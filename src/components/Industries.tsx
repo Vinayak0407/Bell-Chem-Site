@@ -35,26 +35,27 @@ const Industries = () => {
   ];
 
   return (
-    <section id="industries" className="py-16 lg:py-24">
+    <section id="industries" className="py-20 lg:py-28 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Industries <span className="bg-gradient-primary bg-clip-text text-transparent">We Serve</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Trusted partner for leading companies across diverse industries with tailored chemical solutions.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Trusted partner for leading companies across diverse industries, delivering tailored 
+            chemical solutions that drive efficiency and innovation.
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {industries.map((industry, index) => (
-            <Card key={index} className="border-0 shadow-soft hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
-              <CardHeader className="text-center">
-                <div className="text-4xl mb-4">{industry.icon}</div>
-                <CardTitle className="text-xl">{industry.title}</CardTitle>
+            <Card key={index} className="group border-0 shadow-soft hover:shadow-professional transition-all duration-300 hover:-translate-y-2 bg-white">
+              <CardHeader className="text-center pb-4">
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{industry.icon}</div>
+                <CardTitle className="text-xl font-semibold text-gray-900">{industry.title}</CardTitle>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-center leading-relaxed">
+              <CardContent className="text-center">
+                <CardDescription className="text-gray-600 leading-relaxed">
                   {industry.description}
                 </CardDescription>
               </CardContent>
