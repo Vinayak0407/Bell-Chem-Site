@@ -1,24 +1,25 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Services from "@/components/Services";
-import Industries from "@/components/Industries";
-import Contact from "@/components/Contact";
+import HomeHero from "@/components/HomeHero";
+import HomeOverview from "@/components/HomeOverview";
+import HomeTestimonials from "@/components/HomeTestimonials";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <>
+      <SEO 
+        title="Bell Chem - Premium Chemical Solutions & Industrial Dyes | Leading Manufacturer in India"
+        description="Leading manufacturer of high-quality chemicals and industrial dyes in India. Serving textile, pharmaceutical, and manufacturing industries with reliable, cost-effective solutions for over four decades."
+      />
       <Header />
       <main>
-        <Hero />
-        <About />
-        <Services />
-        <Industries />
-        <Contact />
+        <HomeHero />
+        <HomeOverview />
+        <HomeTestimonials />
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
 

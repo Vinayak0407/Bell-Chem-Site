@@ -2,7 +2,7 @@ import manufacturingFacility from "@/assets/manufacturing-facility.jpg";
 
 const About = () => {
   return (
-    <section id="about" className="py-20 lg:py-28 bg-gray-50">
+    <section id="about" className="py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -68,7 +68,7 @@ const About = () => {
             <div className="text-gray-600 font-medium">Products Manufactured</div>
           </div>
           <div className="text-center p-6 bg-white rounded-xl shadow-soft">
-            <div className="text-3xl md:text-4xl font-bold text-primary mb-2">200+</div>
+            <div className="text-3xl md:text-4xl font-bold text-primary mb-2">500+</div>
             <div className="text-gray-600 font-medium">Satisfied Clients</div>
           </div>
           <div className="text-center p-6 bg-white rounded-xl shadow-soft">

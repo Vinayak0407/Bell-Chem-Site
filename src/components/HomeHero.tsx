@@ -3,33 +3,32 @@ import { Link } from "react-router-dom";
 import OptimizedImage from "@/components/OptimizedImage";
 import chemicalLab from "@/assets/chemical-lab.jpg";
 
-const Hero = () => {
+const HomeHero = () => {
   return (
-    <section
-      className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-cover bg-center"
-      style={{ backgroundImage: "url('/SwirlingSpectrum.png')" }}
-    >
-    {/* Background overlay (optional, for text readability) */}
-    <div className="absolute inset-0 bg-black/30"></div>
-  
-    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid lg:grid-cols-2 gap-16 items-center">
-        <div className="space-y-8">
-          <div className="space-y-4">
-            <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium text-white border border-white/20">
-              <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+    <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
+
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-8 relative">
+            {/* Text background overlay */}
+            <div className="absolute inset-0 bg-black/20 rounded-2xl -m-4"></div>
+            
+            <div className="space-y-4 relative z-10">
+              <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium text-white border border-white/20">
+                <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
                 40+ Years of Excellence
               </div>
               
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white drop-shadow-lg">
                 Premium Chemical Solutions &{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-cyan-200">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-cyan-200 drop-shadow-lg">
                   Industrial Dyes
                 </span>
               </h1>
             </div>
             
-            <p className="text-lg md:text-xl text-white/90 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/90 leading-relaxed drop-shadow-md relative z-10">
               Leading manufacturer of high-quality chemicals and industrial dyes in India. 
               Serving textile, pharmaceutical, and manufacturing industries with reliable, 
               cost-effective solutions for over four decades.
@@ -41,9 +40,11 @@ const Hero = () => {
                   Request Quote
                 </Button>
               </Link>
-              <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
-                View Catalog
-              </Button>
+              <Link to="/products">
+                <Button size="lg" className="bg-primary text-white hover:bg-primary/90 shadow-professional">
+                  View Products
+                </Button>
+              </Link>
             </div>
             
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/20">
@@ -96,4 +97,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HomeHero;

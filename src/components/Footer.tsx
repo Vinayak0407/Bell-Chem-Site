@@ -1,19 +1,21 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="bg-foreground text-background py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
+            <Link to="/" className="flex items-center space-x-3 mb-4">
               <img 
                 src="/lovable-uploads/20f50eae-d19f-4dcb-949b-a5e4ef9f76aa.png" 
                 alt="Bell Chem Logo" 
-                className="w-8 h-8"
+                className="w-16 h-16"
               />
               <h3 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                 Bell Chem
               </h3>
-            </div>
+            </Link>
             <p className="text-background/80 leading-relaxed max-w-md">
               Leading manufacturer of premium chemicals and industrial dyes. 
               Committed to quality, reliability, and customer satisfaction.
@@ -23,10 +25,10 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-background/80">
-              <li><a href="#about" className="hover:text-background transition-colors">About Us</a></li>
-              <li><a href="#products" className="hover:text-background transition-colors">Products</a></li>
-              <li><a href="#industries" className="hover:text-background transition-colors">Industries</a></li>
-              <li><a href="#contact" className="hover:text-background transition-colors">Contact</a></li>
+              <li><Link to="/about" className="hover:text-background transition-colors">About Us</Link></li>
+              <li><Link to="/products" className="hover:text-background transition-colors">Products</Link></li>
+              <li><Link to="/industries" className="hover:text-background transition-colors">Industries</Link></li>
+              <li><Link to="/contact" className="hover:text-background transition-colors">Contact</Link></li>
             </ul>
           </div>
           
