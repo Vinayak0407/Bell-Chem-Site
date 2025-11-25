@@ -7,28 +7,28 @@ import chemicalLab from "@/assets/chemical-lab.jpg";
 const SpecialtyChemicals = () => {
   const products = [
     {
-      name: "Custom Surfactant A",
-      description: "Specialized surfactant for specific industrial processes",
-      specifications: ["Custom Formulation", "Grade: Technical", "Packaging: Flexible"],
-      applications: ["Textile Processing", "Chemical Manufacturing", "Industrial Cleaning"]
+      name: "BFF Gel",
+  description: "High-strength fixing and film-forming gel used to enhance pigment adhesion, improve fastness, and stabilise print paste consistency.",
+  specifications: ["Form: Gel", "Ionic Nature: Anionic/Non-ionic (varies by grade)", "Usage: 1%–3%"],
+  applications: ["Pigment Printing", "Print Paste Stabilisation", "Fastness Improvement"]
     },
     {
-      name: "Catalyst System B",
-      description: "High-performance catalyst for chemical reactions",
-      specifications: ["High Activity", "Grade: Technical", "Packaging: Controlled"],
-      applications: ["Chemical Synthesis", "Petrochemical", "Polymer Production"]
+      name: "Alphox 200",
+  description: "Non-ionic surfactant used as an efficient wetting, emulsifying, and detergency agent in textile pretreatment and dyeing.",
+  specifications: ["Ionic Nature: Non-ionic", "Form: Liquid", "Active Content: 99%", "HLB Value: ~13"],
+  applications: ["Scouring", "Wetting", "Dye Bath Additive", "Emulsification"]
     },
     {
-      name: "Additive Package C",
-      description: "Custom additive package for specific applications",
-      specifications: ["Multi-component", "Grade: Technical", "Packaging: Custom"],
-      applications: ["Polymer Processing", "Coating Industry", "Adhesive Manufacturing"]
+      name: "Emulsifier",
+  description: "Non-ionic surfactant used to emulsify oils, silicones, and hydrophobic chemicals for stable textile processing formulations.",
+  specifications: ["Ionic Nature: Non-ionic", "Form: Liquid", "Usage: 0.5%–2%"],
+  applications: ["Scouring", "Emulsification", "Dyeing", "Softener Formulations"]
     },
     {
-      name: "Process Chemical D",
-      description: "Specialized process chemical for industrial applications",
-      specifications: ["Process Optimized", "Grade: Technical", "Packaging: Bulk"],
-      applications: ["Manufacturing", "Processing", "Industrial Applications"]
+      name: "Rasis Salt (Resist Salt)",
+  description: "Speciality dyeing auxiliary used to control dye absorption and improve levelling during reactive dyeing processes.",
+  specifications: ["Form: Powder", "Ionic Nature: Anionic", "Solubility: Completely soluble in water"],
+  applications: ["Reactive Dyeing", "Levelling", "Shade Control", "Pastel Shades"]
     }
   ];
 
@@ -110,7 +110,7 @@ const SpecialtyChemicals = () => {
 
         {/* Products */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">Our Specialty Chemical Products</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-8">Some of our Specialty Chemical Products</h3>
           <div className="grid md:grid-cols-2 gap-8">
             {products.map((product, index) => (
               <Card key={index} className="shadow-sm hover:shadow-md transition-shadow">

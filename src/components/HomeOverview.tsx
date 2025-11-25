@@ -7,7 +7,7 @@ const HomeOverview = () => {
   const overviewSections = [
     {
       title: "About Bell Chem",
-      description: "Discover our 40+ years of excellence in chemical manufacturing, our commitment to quality, and our journey from a modest beginning to becoming India's trusted partner.",
+      description: "Discover our 40+ years of excellence in this industry, our commitment to quality, and our journey from a modest beginning to becoming India's trusted partner.",
       icon: <Building2 className="w-8 h-8 text-primary" />,
       link: "/about",
       linkText: "Learn More About Us",
@@ -24,20 +24,20 @@ const HomeOverview = () => {
       link: "/products",
       linkText: "View All Products",
       stats: [
-        { label: "Dye Categories", value: "4" },
-        { label: "Chemical Types", value: "4" },
+        { label: "Dye Categories", value: "6+" },
+        { label: "Chemical Types", value: "4+" },
         { label: "Industries Served", value: "6+" }
       ]
     },
     {
       title: "Industries We Serve",
-      description: "We serve leading companies across diverse industries including textile manufacturing, pharmaceutical, paint & coatings, and more with tailored solutions.",
+      description: "We serve leading companies across diverse industries including textile, printing, paint & coatings, and more with tailored solutions.",
       icon: <Users className="w-8 h-8 text-primary" />,
       link: "/industries",
       linkText: "Explore Industries",
       stats: [
         { label: "Textile", value: "✓" },
-        { label: "Pharmaceutical", value: "✓" },
+        { label: "Printing", value: "✓" },
         { label: "Coatings", value: "✓" }
       ]
     }
@@ -46,13 +46,26 @@ const HomeOverview = () => {
   return (
     <section className="py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* ⭐ GLASS BOX ADDED HERE */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Why Choose <span className="bg-gradient-primary bg-clip-text text-transparent">Bell Chem</span>
-          </h2>
-          <p className="text-xl text-primary max-w-3xl mx-auto leading-relaxed">
-            Four decades of expertise, innovation, and commitment to quality make us the preferred choice for chemical solutions across India.
-          </p>
+          <div
+            className="
+              max-w-3xl mx-auto px-10 py-8
+              bg-black/30 backdrop-blur-md
+              border border-white/20
+              rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.3)]
+              space-y-4
+            "
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
+              Why Choose <span className="bg-gradient-primary bg-clip-text text-transparent">Bell Chem</span>
+            </h2>
+
+            <p className="text-xl text-white leading-relaxed">
+              Four decades of expertise, innovation, and commitment to quality make us the preferred choice across India.
+            </p>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
@@ -68,7 +81,7 @@ const HomeOverview = () => {
                 <CardDescription className="text-primary leading-relaxed text-lg">
                   {section.description}
                 </CardDescription>
-                
+
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-200">
                   {section.stats.map((stat, statIndex) => (
@@ -78,7 +91,7 @@ const HomeOverview = () => {
                     </div>
                   ))}
                 </div>
-                
+
                 <Link to={section.link}>
                   <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white transition-colors">
                     {section.linkText}
@@ -94,7 +107,7 @@ const HomeOverview = () => {
         <div className="text-center bg-white rounded-2xl p-8 shadow-soft">
           <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
           <p className="text-primary mb-6 max-w-2xl mx-auto">
-            Contact our team today for a consultation and discover how Bell Chem can provide the perfect chemical solutions for your business needs.
+            Contact our team today for a consultation and discover how Bell Chem can provide the perfect dyes and chemical solutions for your business needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">
@@ -110,6 +123,7 @@ const HomeOverview = () => {
             </Link>
           </div>
         </div>
+
       </div>
     </section>
   );

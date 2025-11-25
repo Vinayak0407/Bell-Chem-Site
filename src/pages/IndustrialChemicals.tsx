@@ -13,8 +13,8 @@ const IndustrialChemicals = () => {
       applications: ["Textile Processing", "Chemical Manufacturing", "Water Treatment"]
     },
     {
-      name: "Hydrochloric Acid (HCl)",
-      description: "Concentrated hydrochloric acid for industrial use",
+      name: "Acetic Acid (CH3COOH)",
+      description: "Acetic acid for industrial use",
       specifications: ["Concentration: 32-37%", "Grade: Technical", "Packaging: Bulk"],
       applications: ["Chemical Synthesis", "Metal Treatment", "pH Control"]
     },
@@ -25,7 +25,7 @@ const IndustrialChemicals = () => {
       applications: ["Chemical Manufacturing", "Fertilizer Production", "Metal Processing"]
     },
     {
-      name: "Ammonia Solution",
+      name: "Zinc Oxide (ZnO)",
       description: "Aqueous ammonia solution for industrial applications",
       specifications: ["Concentration: 25-30%", "Grade: Technical", "Packaging: Bulk"],
       applications: ["Chemical Synthesis", "Water Treatment", "Textile Processing"]
@@ -110,7 +110,7 @@ const IndustrialChemicals = () => {
 
         {/* Products */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">Our Industrial Chemical Products</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-8">Some of our Industrial Chemical Products</h3>
           <div className="grid md:grid-cols-2 gap-8">
             {products.map((product, index) => (
               <Card key={index} className="shadow-sm hover:shadow-md transition-shadow">

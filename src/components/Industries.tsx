@@ -3,14 +3,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 const Industries = () => {
   const industries = [
     {
-      title: "Textile Manufacturing",
+      title: "Textile",
       description: "Comprehensive range of dyes and chemicals for cotton, polyester, wool, and silk processing with superior color fastness.",
       icon: "🧵"
     },
     {
-      title: "Pharmaceutical",
-      description: "High-purity intermediates and fine chemicals for drug manufacturing with complete regulatory compliance.",
-      icon: "🏥"
+      title: "Printing",
+      description: "High-performance dyes for vibrant printing, superior color fastness, and precise shade reproduction.",
+      icon: "🖨️"
     },
     {
       title: "Paint & Coatings",
@@ -28,25 +28,39 @@ const Industries = () => {
       icon: "👜"
     },
     {
-      title: "Water Treatment",
-      description: "Advanced chemicals for industrial water treatment, effluent management, and environmental compliance.",
-      icon: "💧"
+      title: "Surfactants",
+      description: "High-performance surfactants for enhanced cleaning, emulsification, and industrial formulation efficiency.",
+      icon: "🧴"
     }
   ];
 
   return (
     <section id="industries" className="py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Industries <span className="bg-gradient-primary bg-clip-text text-transparent">We Serve</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Trusted partner for leading companies across diverse industries, delivering tailored 
-            chemical solutions that drive efficiency and innovation.
-          </p>
+
+        {/* ⭐ Heading + Subheading inside glass box */}
+        <div className="mb-16">
+          <div
+            className="
+              max-w-3xl mx-auto px-10 py-8
+              bg-black/30 backdrop-blur-md
+              border border-white/20
+              rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.3)]
+              text-center space-y-4
+            "
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
+              Industries <span className="bg-gradient-primary bg-clip-text text-transparent">We Serve</span>
+            </h2>
+
+            <p className="text-xl text-white leading-relaxed">
+              Trusted partner for leading companies across diverse industries, delivering tailored
+              chemical solutions that drive efficiency and innovation.
+            </p>
+          </div>
         </div>
-        
+
+        {/* Grid stays exactly the same */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {industries.map((industry, index) => (
             <Card key={index} className="group border-0 shadow-soft hover:shadow-professional transition-all duration-300 hover:-translate-y-2 bg-white">
@@ -62,6 +76,7 @@ const Industries = () => {
             </Card>
           ))}
         </div>
+
       </div>
     </section>
   );

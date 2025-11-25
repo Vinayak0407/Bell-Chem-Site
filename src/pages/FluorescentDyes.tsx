@@ -1,44 +1,64 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, CheckCircle, Star, Award } from "lucide-react";
+import { ArrowLeft, CheckCircle, Sparkles, Flame } from "lucide-react";
 import { Link } from "react-router-dom";
-import textileDyes from "@/assets/textile-dyes.jpg";
+import fluorescentImage from "@/assets/FluorescentDyes.jpg";
 
-const AcidDyes = () => {
+const FluorescentDyes = () => {
   const products = [
     {
-      name: "Acid Red 88",
-      description: "High-strength acid red dye for wool and silk with excellent light fastness",
-      specifications: ["Light Fastness: 5-6", "Wash Fastness: 4-5", "pH Range: 3-5"],
-      applications: ["Wool", "Silk", "Nylon"]
+      name: "Fluorescent Yellow",
+      description: "Ultra-bright high-visibility yellow pigment with excellent luminosity and UV reactivity.",
+      specifications: [
+        "Particle Size: 1–3 µm",
+        "Heat Stability: 180–200°C",
+        "Light Fastness: Moderate",
+        "Form: Fine Powder"
+      ],
+      applications: ["Textile Printing", "High-Visibility Coatings", "Plastic Coloring", "Inks", "Neon Signages"]
     },
     {
-      name: "Acid Blue 80",
-      description: "Brilliant blue acid dye with superior leveling properties",
-      specifications: ["Light Fastness: 6", "Wash Fastness: 4-5", "pH Range: 3-5"],
-      applications: ["Wool", "Silk", "Nylon"]
+      name: "Fluorescent Pink",
+      description: "Intense neon pink shade with excellent dispersion and glowing visual impact.",
+      specifications: [
+        "Particle Size: 1–3 µm",
+        "Heat Stability: 160–190°C",
+        "UV Reactivity: High",
+        "Form: Fine Powder"
+      ],
+      applications: ["Fashion Textiles", "Cosmetic Packaging", "Water-Based Inks", "Art Supplies", "Acrylic Paints"]
     },
     {
-      name: "Acid Yellow 23",
-      description: "Bright yellow acid dye with excellent migration resistance",
-      specifications: ["Light Fastness: 5-6", "Wash Fastness: 4-5", "pH Range: 3-5"],
-      applications: ["Wool", "Silk", "Nylon"]
+      name: "Fluorescent Green",
+      description: "Bright, vivid neon green with strong opacity and exceptional brightness.",
+      specifications: [
+        "Particle Size: 1–3 µm",
+        "Heat Stability: 170–200°C",
+        "Light Fastness: Moderate",
+        "Form: Fine Powder"
+      ],
+      applications: ["Safety Gear", "Plastics", "Posters", "Neon Printing", "Specialty Coatings"]
     },
     {
-      name: "Acid Black 1",
-      description: "Deep black acid dye with outstanding color depth",
-      specifications: ["Light Fastness: 5-6", "Wash Fastness: 4-5", "pH Range: 3-5"],
-      applications: ["Wool", "Silk", "Nylon"]
+      name: "Fluorescent Orange",
+      description: "High-visibility orange pigment ideal for attention-grabbing designs and safety applications.",
+      specifications: [
+        "Particle Size: 1–3 µm",
+        "Heat Stability: 160–190°C",
+        "UV Glow Intensity: High",
+        "Form: Fine Powder"
+      ],
+      applications: ["Road Safety Products", "Advertising Prints", "Inks", "PVC Coloring", "Reflective Textiles"]
     }
   ];
 
   const features = [
-    "Excellent light fastness properties",
-    "Superior leveling characteristics",
-    "Good migration resistance",
-    "Wide pH range compatibility",
-    "Environmentally friendly formulation",
-    "Consistent batch-to-batch quality"
+    "High luminance and neon glow under UV light",
+    "Excellent dispersion for smooth application",
+    "Wide compatibility with inks, plastics, textiles, and coatings",
+    "Vivid and long-lasting color brilliance",
+    "Strong visual impact for branding and safety uses",
+    "Consistent particle size for uniform shade development"
   ];
 
   return (
@@ -54,42 +74,44 @@ const AcidDyes = () => {
               </Button>
             </Link>
             <div className="h-6 w-px bg-gray-300" />
-            <h1 className="text-2xl font-bold text-gray-900">Acid Dyes</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Fluorescent Dyes</h1>
           </div>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Hero Section */}
+
+        {/* Intro Section */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="text-3xl">🎯</div>
-              <h2 className="text-3xl font-bold text-gray-900">Acid Dyes</h2>
+              <div className="text-3xl"><Sparkles /></div>
+              <h2 className="text-3xl font-bold text-gray-900">Fluorescent Dyes</h2>
             </div>
+
             <p className="text-lg text-gray-600 mb-6">
-              Specialized acid dyes for wool, silk, and nylon with excellent light fastness 
-              and leveling properties. Our acid dyes are formulated to provide superior performance 
-              in protein fiber applications.
+              High-impact neon dyes engineered to deliver unmatched vibrancy, UV glow, and eye-catching intensity for premium applications.
             </p>
+
             <div className="flex items-center space-x-4 mb-6">
               <div className="flex items-center space-x-1">
-                <Star className="h-5 w-5 text-yellow-400 fill-current" />
-                <span className="text-sm font-medium">Premium Quality</span>
+                <Flame className="h-5 w-5 text-orange-500" />
+                <span className="text-sm font-medium">Ultra Bright</span>
               </div>
               <div className="flex items-center space-x-1">
-                <Award className="h-5 w-5 text-blue-500" />
-                <span className="text-sm font-medium">ISO Certified</span>
+                <Sparkles className="h-5 w-5 text-pink-500" />
+                <span className="text-sm font-medium">UV Reactive</span>
               </div>
             </div>
           </div>
-          
+
+          {/* Image */}
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img 
-                src={textileDyes}
-                alt="Acid dyes in various colors"
-                className="w-full h-[400px] object-cover"
+              <img
+                src={fluorescentImage}
+                alt="Fluorescent neon color pigments"
+                className="w-full h-[350px] object-cover"
               />
             </div>
           </div>
@@ -110,7 +132,7 @@ const AcidDyes = () => {
 
         {/* Products */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">Some of our Acid Dye Products</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-8">Some of our Fluorescent Dye Products</h3>
           <div className="grid md:grid-cols-2 gap-8">
             {products.map((product, index) => (
               <Card key={index} className="shadow-sm hover:shadow-md transition-shadow">
@@ -120,23 +142,25 @@ const AcidDyes = () => {
                     {product.description}
                   </CardDescription>
                 </CardHeader>
+
                 <CardContent className="space-y-4">
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Specifications:</h4>
                     <ul className="space-y-1">
                       {product.specifications.map((spec, specIndex) => (
                         <li key={specIndex} className="text-sm text-gray-600 flex items-center space-x-2">
-                          <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                          <div className="w-1.5 h-1.5 bg-pink-500 rounded-full"></div>
                           <span>{spec}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
+
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Applications:</h4>
                     <div className="flex flex-wrap gap-2">
                       {product.applications.map((app, appIndex) => (
-                        <span key={appIndex} className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">
+                        <span key={appIndex} className="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-full">
                           {app}
                         </span>
                       ))}
@@ -148,14 +172,14 @@ const AcidDyes = () => {
           </div>
         </div>
 
-        {/* Contact CTA */}
-        <div className="bg-blue-50 rounded-2xl p-8 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Need Custom Acid Dyes?</h3>
+        {/* CTA */}
+        <div className="bg-purple-50 rounded-2xl p-8 text-center">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Need Custom Neon Shades?</h3>
           <p className="text-gray-600 mb-6">
-            Contact our technical team for custom formulations and technical support.
+            Our experts can develop custom fluorescent shades tailored to your industry requirements.
           </p>
           <Link to="/contact">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+            <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
               Contact Us
             </Button>
           </Link>
@@ -165,5 +189,4 @@ const AcidDyes = () => {
   );
 };
 
-export default AcidDyes;
-
+export default FluorescentDyes;

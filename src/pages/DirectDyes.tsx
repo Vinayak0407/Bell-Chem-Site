@@ -110,7 +110,7 @@ const DirectDyes = () => {
 
         {/* Products */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">Our Direct Dye Products</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-8">Some of our Direct Dye Products</h3>
           <div className="grid md:grid-cols-2 gap-8">
             {products.map((product, index) => (
               <Card key={index} className="shadow-sm hover:shadow-md transition-shadow">

@@ -2,47 +2,69 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, CheckCircle, Star, Award } from "lucide-react";
 import { Link } from "react-router-dom";
-import textileDyes from "@/assets/textile-dyes.jpg";
 
-const AcidDyes = () => {
+import OilColorsImage from "@/assets/oil-colors.jpg"; // <-- ADD YOUR IMAGE HERE
+
+const OilColors = () => {
   const products = [
     {
-      name: "Acid Red 88",
-      description: "High-strength acid red dye for wool and silk with excellent light fastness",
-      specifications: ["Light Fastness: 5-6", "Wash Fastness: 4-5", "pH Range: 3-5"],
-      applications: ["Wool", "Silk", "Nylon"]
+      name: "Oil Red O",
+      description: "Bright, oil-soluble red dye suitable for oils, waxes, polishes and hydrocarbon systems.",
+      specifications: [
+        "Solubility: Excellent in oils & hydrocarbons",
+        "Heat Stability: 140–160°C",
+        "Light Fastness: 4–5",
+        "Shade: Bright Red"
+      ],
+      applications: ["Oils", "Polishes", "Waxes", "Lubricants", "Coatings"]
     },
     {
-      name: "Acid Blue 80",
-      description: "Brilliant blue acid dye with superior leveling properties",
-      specifications: ["Light Fastness: 6", "Wash Fastness: 4-5", "pH Range: 3-5"],
-      applications: ["Wool", "Silk", "Nylon"]
+      name: "Oil Yellow 3G",
+      description: "High-strength yellow oil color with strong brightness and excellent dispersibility.",
+      specifications: [
+        "Solubility: High in most oils & solvents",
+        "Heat Stability: Up to 180°C",
+        "Light Fastness: 4",
+        "Shade: Golden Yellow"
+      ],
+      applications: ["Inks", "Oils", "Greases", "Plastic Coloring"]
     },
     {
-      name: "Acid Yellow 23",
-      description: "Bright yellow acid dye with excellent migration resistance",
-      specifications: ["Light Fastness: 5-6", "Wash Fastness: 4-5", "pH Range: 3-5"],
-      applications: ["Wool", "Silk", "Nylon"]
+      name: "Oil Blue N",
+      description: "Brilliant blue oil-soluble dye with strong tinting strength and stability.",
+      specifications: [
+        "Solubility: Excellent in mineral and synthetic oils",
+        "Heat Stability: 160–180°C",
+        "Light Fastness: 5",
+        "Shade: Deep Blue"
+      ],
+      applications: ["Solvent-based inks", "Plastic coloration", "Industrial lubricants"]
     },
     {
-      name: "Acid Black 1",
-      description: "Deep black acid dye with outstanding color depth",
-      specifications: ["Light Fastness: 5-6", "Wash Fastness: 4-5", "pH Range: 3-5"],
-      applications: ["Wool", "Silk", "Nylon"]
+      name: "Oil Green S",
+      description: "Stable green oil color widely used in industrial oils and solvent-based formulations.",
+      specifications: [
+        "Solubility: Very High in oils",
+        "Heat Stability: 180–200°C",
+        "Light Fastness: 4–5",
+        "Shade: Green"
+      ],
+      applications: ["Oils", "Coatings", "Solvent systems", "Marker inks"]
     }
   ];
 
   const features = [
-    "Excellent light fastness properties",
-    "Superior leveling characteristics",
-    "Good migration resistance",
-    "Wide pH range compatibility",
-    "Environmentally friendly formulation",
-    "Consistent batch-to-batch quality"
+    "Excellent solubility in oils & hydrocarbons",
+    "High thermal stability and consistent performance",
+    "Strong tinting strength with bright, clean shades",
+    "Suitable for inks, coatings, polishes and industrial oils",
+    "Non-gritty, smooth dispersion quality",
+    "Stable under processing conditions"
   ];
 
   return (
     <div className="min-h-screen">
+
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -54,24 +76,27 @@ const AcidDyes = () => {
               </Button>
             </Link>
             <div className="h-6 w-px bg-gray-300" />
-            <h1 className="text-2xl font-bold text-gray-900">Acid Dyes</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Oil Colors</h1>
           </div>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Hero Section */}
+
+        {/* Intro Section */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="text-3xl">🎯</div>
-              <h2 className="text-3xl font-bold text-gray-900">Acid Dyes</h2>
+              <div className="text-3xl">🛢️</div>
+              <h2 className="text-3xl font-bold text-gray-900">Oil Colors</h2>
             </div>
+
             <p className="text-lg text-gray-600 mb-6">
-              Specialized acid dyes for wool, silk, and nylon with excellent light fastness 
-              and leveling properties. Our acid dyes are formulated to provide superior performance 
-              in protein fiber applications.
+              High-purity oil-soluble colors formulated for consistent performance in oils, 
+              solvents, waxes, lubricants, inks, and coatings. Designed for excellent solubility,
+              bright shades, and long-term stability in diverse industrial applications.
             </p>
+
             <div className="flex items-center space-x-4 mb-6">
               <div className="flex items-center space-x-1">
                 <Star className="h-5 w-5 text-yellow-400 fill-current" />
@@ -79,19 +104,18 @@ const AcidDyes = () => {
               </div>
               <div className="flex items-center space-x-1">
                 <Award className="h-5 w-5 text-blue-500" />
-                <span className="text-sm font-medium">ISO Certified</span>
+                <span className="text-sm font-medium">Industry Approved</span>
               </div>
             </div>
           </div>
-          
-          <div className="relative">
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img 
-                src={textileDyes}
-                alt="Acid dyes in various colors"
-                className="w-full h-[400px] object-cover"
-              />
-            </div>
+
+          {/* IMAGE SECTION */}
+          <div className="rounded-2xl overflow-hidden shadow-md">
+            <img
+              src={OilColorsImage}
+              alt="Oil Colors"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
 
@@ -110,7 +134,7 @@ const AcidDyes = () => {
 
         {/* Products */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">Some of our Acid Dye Products</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-8">Some of our Oil Color Products</h3>
           <div className="grid md:grid-cols-2 gap-8">
             {products.map((product, index) => (
               <Card key={index} className="shadow-sm hover:shadow-md transition-shadow">
@@ -120,7 +144,9 @@ const AcidDyes = () => {
                     {product.description}
                   </CardDescription>
                 </CardHeader>
+
                 <CardContent className="space-y-4">
+
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Specifications:</h4>
                     <ul className="space-y-1">
@@ -132,6 +158,7 @@ const AcidDyes = () => {
                       ))}
                     </ul>
                   </div>
+
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Applications:</h4>
                     <div className="flex flex-wrap gap-2">
@@ -142,17 +169,18 @@ const AcidDyes = () => {
                       ))}
                     </div>
                   </div>
+
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
 
-        {/* Contact CTA */}
+        {/* CTA */}
         <div className="bg-blue-50 rounded-2xl p-8 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Need Custom Acid Dyes?</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Looking for Custom Oil Colors?</h3>
           <p className="text-gray-600 mb-6">
-            Contact our technical team for custom formulations and technical support.
+            Connect with our technical team for custom formulations and application support.
           </p>
           <Link to="/contact">
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
@@ -160,10 +188,10 @@ const AcidDyes = () => {
             </Button>
           </Link>
         </div>
+
       </div>
     </div>
   );
 };
 
-export default AcidDyes;
-
+export default OilColors;

@@ -1,48 +1,72 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, CheckCircle, Star, Award } from "lucide-react";
+import { ArrowLeft, CheckCircle, Award } from "lucide-react";
 import { Link } from "react-router-dom";
-import textileDyes from "@/assets/textile-dyes.jpg";
+import processingImage from "@/assets/TextileProcessing.jpg"; // <-- replace with your image file
 
-const AcidDyes = () => {
+const TextileProcessing = () => {
+
   const products = [
     {
-      name: "Acid Red 88",
-      description: "High-strength acid red dye for wool and silk with excellent light fastness",
-      specifications: ["Light Fastness: 5-6", "Wash Fastness: 4-5", "pH Range: 3-5"],
-      applications: ["Wool", "Silk", "Nylon"]
+      name: "Tinopal 2B",
+  description: "A highly effective optical brightening agent that enhances fabric whiteness by absorbing UV light and emitting blue fluorescence.",
+  specifications: [
+    "Ionic Nature: Anionic",
+    "Usage: 0.05%–0.3%",
+    "Form: Powder / Granular",
+    "Solubility: Fully soluble in water"
+  ],
+  applications: ["Detergents", "Textile Whitening", "Soaping", "Laundry Chemicals"]
     },
     {
-      name: "Acid Blue 80",
-      description: "Brilliant blue acid dye with superior leveling properties",
-      specifications: ["Light Fastness: 6", "Wash Fastness: 4-5", "pH Range: 3-5"],
-      applications: ["Wool", "Silk", "Nylon"]
+      name: "Optical Brightener CBX",
+  description: "Fluorescent whitening agent used to improve brightness and whiteness of textile substrates during finishing.",
+  specifications: [
+    "Ionic Nature: Anionic / Non-ionic (varies by grade)",
+    "Usage: 0.1%–1%",
+    "Light Fastness: Good",
+    "Temperature Stability: Stable up to 130°C"
+  ],
+  applications: ["Finishing", "Whitening", "Detergent Formulations", "Dyeing Auxiliaries"]
     },
     {
-      name: "Acid Yellow 23",
-      description: "Bright yellow acid dye with excellent migration resistance",
-      specifications: ["Light Fastness: 5-6", "Wash Fastness: 4-5", "pH Range: 3-5"],
-      applications: ["Wool", "Silk", "Nylon"]
+      name: "Alum",
+  description: "Versatile inorganic coagulant used in textile processing for scouring, dye fixation, and water treatment.",
+  specifications: [
+    "Chemical Formula: Al₂(SO₄)₃",
+    "Form: Powder / Lumps",
+    "Purity: 98%–99%",
+    "pH: Acidic",
+    "Solubility: Highly soluble in water"
+  ],
+  applications: ["Mordanting", "Dye Fixing", "Water Treatment", "Scouring"]
     },
     {
-      name: "Acid Black 1",
-      description: "Deep black acid dye with outstanding color depth",
-      specifications: ["Light Fastness: 5-6", "Wash Fastness: 4-5", "pH Range: 3-5"],
-      applications: ["Wool", "Silk", "Nylon"]
+      name: "TSP",
+  description: "Strong alkaline cleaning and processing agent used for scouring and heavy-duty degreasing of textile substrates.",
+  specifications: [
+    "Chemical Formula: Na₃PO₄",
+    "pH: 11–12 (1% solution)",
+    "Form: Crystalline Powder",
+    "Purity: 98% Min",
+    "Solubility: Fully soluble in water"
+  ],
+  applications: ["Scouring", "Degreasing", "Pretreatment", "Boil-Out Cleaning"]
     }
   ];
 
   const features = [
-    "Excellent light fastness properties",
-    "Superior leveling characteristics",
-    "Good migration resistance",
-    "Wide pH range compatibility",
-    "Environmentally friendly formulation",
-    "Consistent batch-to-batch quality"
+    "Enhances efficiency across all textile processing stages",
+    "Improves fabric absorbency, whiteness & leveling",
+    "High thermal stability & broad pH compatibility",
+    "Eco-friendly formulations for sustainable processing",
+    "Stable performance in hard water conditions",
+    "Reduces processing defects & improves consistency"
   ];
 
   return (
     <div className="min-h-screen">
+
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -54,42 +78,42 @@ const AcidDyes = () => {
               </Button>
             </Link>
             <div className="h-6 w-px bg-gray-300" />
-            <h1 className="text-2xl font-bold text-gray-900">Acid Dyes</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Textile Processing Chemicals</h1>
           </div>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Hero Section */}
+
+        {/* Intro */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="text-3xl">🎯</div>
-              <h2 className="text-3xl font-bold text-gray-900">Acid Dyes</h2>
+              <div className="text-3xl">🧵</div>
+              <h2 className="text-3xl font-bold text-gray-900">Textile Processing Chemicals</h2>
             </div>
+
             <p className="text-lg text-gray-600 mb-6">
-              Specialized acid dyes for wool, silk, and nylon with excellent light fastness 
-              and leveling properties. Our acid dyes are formulated to provide superior performance 
-              in protein fiber applications.
+              High-performance processing chemicals engineered to deliver maximum efficiency in pretreatment, 
+              bleaching, dyeing, and finishing operations—ensuring consistent quality, improved absorbency, 
+              and optimized production results.
             </p>
+
             <div className="flex items-center space-x-4 mb-6">
               <div className="flex items-center space-x-1">
-                <Star className="h-5 w-5 text-yellow-400 fill-current" />
-                <span className="text-sm font-medium">Premium Quality</span>
-              </div>
-              <div className="flex items-center space-x-1">
                 <Award className="h-5 w-5 text-blue-500" />
-                <span className="text-sm font-medium">ISO Certified</span>
+                <span className="text-sm font-medium">Industry Approved</span>
               </div>
             </div>
           </div>
-          
+
+          {/* Image */}
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <img 
-                src={textileDyes}
-                alt="Acid dyes in various colors"
-                className="w-full h-[400px] object-cover"
+                src={processingImage}
+                alt="Textile processing chemicals"
+                className="w-full h-[350px] object-cover"
               />
             </div>
           </div>
@@ -108,9 +132,10 @@ const AcidDyes = () => {
           </div>
         </div>
 
-        {/* Products */}
+        {/* Product Cards */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">Some of our Acid Dye Products</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-8">Some of our Processing Chemical Range</h3>
+
           <div className="grid md:grid-cols-2 gap-8">
             {products.map((product, index) => (
               <Card key={index} className="shadow-sm hover:shadow-md transition-shadow">
@@ -120,7 +145,10 @@ const AcidDyes = () => {
                     {product.description}
                   </CardDescription>
                 </CardHeader>
+
                 <CardContent className="space-y-4">
+                  
+                  {/* Specifications */}
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Specifications:</h4>
                     <ul className="space-y-1">
@@ -132,6 +160,8 @@ const AcidDyes = () => {
                       ))}
                     </ul>
                   </div>
+
+                  {/* Applications */}
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Applications:</h4>
                     <div className="flex flex-wrap gap-2">
@@ -142,17 +172,18 @@ const AcidDyes = () => {
                       ))}
                     </div>
                   </div>
+
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
 
-        {/* Contact CTA */}
+        {/* CTA */}
         <div className="bg-blue-50 rounded-2xl p-8 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Need Custom Acid Dyes?</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Need Custom Processing Chemicals?</h3>
           <p className="text-gray-600 mb-6">
-            Contact our technical team for custom formulations and technical support.
+            Contact our expert technical team for optimized formulations and processing support.
           </p>
           <Link to="/contact">
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
@@ -160,10 +191,10 @@ const AcidDyes = () => {
             </Button>
           </Link>
         </div>
+
       </div>
     </div>
   );
 };
 
-export default AcidDyes;
-
+export default TextileProcessing;

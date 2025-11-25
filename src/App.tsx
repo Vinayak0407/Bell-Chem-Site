@@ -13,6 +13,12 @@ import ContactPage from "./pages/Contact";
 import QuoteRequestPage from "./pages/QuoteRequest";
 import NotFound from "./pages/NotFound";
 // Product category pages
+import TextileProcessing from "./pages/TextileProcessing";
+import DischargeDyes from "./pages/DischargeDyes";
+import FluorescentDyes from "./pages/FluorescentDyes";
+import PigmentDyes from "./pages/PigmentDyes";
+import SolventDyes from "./pages/SolventDyes";
+import OilColors from"./pages/OilColors";
 import ReactiveDyes from "./pages/ReactiveDyes";
 import DisperseDyes from "./pages/DisperseDyes";
 import AcidDyes from "./pages/AcidDyes";
@@ -48,6 +54,12 @@ const App = () => (
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/quote" element={<QuoteRequestPage />} />
               {/* Product category routes */}
+              <Route path="/textileprocessing" element={<TextileProcessing />} />
+              <Route path="/dischargedyes" element={<DischargeDyes />} />
+              <Route path="/fluorescentcolors" element={<FluorescentDyes />} />
+              <Route path="/solventdyes" element={<SolventDyes />} />
+              <Route path="/pigmentdyes" element={<PigmentDyes />} />
+              <Route path="/oilcolors" element={<OilColors />} />
               <Route path="/reactivedyes" element={<ReactiveDyes />} />
               <Route path="/dispersedyes" element={<DisperseDyes />} />
               <Route path="/aciddyes" element={<AcidDyes />} />

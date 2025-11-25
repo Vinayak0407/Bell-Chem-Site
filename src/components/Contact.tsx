@@ -14,12 +14,23 @@ const Contact = () => {
     <section id="contact" className="py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Let's <span className="bg-gradient-primary bg-clip-text text-transparent">Connect</span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ready to transform your business? Get in touch with our team for a consultation.
-          </p>
+        <div
+    className="
+      mx-auto w-fit text-center space-y-3 
+      px-8 py-6 
+      bg-black/30 backdrop-blur-md 
+      rounded-2xl border border-white/20 
+      shadow-[0_0_25px_rgba(0,0,0,0.3)]
+    "
+  >
+    <h2 className="text-3xl md:text-4xl font-bold text-white">
+      Let's <span className="bg-gradient-primary bg-clip-text text-transparent">Connect</span>
+    </h2>
+
+    <p className="text-lg text-white">
+      Ready to transform your business? Get in touch with our team for a consultation.
+    </p>
+  </div>
         </div>
         
         <div className="grid lg:grid-cols-3 gap-8">
@@ -164,9 +175,9 @@ const Contact = () => {
               <CardContent className="p-6">
                 <h3 className="font-semibold mb-2">📍 Office</h3>
                 <p className="text-muted-foreground">
-                  16/331A Khajoor Road<br />
-                  Karol Bagh<br />
-                  New Delhi, 110005<br />
+                  Ground floor, Godown no.198<br />
+                  Tilak Bazar, Khari Baoli<br />
+                  New Delhi, 110007<br />
                   India
                 </p>
               </CardContent>

@@ -7,28 +7,28 @@ import chemicalLab from "@/assets/chemical-lab.jpg";
 const TextileAuxiliaries = () => {
   const products = [
     {
-      name: "Softener Agent A",
-      description: "High-performance softener for textile finishing applications",
-      specifications: ["Non-ionic", "Grade: Technical", "Packaging: Bulk"],
-      applications: ["Cotton Finishing", "Synthetic Finishing", "Blend Processing"]
+      name: "Thickener",
+      description: "High-viscosity agent used to regulate print paste flow and ensure dimensional clarity in textile printing.",
+      specifications: ["Type: Natural/Synthetic", "Ionic Nature: Non-ionic/Anionic", "Viscosity Range: Depends on Grade", "Usage Level: Typically 1%-5%"],
+      applications: ["Pigment Printing", "Reactive Printing", "Discharge Printing"]
     },
     {
-      name: "Wetting Agent B",
-      description: "Efficient wetting agent for textile processing",
-      specifications: ["Anionic", "Grade: Technical", "Packaging: Bulk"],
-      applications: ["Dyeing Process", "Printing", "Pretreatment"]
+      name: "Binder",
+  description: "Polymer emulsion employed in pigment printing to form a film that holds pigment particles onto the fabric surface.",
+  specifications: ["Polymer Type: Acrylic Emulsion", "Ionic Nature: Anionic", "Binder Content: Typical 40%-50%", "Curing Temp: 150 °C-170 °C"],
+  applications: ["Pigment Printing", "Screen Printing", "Fabric Coating"]
     },
     {
-      name: "Leveling Agent C",
-      description: "Superior leveling agent for uniform dyeing",
-      specifications: ["Non-ionic", "Grade: Technical", "Packaging: Bulk"],
-      applications: ["Reactive Dyeing", "Disperse Dyeing", "Acid Dyeing"]
+      name: "Gwar Gum",
+  description: "Natural polysaccharide-based thickener derived from guar beans, offering excellent print definition and flow control.",
+  specifications: ["Source: Guar Beans", "Ionic Nature: Non-ionic", "Viscosity (1% Solution): 2,000-5,000 cps", "Form: Off-white powder"],
+  applications: ["Reactive Printing", "Carpet Printing", "Fabric Sizing"]
     },
     {
-      name: "Finishing Agent D",
-      description: "Multi-purpose finishing agent for textile applications",
-      specifications: ["Cationic", "Grade: Technical", "Packaging: Bulk"],
-      applications: ["Fabric Finishing", "Garment Processing", "Technical Textiles"]
+      name: "Dye Fixer",
+  description: "Specialized after-treatment chemical used to improve dye wash fastness and prevent color bleeding on textiles.",
+  specifications: ["Ionic Nature: Cationic", "Form: Liquid", "Application pH: 5–6"],
+  applications: ["Reactive Dyeing", "Direct Dyeing", "After-Treatment", "Color Fastness Improvement"]
     }
   ];
 
@@ -110,7 +110,7 @@ const TextileAuxiliaries = () => {
 
         {/* Products */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">Our Textile Auxiliary Products</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-8">Some of our Textile Auxiliary Products</h3>
           <div className="grid md:grid-cols-2 gap-8">
             {products.map((product, index) => (
               <Card key={index} className="shadow-sm hover:shadow-md transition-shadow">

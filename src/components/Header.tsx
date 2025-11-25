@@ -31,9 +31,15 @@ const Header = () => {
                   }
                 }}
               />
-              <h1 className="text-2xl font-bold text-primary">
-                Bell Chem
-              </h1>
+              <div>
+  <h1 className="text-2xl font-bold text-primary leading-tight">
+    Bell Chem
+  </h1>
+  <p className="text-sm text-primary/70 -mt-1">
+    An A.K Jain & Co Enterprise
+  </p>
+</div>
+
             </Link>
           </div>
           
