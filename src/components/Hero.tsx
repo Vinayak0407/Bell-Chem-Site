@@ -31,7 +31,7 @@ const Hero = () => {
             
             <p className="text-lg md:text-xl text-white/90 leading-relaxed">
               Leading manufacturer of high-quality chemicals and industrial dyes in India. 
-              Serving textile, pharmaceutical, and manufacturing industries with reliable, 
+              Serving textile, and manufacturing industries with reliable, 
               cost-effective solutions for over four decades.
             </p>
             

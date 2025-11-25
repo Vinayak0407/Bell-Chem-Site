@@ -87,25 +87,39 @@ const TextileProcessing = () => {
 
         {/* Intro */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="text-3xl">🧵</div>
-              <h2 className="text-3xl font-bold text-gray-900">Textile Processing Chemicals</h2>
-            </div>
+          {/* LEFT TEXT COLUMN */}
+<div
+  className="
+    p-6 rounded-2xl 
+    bg-black/30 backdrop-blur-md 
+    border border-white/20 
+    shadow-[0_0_25px_rgba(0,0,0,0.3)]
+    space-y-4
+  "
+>
 
-            <p className="text-lg text-gray-600 mb-6">
-              High-performance processing chemicals engineered to deliver maximum efficiency in pretreatment, 
-              bleaching, dyeing, and finishing operations—ensuring consistent quality, improved absorbency, 
-              and optimized production results.
-            </p>
+  {/* Title Row INSIDE Box */}
+  <div className="flex items-center space-x-2 mb-4">
+    <div className="text-3xl">🧵</div>
+    <h2 className="text-3xl font-bold text-white">Textile Processing Chemicals</h2>
+  </div>
 
-            <div className="flex items-center space-x-4 mb-6">
-              <div className="flex items-center space-x-1">
-                <Award className="h-5 w-5 text-blue-500" />
-                <span className="text-sm font-medium">Industry Approved</span>
-              </div>
-            </div>
-          </div>
+  <p className="text-xl text-white leading-relaxed mb-6">
+    High-performance processing chemicals engineered to deliver maximum efficiency 
+    in pretreatment, bleaching, dyeing, and finishing operations—ensuring consistent 
+    quality, improved absorbency, and optimized production results.
+  </p>
+
+  <div className="space-y-4 text-white">
+    <div className="flex items-center space-x-3">
+      <Award className="h-5 w-5 text-blue-400" />
+      <span>Industry Approved</span>
+    </div>
+  </div>
+
+</div>
+
+
 
           {/* Image */}
           <div className="relative">

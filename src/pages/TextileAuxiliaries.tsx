@@ -62,27 +62,44 @@ const TextileAuxiliaries = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Section */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="text-3xl">🔬</div>
-              <h2 className="text-3xl font-bold text-gray-900">Textile Auxiliaries</h2>
-            </div>
-            <p className="text-lg text-gray-600 mb-6">
-              Complete range of textile processing chemicals including softeners, finishing agents, 
-              and auxiliaries. Our textile auxiliaries are designed to enhance processing efficiency 
-              and improve fabric quality.
-            </p>
-            <div className="flex items-center space-x-4 mb-6">
-              <div className="flex items-center space-x-1">
-                <Star className="h-5 w-5 text-yellow-400 fill-current" />
-                <span className="text-sm font-medium">Complete Range</span>
-              </div>
-              <div className="flex items-center space-x-1">
-                <Award className="h-5 w-5 text-blue-500" />
-                <span className="text-sm font-medium">Technical Support</span>
-              </div>
-            </div>
-          </div>
+        <div
+  className="
+    p-6 rounded-2xl 
+    bg-black/30 backdrop-blur-md 
+    border border-white/20 
+    shadow-[0_0_25px_rgba(0,0,0,0.3)]
+    space-y-4
+  "
+>
+
+  {/* Title Row INSIDE Box */}
+  <div className="flex items-center space-x-2 mb-4">
+    <div className="text-3xl">🔬</div>
+    <h2 className="text-3xl font-bold text-white">Textile Auxiliaries</h2>
+  </div>
+
+  <p className="text-xl text-white leading-relaxed mb-6">
+    Complete range of textile processing chemicals including softeners, finishing agents, 
+    and auxiliaries. Our textile auxiliaries are designed to enhance processing efficiency 
+    and improve fabric quality.
+  </p>
+
+  <div className="space-y-4 text-white">
+
+    <div className="flex items-center space-x-3">
+      <Star className="h-5 w-5 text-yellow-300 fill-current" />
+      <span>Complete Range</span>
+    </div>
+
+    <div className="flex items-center space-x-3">
+      <Award className="h-5 w-5 text-blue-400" />
+      <span>Technical Support</span>
+    </div>
+
+  </div>
+
+</div>
+
           
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-lg">

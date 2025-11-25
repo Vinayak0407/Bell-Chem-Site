@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, CheckCircle, Star, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import OilColorsImage from "@/assets/oil-colors.jpg"; // <-- ADD YOUR IMAGE HERE
+import OilColorsImage from "@/assets/oil-colors.jpg";
 
 const OilColors = () => {
   const products = [
@@ -85,28 +85,41 @@ const OilColors = () => {
 
         {/* Intro Section */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        
+        <div
+  className="
+    p-6 rounded-2xl 
+    bg-black/30 backdrop-blur-md 
+    border border-white/20 
+    shadow-[0_0_25px_rgba(0,0,0,0.3)]
+    space-y-4
+  "
+>
+
+          {/* LEFT TEXT COLUMN */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <div className="text-3xl">🛢️</div>
               <h2 className="text-3xl font-bold text-gray-900">Oil Colors</h2>
             </div>
 
-            <p className="text-lg text-gray-600 mb-6">
-              High-purity oil-soluble colors formulated for consistent performance in oils, 
-              solvents, waxes, lubricants, inks, and coatings. Designed for excellent solubility,
-              bright shades, and long-term stability in diverse industrial applications.
-            </p>
+  <p className="text-xl text-white leading-relaxed mb-6">
+    High-purity oil-soluble colors formulated for consistent performance in oils,
+    solvents, waxes, lubricants, inks, and coatings. Designed for excellent solubility,
+    bright shades, and long-term stability in diverse industrial applications.
+  </p>
 
-            <div className="flex items-center space-x-4 mb-6">
-              <div className="flex items-center space-x-1">
-                <Star className="h-5 w-5 text-yellow-400 fill-current" />
-                <span className="text-sm font-medium">Premium Quality</span>
-              </div>
-              <div className="flex items-center space-x-1">
-                <Award className="h-5 w-5 text-blue-500" />
-                <span className="text-sm font-medium">Industry Approved</span>
-              </div>
-            </div>
+  <div className="space-y-4 text-white">
+    <div className="flex items-center space-x-3">
+      <Star className="h-5 w-5 text-yellow-300 fill-current" />
+      <span>Premium Quality</span>
+    </div>
+    <div className="flex items-center space-x-3">
+      <Award className="h-5 w-5 text-blue-400" />
+      <span>Industry Approved</span>
+    </div>
+  </div>
+</div>
           </div>
 
           {/* IMAGE SECTION */}
@@ -117,6 +130,7 @@ const OilColors = () => {
               className="w-full h-full object-cover"
             />
           </div>
+
         </div>
 
         {/* Features */}

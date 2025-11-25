@@ -75,7 +75,7 @@ const DischargeDyes = () => {
               </Button>
             </Link>
             <div className="h-6 w-px bg-gray-300" />
-            <h1 className="text-2xl font-bold text-gray-900">Discharge Dyes</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Discharge Colors</h1>
           </div>
         </div>
       </div>
@@ -84,28 +84,44 @@ const DischargeDyes = () => {
 
         {/* Intro Section */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="text-3xl"><Scissors /></div>
-              <h2 className="text-3xl font-bold text-gray-900">Discharge Dyes</h2>
-            </div>
+        <div
+  className="
+    p-6 rounded-2xl 
+    bg-black/30 backdrop-blur-md 
+    border border-white/20 
+    shadow-[0_0_25px_rgba(0,0,0,0.3)]
+    space-y-4
+  "
+>
 
-            <p className="text-lg text-gray-600 mb-6">
-              Premium discharge dyes engineered for bright, clean color replacement on dark-dyed fabrics.
-              Ideal for high-contrast textile prints with a soft, breathable finish.
-            </p>
+  {/* Title Row INSIDE Box */}
+  <div className="flex items-center space-x-2 mb-4">
+    <div className="text-3xl"><Scissors className="text-green-300" /></div>
+    <h2 className="text-3xl font-bold text-white">Discharge Dyes</h2>
+  </div>
 
-            <div className="flex items-center space-x-4 mb-6">
-              <div className="flex items-center space-x-1">
-                <Award className="h-5 w-5 text-blue-500" />
-                <span className="text-sm font-medium">Industry Approved</span>
-              </div>
-              <div className="flex items-center space-x-1">
-                <Scissors className="h-5 w-5 text-green-600" />
-                <span className="text-sm font-medium">Sharp Discharge Effect</span>
-              </div>
-            </div>
-          </div>
+  <p className="text-xl text-white leading-relaxed mb-6">
+    Premium discharge dyes engineered for bright, clean color replacement on 
+    dark-dyed fabrics. Ideal for high-contrast textile prints with a soft, 
+    breathable finish.
+  </p>
+
+  <div className="space-y-4 text-white">
+
+    <div className="flex items-center space-x-3">
+      <Award className="h-5 w-5 text-blue-400" />
+      <span>Industry Approved</span>
+    </div>
+
+    <div className="flex items-center space-x-3">
+      <Scissors className="h-5 w-5 text-green-300" />
+      <span>Sharp Discharge Effect</span>
+    </div>
+
+  </div>
+
+</div>
+
 
           {/* Image */}
           <div className="relative">
@@ -134,7 +150,7 @@ const DischargeDyes = () => {
 
         {/* Products */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">Some of our Discharge Dye Products</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-8">Some of our Discharge Color Products</h3>
           <div className="grid md:grid-cols-2 gap-8">
             {products.map((product, index) => (
               <Card key={index} className="shadow-sm hover:shadow-md transition-shadow">
