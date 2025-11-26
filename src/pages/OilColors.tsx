@@ -8,7 +8,7 @@ import OilColorsImage from "@/assets/oil-colors.jpg";
 const OilColors = () => {
   const products = [
     {
-      name: "Oil Red O",
+      name: "Oil Red ",
       description: "Bright, oil-soluble red dye suitable for oils, waxes, polishes and hydrocarbon systems.",
       specifications: [
         "Solubility: Excellent in oils & hydrocarbons",
@@ -19,7 +19,7 @@ const OilColors = () => {
       applications: ["Oils", "Polishes", "Waxes", "Lubricants", "Coatings"]
     },
     {
-      name: "Oil Yellow 3G",
+      name: "Oil Yellow 3",
       description: "High-strength yellow oil color with strong brightness and excellent dispersibility.",
       specifications: [
         "Solubility: High in most oils & solvents",
@@ -30,7 +30,7 @@ const OilColors = () => {
       applications: ["Inks", "Oils", "Greases", "Plastic Coloring"]
     },
     {
-      name: "Oil Blue N",
+      name: "Oil Blue ",
       description: "Brilliant blue oil-soluble dye with strong tinting strength and stability.",
       specifications: [
         "Solubility: Excellent in mineral and synthetic oils",
@@ -41,7 +41,7 @@ const OilColors = () => {
       applications: ["Solvent-based inks", "Plastic coloration", "Industrial lubricants"]
     },
     {
-      name: "Oil Green S",
+      name: "Oil Green ",
       description: "Stable green oil color widely used in industrial oils and solvent-based formulations.",
       specifications: [
         "Solubility: Very High in oils",
