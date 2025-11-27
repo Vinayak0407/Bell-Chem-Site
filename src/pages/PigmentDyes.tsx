@@ -19,7 +19,7 @@ const PigmentDyes = () => {
     },
     {
       name: "Pearl Pigment",
-      description: "Strong, stable blue pigment known for excellent dispersion and weather resistance.",
+      description: "Strong, stable pearl pigment known for excellent dispersion and weather resistance.",
       specifications: [
         "Heat Stability: 260–300°C",
         "Light Fastness: 7–8",
