@@ -18,7 +18,7 @@ const PigmentDyes = () => {
       applications: ["Paints", "Inks", "Plastics", "Textile Printing", "Coatings"]
     },
     {
-      name: "Pigment Blue",
+      name: "Pearl Pigment",
       description: "Strong, stable blue pigment known for excellent dispersion and weather resistance.",
       specifications: [
         "Heat Stability: 260–300°C",
