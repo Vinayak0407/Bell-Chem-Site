@@ -369,7 +369,7 @@ const QuoteRequest = () => {
                   For urgent inquiries, call our sales team directly.
                 </p>
                 <p className="text-blue-900 font-medium">+91-9999776385</p>
-                <p className="text-blue-700 text-sm">akjain.ranas@gmail.com</p>
+                <p className="text-blue-700 text-sm">vinayak@bellchem.in</p>
               </CardContent>
             </Card>
           </div>

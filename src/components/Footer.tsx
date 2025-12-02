@@ -15,15 +15,9 @@ const Footer = () => {
                 alt="Bell Chem Logo" 
                 className="w-16 h-16"
               />
-              <div>
-  <h3 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent leading-tight">
-    Bell Chem
-  </h3>
-  <p className="text-sm text-background/80 -mt-1">
-    An A.K Jain & Co Enterprise
-  </p>
-</div>
-
+              <h3 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+                Bell Chem
+              </h3>
             </Link>
 
             <p className="text-background/80 leading-relaxed max-w-md">
@@ -63,7 +57,7 @@ const Footer = () => {
               {/* Email */}
               <li>
                 <a
-                  href="mailto:akjain.ranas@gmail.com"
+                  href="mailto:vinayak@bellchem.in"
                   className="hover:text-background transition-colors"
                 >
                   Email: akjain.ranas@gmail.com

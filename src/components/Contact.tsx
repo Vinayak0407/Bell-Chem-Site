@@ -158,7 +158,7 @@ const Contact = () => {
             <Card className="shadow-soft">
               <CardContent className="p-6">
                 <h3 className="font-semibold mb-2">📧 Email</h3>
-                <p className="text-muted-foreground">akjain.ranas@gmail.com</p>
+                <p className="text-muted-foreground">vinayak@bellchem.in</p>
                 <p className="text-muted-foreground text-sm">akjain.ranas@gmail.com</p>
               </CardContent>
             </Card>
