@@ -60,7 +60,7 @@ const Footer = () => {
                   href="mailto:vinayak@bellchem.in"
                   className="hover:text-background transition-colors"
                 >
-                  Email: akjain.ranas@gmail.com
+                  Email: vinayak@bellchem.in
                 </a>
               </li>
 
