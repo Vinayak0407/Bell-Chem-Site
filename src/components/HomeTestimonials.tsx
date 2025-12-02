@@ -5,7 +5,6 @@ const HomeTestimonials = () => {
   const testimonials = [
     {
       name: "Rajesh Kumar",
-      company: "Textile Manufacturing Co.",
       role: "Production Manager",
       content: "Bell Chem has been our trusted partner for over 15 years. Their textile dyes are of exceptional quality and their customer service is outstanding.",
       rating: 5,
@@ -13,7 +12,6 @@ const HomeTestimonials = () => {
     },
     {
       name: "Dr. Priya Sharma",
-      company: "Pharma Solutions Ltd.",
       role: "R&D Director",
       content: "The pharmaceutical intermediates from Bell Chem meet all our quality standards. Their GMP compliance and documentation are impeccable.",
       rating: 5,
@@ -21,7 +19,6 @@ const HomeTestimonials = () => {
     },
     {
       name: "Amit Patel",
-      company: "Industrial Coatings Inc.",
       role: "Technical Director",
       content: "We've been using Bell Chem's specialty chemicals for our coating applications. The consistency and performance are excellent.",
       rating: 5,
