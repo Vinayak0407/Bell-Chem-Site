@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import pigmentDyesImage from "@/assets/PigmentDyes.jpg";
 
 const PigmentDyes = () => {
+
   const products = [
     {
       name: "Pigment Red FB",
@@ -100,22 +101,17 @@ const PigmentDyes = () => {
     {
       name: "Pigment Black G",
       description:
-        "An economical deep black pigment widely used for general-purpose industrial formulations. Offers reliable color coverage and smooth dispersion in paints, plastics, and inks. Chosen where cost-efficiency and consistent black tones are required.",
+        "An economical deep black pigment widely used for general-purpose industrial formulations. Offers reliable color coverage in paints, plastics, and inks, ideal where cost-efficiency and consistency are needed.",
       applications: ["Rubber", "Plastics", "Paints", "General Inks", "PVC Compounds"]
     },
 
     {
       name: "Pigment Black FBR",
       description:
-        "A quality-grade black pigment suitable for applications needing better depth and coverage than basic economical grades. Provides stable color development in water-based paints, plastics, and ink systems.",
+        "A quality-grade black pigment designed for applications requiring deeper coverage and cleaner tone than basic economical grades. Suitable for water-based paints, plastics, and ink systems.",
       applications: ["Water-Based Paints", "Plastics", "Inks", "General Industrial Applications"]
     }
   ];
-
-  return products;
-};
-
-
 
   const features = [
     "High dispersion quality for smooth finishes",
@@ -149,53 +145,43 @@ const PigmentDyes = () => {
         {/* Intro Section */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            {/* Pigment Colors Section */}
-<div>
-  
-  {/* Title Row */}
+            <div>
+              {/* Glass Box */}
+              <div
+                className="
+                  p-6 rounded-2xl 
+                  bg-black/30 backdrop-blur-md 
+                  border border-white/20 
+                  shadow-[0_0_25px_rgba(0,0,0,0.3)]
+                  space-y-4
+                "
+              >
 
-  
+                <div className="flex items-center space-x-2 mb-4">
+                  <div className="text-3xl">🖌️</div>
+                  <h2 className="text-3xl font-bold text-white">Pigment Colors</h2>
+                </div>
 
+                <p className="text-xl text-white leading-relaxed mb-6">
+                  High-performance pigment powders engineered for maximum opacity, dispersion, 
+                  and shade consistency across paints, inks, plastics, coatings, and textile 
+                  printing applications.
+                </p>
 
-  {/* Black Glass Box */}
-  <div
-  className="
-    p-6 rounded-2xl 
-    bg-black/30 backdrop-blur-md 
-    border border-white/20 
-    shadow-[0_0_25px_rgba(0,0,0,0.3)]
-    space-y-4
-  "
->
+                <div className="space-y-4 text-white">
+                  <div className="flex items-center space-x-3">
+                    <Star className="h-5 w-5 text-yellow-300 fill-current" />
+                    <span>Premium Quality</span>
+                  </div>
 
-  {/* Title Row INSIDE the Glass Box */}
-  <div className="flex items-center space-x-2 mb-4">
-    <div className="text-3xl">🖌️</div>
-    <h2 className="text-3xl font-bold text-white">Pigment Colors</h2>
-  </div>
+                  <div className="flex items-center space-x-3">
+                    <Award className="h-5 w-5 text-blue-400" />
+                    <span>Industry Approved</span>
+                  </div>
+                </div>
 
-  <p className="text-xl text-white leading-relaxed mb-6">
-    High-performance pigment powders engineered for maximum opacity, dispersion, 
-    and shade consistency across paints, inks, plastics, coatings, and textile 
-    printing applications.
-  </p>
-
-  <div className="space-y-4 text-white">
-    <div className="flex items-center space-x-3">
-      <Star className="h-5 w-5 text-yellow-300 fill-current" />
-      <span>Premium Quality</span>
-    </div>
-
-    <div className="flex items-center space-x-3">
-      <Award className="h-5 w-5 text-blue-400" />
-      <span>Industry Approved</span>
-    </div>
-  </div>
-
-</div>
-
-</div>
-
+              </div>
+            </div>
           </div>
 
           {/* Image */}
@@ -227,6 +213,7 @@ const PigmentDyes = () => {
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-gray-900 mb-8">Some of our Pigment Color Products</h3>
           <div className="grid md:grid-cols-2 gap-8">
+
             {products.map((product, index) => (
               <Card key={index} className="shadow-sm hover:shadow-md transition-shadow">
                 <CardHeader>
@@ -237,18 +224,6 @@ const PigmentDyes = () => {
                 </CardHeader>
 
                 <CardContent className="space-y-4">
-                  
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Specifications:</h4>
-                    <ul className="space-y-1">
-                      {product.specifications.map((spec, specIndex) => (
-                        <li key={specIndex} className="text-sm text-gray-600 flex items-center space-x-2">
-                          <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-                          <span>{spec}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
 
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Applications:</h4>
@@ -264,6 +239,7 @@ const PigmentDyes = () => {
                 </CardContent>
               </Card>
             ))}
+
           </div>
         </div>
 
