@@ -7,50 +7,115 @@ import pigmentDyesImage from "@/assets/PigmentDyes.jpg";
 const PigmentDyes = () => {
   const products = [
     {
-      name: "Pigment Red",
-      description: "High-performance red pigment offering strong opacity, brightness, and excellent heat stability.",
-      specifications: [
-        "Heat Stability: 250–300°C",
-        "Light Fastness: 6–7",
-        "Tinting Strength: High",
-        "Particle Size: 0.2–0.5 µm"
-      ],
-      applications: ["Paints", "Inks", "Plastics", "Textile Printing", "Coatings"]
+      name: "Pigment Red FB",
+      description:
+        "A vibrant red pigment offering strong coloration and excellent consistency across formulations. Ideal for paints, plastics, coatings, and printing inks requiring rich, long-lasting red shades.",
+      applications: ["Paints", "Plastics", "Printing Inks", "Masterbatches", "Coatings"]
     },
+
     {
-      name: "Pearl Pigment",
-      description: "Strong, stable pearl pigment known for excellent dispersion and weather resistance.",
-      specifications: [
-        "Heat Stability: 260–300°C",
-        "Light Fastness: 7–8",
-        "Opacifying Power: High",
-        "Particle Size: 0.1–0.3 µm"
-      ],
-      applications: ["Masterbatches", "Decorative Paints", "Inkjet Inks", "Industrial Coatings"]
+      name: "Pigment Lemon Yellow GRKW",
+      description:
+        "A bright lemon-yellow pigment known for its clean shade and reliable performance across industries. Suitable for paints, inks, textiles, and polymers requiring strong brightness and coverage.",
+      applications: ["Textile Printing", "Water-Based Paints", "Inks", "Plastics"]
     },
+
     {
-      name: "Pigment Orange",
-      description: "Bright orange pigment with superb brightness and excellent fastness properties.",
-      specifications: [
-        "Heat Stability: 240–280°C",
-        "Light Fastness: 6",
-        "Migration Resistance: High",
-        "Particle Size: 0.3–0.6 µm"
-      ],
-      applications: ["PVC Coloring", "Printing Inks", "Powder Coatings", "Textile Prints"]
+      name: "Pigment Golden Yellow GR",
+      description:
+        "A warm, golden-yellow pigment offering excellent opacity and balanced brightness. Widely used in coatings, plastics, and inks for clean, high-quality color development.",
+      applications: ["Paints", "Plastics", "Powder Coatings", "Inks"]
     },
+
     {
-      name: "Pigment Black",
-      description: "Deep black pigment with high jetness and uniform dispersion quality.",
-      specifications: [
-        "Heat Stability: 280–320°C",
-        "Light Fastness: 8",
-        "Jetness: High",
-        "Particle Size: 0.02–0.1 µm"
-      ],
-      applications: ["Rubber", "Plastics", "Paints", "Automotive Coatings", "Inks"]
+      name: "Pigment Orange G",
+      description:
+        "A brilliant orange pigment with high chroma and smooth dispersion. Commonly used in PVC coloring, inks, paints, and textile printing for vivid orange shades.",
+      applications: ["PVC Coloring", "Inks", "Coatings", "Textile Prints"]
+    },
+
+    {
+      name: "Pigment Pink PF",
+      description:
+        "A bright and visually appealing pink pigment valued for its clean tone and stability. Ideal for decorative coatings, plastics, textiles, and specialty color formulations.",
+      applications: ["Decorative Coatings", "Plastics", "Textile Printing", "Masterbatches"]
+    },
+
+    {
+      name: "Pigment Bordeaux BW",
+      description:
+        "A deep bordeaux red pigment offering strong coloring power and smooth dispersion. Suitable for industrial paints, inks, leather finishes, and coatings requiring elegant red tones.",
+      applications: ["Printing Inks", "Industrial Coatings", "Leather Finishes"]
+    },
+
+    {
+      name: "Pigment Rubine R",
+      description:
+        "A vibrant rubine-red pigment known for its bold tone and excellent tinting strength. Ideal for inks, paints, plastics, and textile applications requiring rich red coloration.",
+      applications: ["Offset Inks", "Paints", "Plastics", "Textile Printing"]
+    },
+
+    {
+      name: "Pigment Violet B",
+      description:
+        "A deep violet pigment with high shade purity and smooth color performance. Commonly used in decorative paints, plastics, inks, and specialty coatings.",
+      applications: ["Coatings", "Masterbatches", "Decorative Paints", "Inks"]
+    },
+
+    {
+      name: "Pigment Navy Blue RJ",
+      description:
+        "A strong navy-blue pigment offering uniform coverage and dependable consistency. Suitable for industrial coatings, plastics, inks, and rubber applications requiring deep blue tones.",
+      applications: ["Paints", "Powder Coatings", "Inks", "Rubber Compounds"]
+    },
+
+    {
+      name: "Pigment Blue FB",
+      description:
+        "A bright blue pigment with consistent tinting strength and broad industrial applicability. Used in plastics, masterbatches, inks, and coatings for vivid blue shades.",
+      applications: ["Plastics", "Masterbatches", "Textile Printing", "Coatings"]
+    },
+
+    {
+      name: "Pigment Turquoise Blue CB",
+      description:
+        "A striking turquoise pigment delivering fresh, eye-catching blue-green tones. Ideal for decorative paints, inks, polymers, and textile applications.",
+      applications: ["Water-Based Paints", "Inks", "Polymer Coloring", "Decorative Coatings"]
+    },
+
+    {
+      name: "Pigment Green GR",
+      description:
+        "A high-strength green pigment known for its wide usability and stable color performance. Used in plastics, coatings, inks, and industrial finishes.",
+      applications: ["Plastics", "Coatings", "Printing Inks", "Industrial Finishes"]
+    },
+
+    {
+      name: "Pigment Brown GR",
+      description:
+        "A rich brown pigment offering excellent hiding power and uniform shade development. Suitable for wood coatings, leather finishes, inks, and industrial paints.",
+      applications: ["Leather Coatings", "Wood Finishes", "Inks", "Industrial Paints"]
+    },
+
+    {
+      name: "Pigment Black G",
+      description:
+        "An economical deep black pigment widely used for general-purpose industrial formulations. Offers reliable color coverage and smooth dispersion in paints, plastics, and inks. Chosen where cost-efficiency and consistent black tones are required.",
+      applications: ["Rubber", "Plastics", "Paints", "General Inks", "PVC Compounds"]
+    },
+
+    {
+      name: "Pigment Black FBR",
+      description:
+        "A quality-grade black pigment suitable for applications needing better depth and coverage than basic economical grades. Provides stable color development in water-based paints, plastics, and ink systems.",
+      applications: ["Water-Based Paints", "Plastics", "Inks", "General Industrial Applications"]
     }
   ];
+
+  return products;
+};
+
+
 
   const features = [
     "High dispersion quality for smooth finishes",
