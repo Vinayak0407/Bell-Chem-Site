@@ -1,34 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://bellchem.com/</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://bellchem.com/#about</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bellchem.com/#products</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bellchem.com/#industries</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bellchem.com/#contact</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-</urlset>
 
+  <!-- Main Pages -->
+  <url><loc>https://bellchem.in/</loc></url>
+  <url><loc>https://bellchem.in/about-us</loc></url>
+  <url><loc>https://bellchem.in/products</loc></url>
+  <url><loc>https://bellchem.in/industries</loc></url>
+  <url><loc>https://bellchem.in/contact</loc></url>
+  <url><loc>https://bellchem.in/quote</loc></url>
+
+  <!-- Dye Categories -->
+  <url><loc>https://bellchem.in/oil-colors</loc></url>
+  <url><loc>https://bellchem.in/pigment-colors</loc></url>
+  <url><loc>https://bellchem.in/solvent-dyes</loc></url>
+  <url><loc>https://bellchem.in/direct-dyes</loc></url>
+  <url><loc>https://bellchem.in/fluorescent-colors</loc></url>
+  <url><loc>https://bellchem.in/acid-dyes</loc></url>
+  <url><loc>https://bellchem.in/reactive-dyes</loc></url>
+  <url><loc>https://bellchem.in/discharge-colors</loc></url>
+
+  <!-- Chemical Categories -->
+  <url><loc>https://bellchem.in/industrial-chemicals</loc></url>
+  <url><loc>https://bellchem.in/textile-processing</loc></url>
+  <url><loc>https://bellchem.in/specialty-chemicals</loc></url>
+  <url><loc>https://bellchem.in/textile-auxiliaries</loc></url>
+
+</urlset>
