@@ -24,7 +24,6 @@ import DisperseDyes from "./pages/DisperseDyes";
 import AcidDyes from "./pages/AcidDyes";
 import DirectDyes from "./pages/DirectDyes";
 import IndustrialChemicals from "./pages/IndustrialChemicals";
-import PharmaceuticalIntermediates from "./pages/PharmaceuticalIntermediates";
 import SpecialtyChemicals from "./pages/SpecialtyChemicals";
 import TextileAuxiliaries from "./pages/TextileAuxiliaries";
 
@@ -65,7 +64,6 @@ const App = () => (
               <Route path="/aciddyes" element={<AcidDyes />} />
               <Route path="/directdyes" element={<DirectDyes />} />
               <Route path="/industrialchemicals" element={<IndustrialChemicals />} />
-              <Route path="/pharmaceuticalintermediates" element={<PharmaceuticalIntermediates />} />
               <Route path="/specialtychemicals" element={<SpecialtyChemicals />} />
               <Route path="/textileauxiliaries" element={<TextileAuxiliaries />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
