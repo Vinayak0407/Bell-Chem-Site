@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Bell Chem – Industrial Chemicals & Textile Dyes Supplier</title>
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://bellchem.in/" />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Bell Chem is a trusted supplier of industrial chemicals, textile dyes, and auxiliaries. An A.K. Jain & Co. enterprise serving textile and manufacturing industries."
+    />
+    <meta name="author" content="Bell Chem" />
+    <meta
+      name="keywords"
+      content="Bell Chem, textile dyes supplier, industrial chemicals, textile auxiliaries, dye chemicals India"
+    />
+
+    <!-- Open Graph (WhatsApp, LinkedIn, Facebook) -->
+    <meta property="og:title" content="Bell Chem – Industrial Chemicals & Dyes Supplier" />
+    <meta
+      property="og:description"
+      content="Trusted sourcing of industrial chemicals, textile dyes, and auxiliaries. An A.K. Jain & Co. Enterprise."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bellchem.in/" />
+    <meta property="og:image" content="https://bellchem.in/logo.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bell Chem – Industrial Chemicals & Dyes Supplier" />
+    <meta
+      name="twitter:description"
+      content="Trusted sourcing of industrial chemicals, textile dyes, and auxiliaries."
+    />
+    <meta name="twitter:image" content="https://bellchem.in/logo.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://bellchem.in/#organization",
+      "name": "Bell Chem",
+      "url": "https://bellchem.in/",
+      "logo": "https://bellchem.in/logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/bellchem/"
+      ]
+    }
+    </script>
+
+    <!-- Website Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://bellchem.in/#website",
+      "url": "https://bellchem.in/",
+      "name": "Bell Chem",
+      "publisher": {
+        "@id": "https://bellchem.in/#organization"
+      }
+    }
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
