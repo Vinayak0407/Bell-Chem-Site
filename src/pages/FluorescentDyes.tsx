@@ -69,11 +69,11 @@ const FluorescentDyes = () => {
       <SEO
         title="Fluorescent Dyes & Neon Colors Supplier in India"
         description="BellChem (A. K. Jain & Co.) is a trusted B2B supplier and exporter of fluorescent dyes and neon pigments for textiles, inks, plastics, coatings, and high-visibility applications."
-        canonical="https://www.bellchem.in/fluorescentcolors"
+        canonical="https://www.bellchem.in/fluorescent-colors"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Service",
-          "@id": "https://www.bellchem.in/fluorescentcolors#service",
+          "@id": "https://www.bellchem.in/fluorescent-colors#service",
           "name": "Fluorescent Dyes Supply",
           "serviceType": "Bulk Fluorescent Dyes & Neon Pigments Supplier",
           "provider": {
@@ -112,16 +112,7 @@ const FluorescentDyes = () => {
         {/* HERO */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
 
-          {/* GLASS BOX */}
-          <div
-            className="
-              p-6 rounded-2xl
-              bg-black/35 backdrop-blur-md
-              border border-white/20
-              shadow-[0_0_25px_rgba(0,0,0,0.3)]
-              space-y-6
-            "
-          >
+          <div className="p-6 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] space-y-6">
             <div className="flex items-center space-x-2">
               <Sparkles className="h-8 w-8 text-yellow-300" />
               <h2 className="text-3xl font-bold text-white">
@@ -147,7 +138,6 @@ const FluorescentDyes = () => {
             </div>
           </div>
 
-          {/* IMAGE */}
           <div className="relative rounded-2xl overflow-hidden shadow-lg">
             <img
               src={fluorescentImage}
@@ -155,6 +145,23 @@ const FluorescentDyes = () => {
               className="w-full h-[350px] object-cover"
             />
           </div>
+        </div>
+
+        {/* SEO TEXT BLOCK (FIXES SOFT 404) */}
+        <div className="max-w-3xl mx-auto mb-16 text-gray-700 text-lg leading-relaxed">
+          <p>
+            Fluorescent dyes and neon pigments are specialized colorants designed to emit
+            high-intensity visible light when exposed to natural or ultraviolet light.
+            BellChem supplies industrial-grade fluorescent dyes formulated for superior
+            brightness, dispersion, and consistency across demanding manufacturing environments.
+          </p>
+
+          <p className="mt-4">
+            Our fluorescent color range is widely used by textile printers, ink manufacturers,
+            plastic processors, coating formulators, and safety product manufacturers who require
+            vibrant shades, UV reactivity, and reliable performance. BellChem supports bulk supply,
+            export logistics, and custom shade development for B2B clients worldwide.
+          </p>
         </div>
 
         {/* FEATURES */}
@@ -165,7 +172,7 @@ const FluorescentDyes = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
               <div key={index} className="flex items-center space-x-3 p-4 bg-white rounded-lg shadow-sm">
-                <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                <CheckCircle className="h-5 w-5 text-green-500" />
                 <span className="text-gray-700">{feature}</span>
               </div>
             ))}
@@ -186,7 +193,6 @@ const FluorescentDyes = () => {
                     {product.description}
                   </CardDescription>
                 </CardHeader>
-
                 <CardContent className="space-y-4">
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-2">Specifications</h3>
@@ -199,7 +205,6 @@ const FluorescentDyes = () => {
                       ))}
                     </ul>
                   </div>
-
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-2">Applications</h3>
                     <div className="flex flex-wrap gap-2">
@@ -213,32 +218,6 @@ const FluorescentDyes = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-
-        {/* RELATED LINKS — GLASS */}
-        <div
-          className="
-            mb-16
-            p-6 rounded-2xl
-            bg-black/35 backdrop-blur-md
-            border border-white/20
-            shadow-[0_0_25px_rgba(0,0,0,0.3)]
-          "
-        >
-          <h2 className="text-2xl font-bold text-white mb-6">
-            Related Dye Categories
-          </h2>
-          <div className="flex flex-wrap gap-4">
-            <Link to="/pigmentdyes" className="text-white/90 hover:text-white hover:underline">
-              Pigment Dyes Supplier
-            </Link>
-            <Link to="/solventdyes" className="text-white/90 hover:text-white hover:underline">
-              Solvent Dyes Supplier
-            </Link>
-            <Link to="/textileprocessing" className="text-white/90 hover:text-white hover:underline">
-              Textile Processing Chemicals
-            </Link>
           </div>
         </div>
 
