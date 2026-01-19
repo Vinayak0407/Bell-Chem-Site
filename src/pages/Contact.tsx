@@ -3,26 +3,41 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 
-const ContactPage = () => {
+export default function ContactPage() {
   return (
     <>
-      <SEO 
-        title="Contact Bell Chem - Get Quote | Chemical Manufacturer"
-        description="Contact Bell Chem for quotes on industrial dyes and chemicals. Get in touch with our team for consultation and product information."
+      <SEO
+        title="Contact BellChem | Get a Quote for Industrial Dyes & Chemicals"
+        description="Contact BellChem (A. K. Jain & Co.) for bulk pricing, export inquiries, and technical consultation on industrial dyes, pigments, and specialty chemicals."
+        canonical="https://www.bellchem.in/contact"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "@id": "https://www.bellchem.in/contact#contactpage",
+          "name": "Contact BellChem",
+          "url": "https://www.bellchem.in/contact",
+          "mainEntity": {
+            "@type": "Organization",
+            "@id": "https://www.bellchem.in/#organization",
+            "name": "A. K. Jain & Co. (BellChem)",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "sales",
+              "email": "vinayak@bellchem.in",
+              "availableLanguage": ["English"]
+            },
+            "areaServed": "Worldwide"
+          }
+        }}
       />
+
       <Header />
+
       <main className="pt-20">
         <Contact />
       </main>
+
       <Footer />
     </>
   );
-};
-
-export default ContactPage;
-
-
-
-
-
-
+}

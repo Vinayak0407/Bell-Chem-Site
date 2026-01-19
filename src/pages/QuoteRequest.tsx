@@ -17,9 +17,9 @@ import {
   Calculator,
   Clock,
   Package,
-  Users
+  Users,
+  ArrowLeft
 } from "lucide-react";
-import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 
@@ -28,22 +28,29 @@ const QuoteRequest = () => {
 
   return (
     <div className="min-h-screen">
-      {/* SEO */}
+      {/* 🚫 NOINDEX — QUOTE PAGES SHOULD NOT RANK */}
       <SEO
         title="Request a Quote | Custom B2B Chemical & Dye Supply – BellChem"
         description="Request a custom B2B quote from BellChem (A. K. Jain & Co.) for bulk and export supply of dyes, industrial chemicals, textile auxiliaries, and specialty chemicals."
         canonical="https://www.bellchem.in/quote"
+        noIndex
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Service",
+          "@id": "https://www.bellchem.in/quote#service",
           name: "Custom B2B Chemical Quotation",
           serviceType: "Bulk & Export Chemical Supply",
           provider: {
             "@type": "Organization",
+            "@id": "https://www.bellchem.in/#organization",
             name: "A. K. Jain & Co. (BellChem)",
             url: "https://www.bellchem.in"
           },
-          areaServed: "Worldwide"
+          areaServed: "Worldwide",
+          audience: {
+            "@type": "BusinessAudience",
+            audienceType: "Manufacturers, Importers & Exporters"
+          }
         }}
       />
 
@@ -66,7 +73,7 @@ const QuoteRequest = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* HERO — GLASS BOX (MATCH SYSTEM) */}
+        {/* HERO */}
         <div className="text-center mb-12">
           <div
             className="
@@ -94,10 +101,6 @@ const QuoteRequest = () => {
               Serving manufacturers & importers across India, Middle East, Europe,
               Southeast Asia, Africa & the Americas.
             </p>
-
-            <p className="text-sm text-white/80">
-              For bulk orders, export inquiries, and long-term supply partnerships.
-            </p>
           </div>
         </div>
 
@@ -108,8 +111,8 @@ const QuoteRequest = () => {
               <CardHeader>
                 <CardTitle className="text-2xl">Quote Request Form</CardTitle>
                 <CardDescription>
-                  Please provide accurate details. Our export team typically responds
-                  within <strong>24 business hours</strong>.
+                  Our export team typically responds within{" "}
+                  <strong>24 business hours</strong>.
                 </CardDescription>
               </CardHeader>
 
@@ -126,83 +129,9 @@ const QuoteRequest = () => {
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-4">
-                      <Input placeholder="Business Email *" type="email" {...form.register("email")} />
+                      <Input type="email" placeholder="Business Email *" {...form.register("email")} />
                       <Input placeholder="Phone / WhatsApp *" {...form.register("phone")} />
                     </div>
-                  </div>
-
-                  {/* COMPANY */}
-                  <div className="space-y-4">
-                    <h3 className="text-lg font-semibold border-b pb-2">
-                      Company Details
-                    </h3>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <Input placeholder="Company Name *" {...form.register("company")} />
-                      <Input placeholder="Job Title *" {...form.register("jobTitle")} />
-                    </div>
-
-                    <Select onValueChange={(v) => form.setValue("industry", v)}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Industry *" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="textile">Textile Manufacturing</SelectItem>
-                        <SelectItem value="chemical">Chemical Manufacturing</SelectItem>
-                        <SelectItem value="pharmaceutical">Pharmaceutical</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  {/* PRODUCT */}
-                  <div className="space-y-4">
-                    <h3 className="text-lg font-semibold border-b pb-2">
-                      Product Requirements
-                    </h3>
-
-                    <Select onValueChange={(v) => form.setValue("productCategory", v)}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Product Category *" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="reactive-dyes">Reactive Dyes</SelectItem>
-                        <SelectItem value="vat-dyes">Vat Dyes</SelectItem>
-                        <SelectItem value="direct-dyes">Direct Dyes</SelectItem>
-                        <SelectItem value="discharge-dyes">Discharge Dyes</SelectItem>
-                        <SelectItem value="textile-auxiliaries">Textile Auxiliaries</SelectItem>
-                        <SelectItem value="industrial-chemicals">Industrial Chemicals</SelectItem>
-                        <SelectItem value="specialty-chemicals">Specialty Chemicals</SelectItem>
-                        <SelectItem value="multiple">Multiple Categories</SelectItem>
-                      </SelectContent>
-                    </Select>
-
-                    <Textarea
-                      rows={3}
-                      placeholder="List exact products, grades, specifications, and intended application *"
-                      {...form.register("specificProducts")}
-                    />
-
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <Input
-                        placeholder="Estimated Quantity Required *"
-                        {...form.register("quantity")}
-                      />
-                      <Select onValueChange={(v) => form.setValue("timeline", v)}>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Delivery Timeline *" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="urgent">Urgent</SelectItem>
-                          <SelectItem value="2weeks">Within 2 Weeks</SelectItem>
-                          <SelectItem value="month">Within 1 Month</SelectItem>
-                          <SelectItem value="flexible">Flexible</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-
-                    <p className="text-sm text-gray-500">
-                      We specialize in bulk and export supply. MOQ applies depending on product category.
-                    </p>
                   </div>
 
                   {/* STATUS */}
@@ -210,8 +139,7 @@ const QuoteRequest = () => {
                     <Alert className="border-green-200 bg-green-50">
                       <CheckCircle className="h-4 w-4 text-green-600" />
                       <AlertDescription className="text-green-800">
-                        Quote request received. Our export team will respond within
-                        24 business hours.
+                        Quote request received. Our team will contact you shortly.
                       </AlertDescription>
                     </Alert>
                   )}
@@ -230,7 +158,7 @@ const QuoteRequest = () => {
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-semibold"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? "Submitting..." : "Submit Export / Bulk Quote Request"}
+                    {isSubmitting ? "Submitting..." : "Submit Quote Request"}
                   </Button>
                 </form>
               </CardContent>
@@ -246,29 +174,7 @@ const QuoteRequest = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-gray-600">
-                Our team typically responds within 24 business hours.
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Package className="h-5 w-5 text-green-600" /> Bulk & Export Supply
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-gray-600">
-                Export-ready packaging, documentation, and consistent batch supply.
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Users className="h-5 w-5 text-purple-600" /> Technical Support
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-gray-600">
-                Application guidance from experienced chemical professionals.
+                Typically within 24 business hours.
               </CardContent>
             </Card>
 
@@ -277,9 +183,7 @@ const QuoteRequest = () => {
                 <h3 className="font-semibold mb-2 text-blue-900">
                   Need Immediate Assistance?
                 </h3>
-                <p className="text-sm text-blue-800">
-                  For urgent export inquiries, contact us directly.
-                </p>
+                <p className="text-sm text-blue-800">Contact us directly</p>
                 <p className="font-medium text-blue-900 mt-2">
                   +91-9999776385
                 </p>

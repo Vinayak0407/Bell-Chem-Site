@@ -6,20 +6,45 @@ import SEO from "@/components/SEO";
 const ProductsPage = () => {
   return (
     <>
-      <SEO 
-        title="Products - Industrial Dyes & Chemicals | Bell Chem"
-        description="Explore our comprehensive range of industrial dyes and chemicals. Premium quality reactive dyes, disperse dyes, acid dyes, and specialty chemicals for various industries."
+      <SEO
+        title="Industrial Dyes & Chemicals Manufacturer & Exporter | BellChem"
+        description="Explore BellChem’s complete range of industrial dyes and chemicals including reactive dyes, direct dyes, acid dyes, solvent dyes, pigment dyes, textile auxiliaries, and specialty chemicals for bulk and export supply."
+        canonical="https://www.bellchem.in/products"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "@id": "https://www.bellchem.in/products#collection",
+          "name": "Industrial Dyes & Chemicals Product Range",
+          "url": "https://www.bellchem.in/products",
+          "mainEntity": {
+            "@type": "Organization",
+            "@id": "https://www.bellchem.in/#organization",
+            "name": "A. K. Jain & Co. (BellChem)"
+          },
+          "about": [
+            "Reactive Dyes",
+            "Direct Dyes",
+            "Acid Dyes",
+            "Disperse Dyes",
+            "Pigment Dyes",
+            "Solvent Dyes",
+            "Discharge Dyes",
+            "Textile Auxiliaries",
+            "Industrial Chemicals",
+            "Specialty Chemicals"
+          ]
+        }}
       />
+
       <Header />
+
       <main className="pt-20">
         <Services />
       </main>
-      <Footer />  
+
+      <Footer />
     </>
   );
 };
 
 export default ProductsPage;
-
-
-

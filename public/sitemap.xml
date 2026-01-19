@@ -2,27 +2,121 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Main Pages -->
-  <url><loc>https://bellchem.in/</loc></url>
-  <url><loc>https://bellchem.in/about-us</loc></url>
-  <url><loc>https://bellchem.in/products</loc></url>
-  <url><loc>https://bellchem.in/industries</loc></url>
-  <url><loc>https://bellchem.in/contact</loc></url>
-  <url><loc>https://bellchem.in/quote</loc></url>
+  <url>
+    <loc>https://www.bellchem.in/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-  <!-- Dye Categories -->
-  <url><loc>https://bellchem.in/oil-colors</loc></url>
-  <url><loc>https://bellchem.in/pigment-colors</loc></url>
-  <url><loc>https://bellchem.in/solvent-dyes</loc></url>
-  <url><loc>https://bellchem.in/direct-dyes</loc></url>
-  <url><loc>https://bellchem.in/fluorescent-colors</loc></url>
-  <url><loc>https://bellchem.in/acid-dyes</loc></url>
-  <url><loc>https://bellchem.in/reactive-dyes</loc></url>
-  <url><loc>https://bellchem.in/discharge-colors</loc></url>
+  <url>
+    <loc>https://www.bellchem.in/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-  <!-- Chemical Categories -->
-  <url><loc>https://bellchem.in/industrial-chemicals</loc></url>
-  <url><loc>https://bellchem.in/textile-processing</loc></url>
-  <url><loc>https://bellchem.in/specialty-chemicals</loc></url>
-  <url><loc>https://bellchem.in/textile-auxiliaries</loc></url>
+  <url>
+    <loc>https://www.bellchem.in/products</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bellchem.in/industries</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bellchem.in/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bellchem.in/quote</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Product Category Pages – Dyes -->
+  <url>
+    <loc>https://www.bellchem.in/aciddyes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bellchem.in/reactivedyes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bellchem.in/dispersedyes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bellchem.in/directdyes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bellchem.in/dischargedyes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- IMPORTANT: corrected route -->
+  <url>
+    <loc>https://www.bellchem.in/fluorescentcolors</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bellchem.in/pigmentdyes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bellchem.in/solventdyes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bellchem.in/oilcolors</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Product Category Pages – Chemicals -->
+  <url>
+    <loc>https://www.bellchem.in/industrialchemicals</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bellchem.in/specialtychemicals</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bellchem.in/textileauxiliaries</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bellchem.in/textileprocessing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
 </urlset>
