@@ -71,25 +71,13 @@ export default function SpecialtyChemicalsPage() {
         title="Specialty Chemicals Supplier in India"
         description="BellChem (A. K. Jain & Co.) supplies specialty chemicals for textile processing, printing, and industrial applications, offering custom formulations and technical support."
         canonical="https://www.bellchem.in/specialtychemicals"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "@id": "https://www.bellchem.in/specialtychemicals#service",
-          "name": "Specialty Chemicals Supply",
-          "serviceType": "Bulk Specialty Chemicals Supplier",
-          "provider": {
-            "@type": "Organization",
-            "@id": "https://www.bellchem.in/#organization",
-            "name": "A. K. Jain & Co. (BellChem)"
-          },
-          "areaServed": "Worldwide"
-        }}
       />
 
       <Header />
 
       <main className="min-h-screen">
-        {/* HEADER */}
+
+        {/* TOP HEADER */}
         <div className="bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center space-x-4">
             <Link to="/products">
@@ -98,7 +86,9 @@ export default function SpecialtyChemicalsPage() {
                 <span>Back to Products</span>
               </Button>
             </Link>
+
             <div className="h-6 w-px bg-gray-300" />
+
             <h1 className="text-2xl font-bold text-gray-900">
               Specialty Chemicals Supplier in India
             </h1>
@@ -108,7 +98,8 @@ export default function SpecialtyChemicalsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
           {/* HERO */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
+
             <div className="p-6 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] space-y-6">
               <div className="flex items-center space-x-2">
                 <div className="text-3xl">🧪</div>
@@ -123,40 +114,64 @@ export default function SpecialtyChemicalsPage() {
                 applications.
               </p>
 
-              <div className="space-y-4 text-white">
-                <div className="flex items-center space-x-3">
+              <div className="space-y-3 text-white">
+                <div className="flex items-center space-x-2">
                   <Star className="h-5 w-5 text-yellow-300 fill-current" />
                   <span>Custom Formulated Solutions</span>
                 </div>
-                <div className="flex items-center space-x-3">
+
+                <div className="flex items-center space-x-2">
                   <Award className="h-5 w-5 text-blue-400" />
                   <span>Industry & Export Approved</span>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-2xl overflow-hidden shadow-lg">
+            {/* IMAGE */}
+            <div className="rounded-2xl overflow-hidden shadow-lg aspect-[16/10] max-h-[320px] w-full">
               <img
                 src={chemicalLab}
                 alt="Specialty chemicals formulation and laboratory testing"
                 className="w-full h-full object-cover"
               />
             </div>
+
           </div>
 
-          {/* FEATURES */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-8">
-              Key Features of Our Specialty Chemicals
+          {/* SEO + FEATURES GLASS */}
+          <div className="mb-16 p-10 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] text-center">
+
+            <div className="max-w-4xl mx-auto mb-14 space-y-6">
+              <p className="text-white/95 text-lg leading-relaxed">
+                BellChem supplies specialty chemicals developed for textile printing,
+                dyeing auxiliaries, and industrial processing applications. Our products
+                help improve fastness, dispersion, leveling, and overall production efficiency.
+              </p>
+
+              <p className="text-white/90 text-lg leading-relaxed">
+                We provide bulk supply, custom formulations, technical consultation,
+                and compliance documentation for domestic and export customers worldwide.
+              </p>
+            </div>
+
+            <h2 className="text-3xl font-bold mb-10 text-white">
+              Key Features
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, i) => (
-                <div key={i} className="flex items-center space-x-3 p-4 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>{feature}</span>
+                <div
+                  key={i}
+                  className="flex items-center justify-center space-x-4 p-5 bg-black/30 backdrop-blur-sm rounded-xl border border-white/15"
+                >
+                  <CheckCircle className="h-6 w-6 text-green-400" />
+                  <span className="text-white/95">
+                    {feature}
+                  </span>
                 </div>
               ))}
             </div>
+
           </div>
 
           {/* PRODUCTS */}
@@ -164,6 +179,7 @@ export default function SpecialtyChemicalsPage() {
             <h2 className="text-2xl font-bold mb-8">
               Specialty Chemical Product Range
             </h2>
+
             <div className="grid md:grid-cols-2 gap-8">
               {products.map((product, i) => (
                 <Card key={i}>
@@ -171,18 +187,17 @@ export default function SpecialtyChemicalsPage() {
                     <CardTitle>{product.name}</CardTitle>
                     <CardDescription>{product.description}</CardDescription>
                   </CardHeader>
+
                   <CardContent className="space-y-4">
                     <div>
                       <h3 className="font-semibold mb-2">Specifications</h3>
-                      <ul className="space-y-1">
+                      <ul className="space-y-1 text-sm">
                         {product.specifications.map((spec, j) => (
-                          <li key={j} className="flex items-center space-x-2 text-sm">
-                            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-                            <span>{spec}</span>
-                          </li>
+                          <li key={j}>• {spec}</li>
                         ))}
                       </ul>
                     </div>
+
                     <div>
                       <h3 className="font-semibold mb-2">Applications</h3>
                       <div className="flex flex-wrap gap-2">
@@ -202,36 +217,17 @@ export default function SpecialtyChemicalsPage() {
             </div>
           </div>
 
-          {/* RELATED */}
-          <div className="mb-16">
-            <h2 className="text-xl font-semibold mb-4">
-              Related Dye & Chemical Categories
-            </h2>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/textileauxiliaries" className="text-blue-600 hover:underline">
-                Textile Auxiliaries
-              </Link>
-              <Link to="/textileprocessing" className="text-blue-600 hover:underline">
-                Textile Processing Chemicals
-              </Link>
-              <Link to="/industrialchemicals" className="text-blue-600 hover:underline">
-                Industrial Chemicals
-              </Link>
-              <Link to="/reactivedyes" className="text-blue-600 hover:underline">
-                Reactive Dyes
-              </Link>
-            </div>
-          </div>
-
           {/* CTA */}
           <div className="bg-blue-50 rounded-2xl p-8 text-center">
             <h2 className="text-2xl font-bold mb-4">
               Need Custom Specialty Chemical Solutions?
             </h2>
+
             <p className="mb-6">
               Our technical team supports custom formulation, optimization, and bulk
               supply for specialized industrial requirements.
             </p>
+
             <Link to="/contact">
               <Button size="lg">Contact Us</Button>
             </Link>

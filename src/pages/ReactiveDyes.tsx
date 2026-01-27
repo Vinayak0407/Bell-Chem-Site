@@ -70,28 +70,12 @@ export default function ReactiveDyesPage() {
         title="Reactive Dyes Supplier in India"
         description="BellChem (A. K. Jain & Co.) supplies high-quality reactive dyes for cotton and cellulosic fibers with excellent wash fastness, color strength, and industrial performance."
         canonical="https://www.bellchem.in/reactivedyes"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "@id": "https://www.bellchem.in/reactivedyes#service",
-          "name": "Reactive Dyes Supply",
-          "serviceType": "Bulk Reactive Dyes Supplier",
-          "provider": {
-            "@type": "Organization",
-            "@id": "https://www.bellchem.in/#organization",
-            "name": "A. K. Jain & Co. (BellChem)"
-          },
-          "areaServed": "Worldwide",
-          "audience": {
-            "@type": "BusinessAudience",
-            "audienceType": "Textile & Garment Manufacturers"
-          }
-        }}
       />
 
       <Header />
 
       <main className="min-h-screen">
+
         {/* TOP HEADER */}
         <div className="bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center space-x-4">
@@ -101,7 +85,9 @@ export default function ReactiveDyesPage() {
                 <span>Back to Products</span>
               </Button>
             </Link>
+
             <div className="h-6 w-px bg-gray-300" />
+
             <h1 className="text-2xl font-bold text-gray-900">
               Reactive Dyes Supplier in India
             </h1>
@@ -111,11 +97,14 @@ export default function ReactiveDyesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
           {/* HERO */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div className="p-6 rounded-2xl bg-black/30 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] space-y-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
+
+            <div className="p-6 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] space-y-6">
               <div className="flex items-center space-x-2">
                 <div className="text-3xl">🎨</div>
-                <h2 className="text-3xl font-bold text-white">Reactive Dyes</h2>
+                <h2 className="text-3xl font-bold text-white">
+                  High-Performance Reactive Dyes
+                </h2>
               </div>
 
               <p className="text-xl text-white leading-relaxed">
@@ -127,51 +116,63 @@ export default function ReactiveDyesPage() {
               <div className="space-y-3 text-white">
                 <div className="flex items-center space-x-2">
                   <Star className="h-5 w-5 text-yellow-300 fill-current" />
-                  <span>Premium Quality</span>
+                  <span>Premium Industrial Quality</span>
                 </div>
+
                 <div className="flex items-center space-x-2">
                   <Award className="h-5 w-5 text-blue-400" />
-                  <span>Industry Approved</span>
+                  <span>Industry & Export Approved</span>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-2xl overflow-hidden shadow-lg">
+            {/* IMAGE */}
+            <div className="rounded-2xl overflow-hidden shadow-lg aspect-[16/10] max-h-[320px] w-full">
               <img
                 src={textileDyes}
                 alt="Reactive dyes for cotton and cellulosic fibers"
                 className="w-full h-full object-cover"
               />
             </div>
+
           </div>
 
-          {/* SEO BODY CONTENT */}
-          <div className="max-w-4xl mb-16">
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Reactive dyes are water-soluble dyes that form a covalent bond with
-              cellulosic fibers, resulting in excellent wash fastness and long-lasting
-              color. BellChem supplies carefully selected reactive dyes suitable for
-              modern textile dyeing and printing processes.
-            </p>
+          {/* SEO + FEATURES GLASS */}
+          <div className="mb-16 p-10 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] text-center">
 
-            <p className="text-gray-700 leading-relaxed">
-              Our reactive dye range is widely used by textile processors, garment
-              manufacturers, and fabric dye houses seeking consistent shade,
-              strong fixation, and reliable batch-to-batch performance.
-            </p>
-          </div>
+            <div className="max-w-4xl mx-auto mb-14 space-y-6">
+              <p className="text-white/95 text-lg leading-relaxed">
+                Reactive dyes are water-soluble dyes that form a covalent bond with
+                cellulosic fibers, resulting in excellent wash fastness and long-lasting
+                color. BellChem supplies carefully selected reactive dyes suitable for
+                modern textile dyeing and printing processes.
+              </p>
 
-          {/* FEATURES */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-8">Key Features</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <p className="text-white/90 text-lg leading-relaxed">
+                Our reactive dye range is widely used by textile processors, garment
+                manufacturers, and fabric dye houses seeking consistent shade,
+                strong fixation, and reliable batch-to-batch performance.
+              </p>
+            </div>
+
+            <h2 className="text-3xl font-bold mb-10 text-white">
+              Key Features
+            </h2>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, i) => (
-                <div key={i} className="flex items-center space-x-3 p-4 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>{feature}</span>
+                <div
+                  key={i}
+                  className="flex items-center justify-center space-x-4 p-5 bg-black/30 backdrop-blur-sm rounded-xl border border-white/15"
+                >
+                  <CheckCircle className="h-6 w-6 text-green-400" />
+                  <span className="text-white/95">
+                    {feature}
+                  </span>
                 </div>
               ))}
             </div>
+
           </div>
 
           {/* PRODUCTS */}
@@ -179,6 +180,7 @@ export default function ReactiveDyesPage() {
             <h2 className="text-2xl font-bold mb-8">
               Selected Reactive Dye Products
             </h2>
+
             <div className="grid md:grid-cols-2 gap-8">
               {products.map((product, i) => (
                 <Card key={i}>
@@ -186,12 +188,14 @@ export default function ReactiveDyesPage() {
                     <CardTitle>{product.name}</CardTitle>
                     <CardDescription>{product.description}</CardDescription>
                   </CardHeader>
+
                   <CardContent className="space-y-4">
                     <ul className="space-y-1 text-sm text-gray-600">
                       {product.specifications.map((spec, j) => (
                         <li key={j}>• {spec}</li>
                       ))}
                     </ul>
+
                     <div className="flex flex-wrap gap-2">
                       {product.applications.map((app, j) => (
                         <span
@@ -213,10 +217,12 @@ export default function ReactiveDyesPage() {
             <h2 className="text-2xl font-bold mb-4">
               Need Custom Reactive Dyes?
             </h2>
+
             <p className="mb-6">
               Contact our technical team for custom formulations, shade matching,
               and application support.
             </p>
+
             <Link to="/contact">
               <Button size="lg">Contact Us</Button>
             </Link>

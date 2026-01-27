@@ -151,37 +151,55 @@ export default function OilColorsPage() {
             </div>
           </div>
 
-          {/* SEO BODY CONTENT */}
-          <div className="max-w-4xl mb-16">
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Oil colors are oil-soluble dyes used where transparency, solubility,
-              and thermal stability are required. BellChem supplies carefully
-              selected oil colors for industrial formulations that demand reliable
-              dispersion and shade consistency.
-            </p>
+          {/* SEO BODY CONTENT + FEATURES (BLACK GLASS, CENTER ALIGNED) */}
+<div className="mb-16 p-10 rounded-2xl 
+                bg-black/35 backdrop-blur-md 
+                border border-white/20 
+                shadow-[0_0_25px_rgba(0,0,0,0.3)]
+                text-center">
 
-            <p className="text-gray-700 leading-relaxed">
-              Our oil colors are widely used in inks, lubricants, waxes, polishes,
-              coatings, and solvent-based systems, supporting stable coloration
-              across demanding manufacturing environments.
-            </p>
-          </div>
+  {/* SEO BODY CONTENT */}
+  <div className="max-w-4xl mx-auto mb-14 space-y-6">
+    <p className="text-white/95 text-lg leading-relaxed">
+      Oil colors are oil-soluble dyes used where transparency, solubility,
+      and thermal stability are required. BellChem supplies carefully
+      selected oil colors for industrial formulations that demand reliable
+      dispersion and shade consistency.
+    </p>
 
-          {/* FEATURES */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-8">Key Features</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {features.map((feature, i) => (
-                <div
-                  key={i}
-                  className="flex items-center space-x-3 p-4 bg-white rounded-lg shadow-sm"
-                >
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>{feature}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+    <p className="text-white/90 text-lg leading-relaxed">
+      Our oil colors are widely used in inks, lubricants, waxes, polishes,
+      coatings, and solvent-based systems, supporting stable coloration
+      across demanding manufacturing environments.
+    </p>
+  </div>
+
+  {/* FEATURES */}
+  <div>
+    <h2 className="text-3xl font-bold mb-10 text-white">
+      Key Features
+    </h2>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {features.map((feature, i) => (
+        <div
+          key={i}
+          className="flex items-center justify-center space-x-4 p-5 
+                     bg-black/30 backdrop-blur-sm
+                     rounded-xl border border-white/15
+                     shadow-sm"
+        >
+          <CheckCircle className="h-6 w-6 text-green-400" />
+          <span className="text-white/95 text-base">
+            {feature}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+</div>
+
 
           {/* PRODUCTS */}
           <div className="mb-16">
@@ -217,21 +235,56 @@ export default function OilColorsPage() {
             </div>
           </div>
 
-          {/* RELATED LINKS */}
-          <div className="mb-16">
-            <h2 className="text-xl font-semibold mb-4">Related Categories</h2>
-            <div className="flex gap-4">
-              <Link to="/solventdyes" className="text-blue-600 hover:underline">
-                Solvent Dyes
-              </Link>
-              <Link to="/pigmentdyes" className="text-blue-600 hover:underline">
-                Pigment Dyes
-              </Link>
-              <Link to="/industrialchemicals" className="text-blue-600 hover:underline">
-                Industrial Chemicals
-              </Link>
-            </div>
-          </div>
+        {/* RELATED LINKS (BLACK GLASS) */}
+<div className="mb-16 p-8 rounded-2xl 
+                bg-black/35 backdrop-blur-md 
+                border border-white/20 
+                shadow-[0_0_25px_rgba(0,0,0,0.3)]
+                text-center">
+
+  <h2 className="text-2xl font-bold mb-6 text-white">
+    Related Categories
+  </h2>
+
+  <div className="flex flex-wrap justify-center gap-6">
+    <Link
+      to="/solventdyes"
+      className="px-6 py-3 rounded-xl 
+                 bg-black/30 backdrop-blur-sm
+                 border border-white/15
+                 text-white/90 font-medium
+                 hover:bg-black/45 hover:border-white/30
+                 transition-all duration-200"
+    >
+      Solvent Dyes
+    </Link>
+
+    <Link
+      to="/pigmentdyes"
+      className="px-6 py-3 rounded-xl 
+                 bg-black/30 backdrop-blur-sm
+                 border border-white/15
+                 text-white/90 font-medium
+                 hover:bg-black/45 hover:border-white/30
+                 transition-all duration-200"
+    >
+      Pigment Dyes
+    </Link>
+
+    <Link
+      to="/industrialchemicals"
+      className="px-6 py-3 rounded-xl 
+                 bg-black/30 backdrop-blur-sm
+                 border border-white/15
+                 text-white/90 font-medium
+                 hover:bg-black/45 hover:border-white/30
+                 transition-all duration-200"
+    >
+      Industrial Chemicals
+    </Link>
+  </div>
+</div>
+
 
           {/* CTA */}
           <div className="bg-blue-50 rounded-2xl p-8 text-center">

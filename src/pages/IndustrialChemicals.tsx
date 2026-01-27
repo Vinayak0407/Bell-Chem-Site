@@ -54,25 +54,13 @@ export default function IndustrialChemicalsPage() {
         title="Industrial Chemicals Supplier in India"
         description="BellChem (A. K. Jain & Co.) supplies industrial chemicals for textile processing, chemical manufacturing, and water treatment applications."
         canonical="https://www.bellchem.in/industrialchemicals"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "@id": "https://www.bellchem.in/industrialchemicals#service",
-          "name": "Industrial Chemicals Supply",
-          "serviceType": "Bulk Industrial Chemicals Supplier",
-          "provider": {
-            "@type": "Organization",
-            "@id": "https://www.bellchem.in/#organization",
-            "name": "A. K. Jain & Co. (BellChem)"
-          },
-          "areaServed": "Worldwide"
-        }}
       />
 
       <Header />
 
       <main className="min-h-screen">
-        {/* HEADER */}
+
+        {/* TOP HEADER */}
         <div className="bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center space-x-4">
             <Link to="/products">
@@ -81,7 +69,9 @@ export default function IndustrialChemicalsPage() {
                 <span>Back to Products</span>
               </Button>
             </Link>
+
             <div className="h-6 w-px bg-gray-300" />
+
             <h1 className="text-2xl font-bold text-gray-900">
               Industrial Chemicals Supplier in India
             </h1>
@@ -91,16 +81,16 @@ export default function IndustrialChemicalsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
           {/* HERO */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
+
             <div className="p-6 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] space-y-6">
               <h2 className="text-3xl font-bold text-white">
                 Industrial Chemicals for Textile & Manufacturing Applications
               </h2>
 
               <p className="text-xl text-white leading-relaxed">
-                BellChem (A. K. Jain & Co.) supplies high-performance industrial chemicals
-                for textile processing, chemical manufacturing, water treatment, and
-                allied industrial operations.
+                BellChem supplies high-performance industrial chemicals for textile processing,
+                chemical manufacturing, water treatment, and allied industrial operations.
               </p>
 
               <p className="text-white/80">
@@ -109,28 +99,52 @@ export default function IndustrialChemicalsPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl overflow-hidden shadow-lg">
+            {/* IMAGE */}
+            <div className="rounded-2xl overflow-hidden shadow-lg aspect-[16/10] max-h-[320px] w-full">
               <img
                 src={chemicalLab}
                 alt="Industrial chemicals manufacturing and quality control laboratory"
                 className="w-full h-full object-cover"
               />
             </div>
+
           </div>
 
-          {/* FEATURES */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-8">
+          {/* SEO + FEATURES GLASS */}
+          <div className="mb-16 p-10 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] text-center">
+
+            <div className="max-w-4xl mx-auto mb-14 space-y-6">
+              <p className="text-white/95 text-lg leading-relaxed">
+                BellChem supplies export-grade industrial chemicals used across textile
+                processing, chemical synthesis, rubber manufacturing, fertilizer production,
+                and water treatment industries. Our products are sourced and handled under
+                strict quality control systems.
+              </p>
+
+              <p className="text-white/90 text-lg leading-relaxed">
+                We support bulk supply, custom packaging, technical documentation,
+                and regulatory compliance for domestic and international customers.
+              </p>
+            </div>
+
+            <h2 className="text-3xl font-bold mb-10 text-white">
               Key Supply Advantages
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, i) => (
-                <div key={i} className="flex items-center space-x-3 p-4 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>{feature}</span>
+                <div
+                  key={i}
+                  className="flex items-center justify-center space-x-4 p-5 bg-black/30 backdrop-blur-sm rounded-xl border border-white/15"
+                >
+                  <CheckCircle className="h-6 w-6 text-green-400" />
+                  <span className="text-white/95">
+                    {feature}
+                  </span>
                 </div>
               ))}
             </div>
+
           </div>
 
           {/* PRODUCTS */}
@@ -138,6 +152,7 @@ export default function IndustrialChemicalsPage() {
             <h2 className="text-2xl font-bold mb-8">
               Industrial Chemical Product Range
             </h2>
+
             <div className="grid md:grid-cols-2 gap-8">
               {products.map((product, i) => (
                 <Card key={i}>
@@ -145,18 +160,17 @@ export default function IndustrialChemicalsPage() {
                     <CardTitle>{product.name}</CardTitle>
                     <CardDescription>{product.description}</CardDescription>
                   </CardHeader>
+
                   <CardContent className="space-y-4">
                     <div>
                       <h3 className="font-semibold mb-2">Specifications</h3>
-                      <ul className="space-y-1">
+                      <ul className="space-y-1 text-sm">
                         {product.specifications.map((spec, j) => (
-                          <li key={j} className="flex items-center space-x-2 text-sm">
-                            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-                            <span>{spec}</span>
-                          </li>
+                          <li key={j}>• {spec}</li>
                         ))}
                       </ul>
                     </div>
+
                     <div>
                       <h3 className="font-semibold mb-2">Applications</h3>
                       <div className="flex flex-wrap gap-2">
@@ -176,36 +190,17 @@ export default function IndustrialChemicalsPage() {
             </div>
           </div>
 
-          {/* RELATED */}
-          <div className="mb-16">
-            <h2 className="text-xl font-semibold mb-4">
-              Related Categories
-            </h2>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/reactivedyes" className="text-blue-600 hover:underline">
-                Reactive Dyes
-              </Link>
-              <Link to="/vatdyes" className="text-blue-600 hover:underline">
-                Vat Dyes
-              </Link>
-              <Link to="/dischargedyes" className="text-blue-600 hover:underline">
-                Discharge Dyes
-              </Link>
-              <Link to="/textileauxiliaries" className="text-blue-600 hover:underline">
-                Textile Auxiliaries
-              </Link>
-            </div>
-          </div>
-
           {/* CTA */}
           <div className="bg-blue-50 rounded-2xl p-8 text-center">
             <h2 className="text-2xl font-bold mb-4">
               Looking for a Reliable Industrial Chemical Supplier?
             </h2>
+
             <p className="mb-6">
               Contact BellChem for bulk supply, export inquiries, and technical
               documentation support.
             </p>
+
             <Link to="/contact">
               <Button size="lg">Contact Us</Button>
             </Link>

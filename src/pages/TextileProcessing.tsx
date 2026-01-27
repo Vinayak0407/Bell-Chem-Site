@@ -76,25 +76,13 @@ export default function TextileProcessingPage() {
         title="Textile Processing Chemicals Supplier in India"
         description="BellChem (A. K. Jain & Co.) supplies textile processing chemicals for pretreatment, dyeing, bleaching, and finishing applications."
         canonical="https://www.bellchem.in/textileprocessing"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "@id": "https://www.bellchem.in/textileprocessing#service",
-          "name": "Textile Processing Chemicals Supply",
-          "serviceType": "Bulk Textile Processing Chemicals Supplier",
-          "provider": {
-            "@type": "Organization",
-            "@id": "https://www.bellchem.in/#organization",
-            "name": "A. K. Jain & Co. (BellChem)"
-          },
-          "areaServed": "Worldwide"
-        }}
       />
 
       <Header />
 
       <main className="min-h-screen">
-        {/* HEADER */}
+
+        {/* TOP HEADER */}
         <div className="bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center space-x-4">
             <Link to="/products">
@@ -103,7 +91,9 @@ export default function TextileProcessingPage() {
                 <span>Back to Products</span>
               </Button>
             </Link>
+
             <div className="h-6 w-px bg-gray-300" />
+
             <h1 className="text-2xl font-bold text-gray-900">
               Textile Processing Chemicals Supplier in India
             </h1>
@@ -113,7 +103,8 @@ export default function TextileProcessingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
           {/* HERO */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
+
             <div className="p-6 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] space-y-6">
               <div className="flex items-center space-x-2">
                 <div className="text-3xl">🧵</div>
@@ -128,34 +119,60 @@ export default function TextileProcessingPage() {
                 enhanced whiteness, uniform dye uptake, and consistent quality.
               </p>
 
-              <div className="flex items-center space-x-3 text-white">
+              <div className="flex items-center space-x-2 text-white">
                 <Award className="h-5 w-5 text-blue-400" />
                 <span>Industry & Export Approved</span>
               </div>
             </div>
 
-            <div className="rounded-2xl overflow-hidden shadow-lg">
+            <div className="rounded-2xl overflow-hidden shadow-lg aspect-[16/10] max-h-[320px] w-full">
               <img
                 src={processingImage}
                 alt="Textile processing chemicals for pretreatment and finishing"
                 className="w-full h-full object-cover"
               />
             </div>
+
           </div>
 
-          {/* FEATURES */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-8">
-              Key Features of Our Processing Chemicals
+          {/* SEO + FEATURES GLASS */}
+          <div className="mb-16 p-10 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] text-center">
+
+            <div className="max-w-4xl mx-auto mb-14 space-y-6">
+              <p className="text-white/95 text-lg leading-relaxed">
+                Textile processing chemicals play a critical role in pretreatment,
+                bleaching, dyeing, and finishing by improving fabric absorbency,
+                enhancing whiteness, and ensuring uniform dye penetration. BellChem
+                supplies carefully selected processing chemicals engineered for
+                consistent performance across cotton, blended, and specialty textiles.
+              </p>
+
+              <p className="text-white/90 text-lg leading-relaxed">
+                Our processing chemical range is trusted by dye houses, garment
+                manufacturers, and fabric processors seeking optimized workflows,
+                reduced defects, and reliable batch-to-batch results. BellChem supports
+                bulk supply, technical guidance, and customized solutions worldwide.
+              </p>
+            </div>
+
+            <h2 className="text-3xl font-bold mb-10 text-white">
+              Key Features
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, i) => (
-                <div key={i} className="flex items-center space-x-3 p-4 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>{feature}</span>
+                <div
+                  key={i}
+                  className="flex items-center justify-center space-x-4 p-5 bg-black/30 backdrop-blur-sm rounded-xl border border-white/15"
+                >
+                  <CheckCircle className="h-6 w-6 text-green-400" />
+                  <span className="text-white/95">
+                    {feature}
+                  </span>
                 </div>
               ))}
             </div>
+
           </div>
 
           {/* PRODUCTS */}
@@ -171,18 +188,17 @@ export default function TextileProcessingPage() {
                     <CardTitle>{product.name}</CardTitle>
                     <CardDescription>{product.description}</CardDescription>
                   </CardHeader>
+
                   <CardContent className="space-y-4">
                     <div>
                       <h3 className="font-semibold mb-2">Specifications</h3>
-                      <ul className="space-y-1">
+                      <ul className="space-y-1 text-sm">
                         {product.specifications.map((spec, j) => (
-                          <li key={j} className="flex items-center space-x-2 text-sm">
-                            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-                            <span>{spec}</span>
-                          </li>
+                          <li key={j}>• {spec}</li>
                         ))}
                       </ul>
                     </div>
+
                     <div>
                       <h3 className="font-semibold mb-2">Applications</h3>
                       <div className="flex flex-wrap gap-2">
@@ -202,25 +218,28 @@ export default function TextileProcessingPage() {
             </div>
           </div>
 
-          {/* RELATED */}
-          <div className="mb-16">
-            <h2 className="text-xl font-semibold mb-4">
-              Related Dye & Chemical Categories
+          {/* RELATED GLASS */}
+          <div className="mb-16 p-8 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] text-center">
+
+            <h2 className="text-2xl font-bold mb-6 text-white">
+              Related Categories
             </h2>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/reactivedyes" className="text-blue-600 hover:underline">
+
+            <div className="flex flex-wrap justify-center gap-6">
+              <Link to="/reactivedyes" className="px-6 py-3 rounded-xl bg-black/30 border border-white/15 text-white hover:bg-black/45 transition">
                 Reactive Dyes
               </Link>
-              <Link to="/directdyes" className="text-blue-600 hover:underline">
+              <Link to="/directdyes" className="px-6 py-3 rounded-xl bg-black/30 border border-white/15 text-white hover:bg-black/45 transition">
                 Direct Dyes
               </Link>
-              <Link to="/dischargedyes" className="text-blue-600 hover:underline">
+              <Link to="/dischargedyes" className="px-6 py-3 rounded-xl bg-black/30 border border-white/15 text-white hover:bg-black/45 transition">
                 Discharge Dyes
               </Link>
-              <Link to="/textileauxiliaries" className="text-blue-600 hover:underline">
+              <Link to="/textileauxiliaries" className="px-6 py-3 rounded-xl bg-black/30 border border-white/15 text-white hover:bg-black/45 transition">
                 Textile Auxiliaries
               </Link>
             </div>
+
           </div>
 
           {/* CTA */}
@@ -228,10 +247,12 @@ export default function TextileProcessingPage() {
             <h2 className="text-2xl font-bold mb-4">
               Need Custom Textile Processing Solutions?
             </h2>
+
             <p className="mb-6">
               Contact our technical experts for optimized formulations and
               process support tailored to your production requirements.
             </p>
+
             <Link to="/contact">
               <Button size="lg">Contact Us</Button>
             </Link>

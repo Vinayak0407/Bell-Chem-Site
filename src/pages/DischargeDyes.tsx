@@ -7,7 +7,6 @@ import { ArrowLeft, CheckCircle, Scissors, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 import dischargeImage from "@/assets/DischargeDyes.jpg";
 
-/* FULL PRODUCT LIST */
 const dischargeProducts = [
   {
     name: "Black BG",
@@ -117,24 +116,12 @@ export default function DischargeDyes() {
         title="Discharge Dyes Supplier in India | BellChem"
         description="BellChem (A. K. Jain & Co.) supplies high-performance discharge dyes for textile printing with sharp discharge effects and consistent results on dark fabrics."
         canonical="https://www.bellchem.in/dischargedyes"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "@id": "https://www.bellchem.in/dischargedyes#service",
-          name: "Discharge Dyes Supply",
-          serviceType: "Bulk Discharge Dyes Supplier",
-          provider: {
-            "@type": "Organization",
-            "@id": "https://www.bellchem.in/#organization",
-            name: "A. K. Jain & Co. (BellChem)"
-          },
-          areaServed: "Worldwide"
-        }}
       />
 
       <Header />
 
       <main className="min-h-screen">
+
         {/* TOP BAR */}
         <div className="bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center space-x-4">
@@ -144,7 +131,9 @@ export default function DischargeDyes() {
                 <span>Back to Products</span>
               </Button>
             </Link>
+
             <div className="h-6 w-px bg-gray-300" />
+
             <h1 className="text-2xl font-bold text-gray-900">
               Discharge Dyes Supplier in India
             </h1>
@@ -154,7 +143,8 @@ export default function DischargeDyes() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
           {/* HERO */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
+
             <div className="p-6 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] space-y-6">
               <div className="flex items-center space-x-2">
                 <Scissors className="h-8 w-8 text-green-300" />
@@ -173,6 +163,7 @@ export default function DischargeDyes() {
                   <Award className="h-5 w-5 text-blue-400" />
                   <span>Industry & Export Approved</span>
                 </div>
+
                 <div className="flex items-center space-x-2">
                   <Scissors className="h-5 w-5 text-green-300" />
                   <span>Sharp, Clean Discharge Effect</span>
@@ -180,31 +171,51 @@ export default function DischargeDyes() {
               </div>
             </div>
 
-            <div className="rounded-2xl overflow-hidden shadow-lg">
+            {/* IMAGE */}
+            <div className="rounded-2xl overflow-hidden shadow-lg aspect-[16/10] max-h-[320px] w-full">
               <img
                 src={dischargeImage}
                 alt="Discharge dyes for textile printing"
                 className="w-full h-full object-cover"
               />
             </div>
+
           </div>
 
-          {/* FEATURES */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-8">
-              Key Features of Our Discharge Dyes
+          {/* SEO + FEATURES */}
+          <div className="mb-16 p-10 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] text-center">
+
+            <div className="max-w-4xl mx-auto mb-14 space-y-6">
+              <p className="text-white/95 text-lg leading-relaxed">
+                Discharge dyes are specialized textile dyes used to remove or replace
+                existing colors on dark fabrics, enabling bright designs with soft
+                hand-feel. BellChem supplies high-performance discharge dyes engineered
+                for sharp discharge, consistent penetration, and clean tonal results.
+              </p>
+
+              <p className="text-white/90 text-lg leading-relaxed">
+                Our discharge dye range is widely adopted by textile printers and garment
+                manufacturers seeking vibrant shades, eco-conscious formulations, and
+                dependable batch-to-batch consistency.
+              </p>
+            </div>
+
+            <h2 className="text-3xl font-bold mb-10 text-white">
+              Key Features
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, i) => (
                 <div
                   key={i}
-                  className="flex items-center space-x-3 p-4 bg-white rounded-lg shadow-sm"
+                  className="flex items-center justify-center space-x-4 p-5 bg-black/30 backdrop-blur-sm rounded-xl border border-white/15"
                 >
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>{feature}</span>
+                  <CheckCircle className="h-6 w-6 text-green-400" />
+                  <span className="text-white/95">{feature}</span>
                 </div>
               ))}
             </div>
+
           </div>
 
           {/* PRODUCTS */}
@@ -212,6 +223,7 @@ export default function DischargeDyes() {
             <h2 className="text-2xl font-bold mb-8">
               Discharge Dye Product Range
             </h2>
+
             <div className="grid md:grid-cols-2 gap-8">
               {dischargeProducts.map((product, i) => (
                 <Card key={i}>
@@ -219,13 +231,11 @@ export default function DischargeDyes() {
                     <CardTitle>{product.name}</CardTitle>
                     <CardDescription>{product.description}</CardDescription>
                   </CardHeader>
+
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
                       {product.applications.map((app, j) => (
-                        <span
-                          key={j}
-                          className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
-                        >
+                        <span key={j} className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">
                           {app}
                         </span>
                       ))}
@@ -241,10 +251,12 @@ export default function DischargeDyes() {
             <h2 className="text-2xl font-bold mb-4">
               Need Custom Discharge Dye Solutions?
             </h2>
+
             <p className="mb-6">
               Our technical team supports formulation, shade matching,
               and bulk supply for textile printers worldwide.
             </p>
+
             <Link to="/contact">
               <Button size="lg">Contact Us</Button>
             </Link>

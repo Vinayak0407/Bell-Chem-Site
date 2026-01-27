@@ -50,28 +50,12 @@ export default function DirectDyesPage() {
         title="Direct Dyes Supplier in India"
         description="BellChem (A. K. Jain & Co.) supplies direct dyes for cotton, viscose, and cellulosic fibers. Reliable bulk supply for textile manufacturers."
         canonical="https://www.bellchem.in/directdyes"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "@id": "https://www.bellchem.in/directdyes#service",
-          "name": "Direct Dyes Supply",
-          "serviceType": "Bulk Direct Dyes Supplier",
-          "provider": {
-            "@type": "Organization",
-            "@id": "https://www.bellchem.in/#organization",
-            "name": "A. K. Jain & Co. (BellChem)"
-          },
-          "areaServed": "Worldwide",
-          "audience": {
-            "@type": "BusinessAudience",
-            "audienceType": "Textile & Fabric Manufacturers"
-          }
-        }}
       />
 
       <Header />
 
       <main className="min-h-screen">
+
         {/* TOP HEADER */}
         <div className="bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center space-x-4">
@@ -127,30 +111,36 @@ export default function DirectDyesPage() {
             </div>
           </div>
 
-          {/* SEO BODY CONTENT */}
-          <div className="max-w-4xl mb-16">
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Direct dyes are water-soluble dyes applied directly to cellulosic
-              fibers without the need for complex fixation chemistry.
-              BellChem supplies carefully selected direct dyes suitable for
-              economical textile dyeing operations.
-            </p>
+          {/* SEO + FEATURES (BLACK GLASS) */}
+          <div className="mb-16 p-10 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] text-center">
 
-            <p className="text-gray-700 leading-relaxed">
-              Our direct dye range is widely used by textile processors and
-              fabric manufacturers seeking cost efficiency, reliable color
-              yield, and consistent batch performance.
-            </p>
-          </div>
+            <div className="max-w-4xl mx-auto mb-14 space-y-6">
+              <p className="text-white/95 text-lg leading-relaxed">
+                Direct dyes are water-soluble dyes applied directly to cellulosic
+                fibers without the need for complex fixation chemistry.
+                BellChem supplies carefully selected direct dyes suitable for
+                economical textile dyeing operations.
+              </p>
 
-          {/* FEATURES */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-8">Key Features</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <p className="text-white/90 text-lg leading-relaxed">
+                Our direct dye range is widely used by textile processors and
+                fabric manufacturers seeking cost efficiency, reliable color
+                yield, and consistent batch performance.
+              </p>
+            </div>
+
+            <h2 className="text-3xl font-bold mb-10 text-white">
+              Key Features
+            </h2>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, i) => (
-                <div key={i} className="flex items-center space-x-3 p-4 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>{feature}</span>
+                <div
+                  key={i}
+                  className="flex items-center justify-center space-x-4 p-5 bg-black/30 backdrop-blur-sm rounded-xl border border-white/15"
+                >
+                  <CheckCircle className="h-6 w-6 text-green-400" />
+                  <span className="text-white/95">{feature}</span>
                 </div>
               ))}
             </div>
@@ -161,6 +151,7 @@ export default function DirectDyesPage() {
             <h2 className="text-2xl font-bold mb-8">
               Direct Dye Products for Textile Applications
             </h2>
+
             <div className="grid md:grid-cols-2 gap-8">
               {products.map((product, i) => (
                 <Card key={i}>
@@ -168,18 +159,17 @@ export default function DirectDyesPage() {
                     <CardTitle>{product.name}</CardTitle>
                     <CardDescription>{product.description}</CardDescription>
                   </CardHeader>
+
                   <CardContent className="space-y-4">
                     <ul className="space-y-1 text-sm text-gray-600">
                       {product.specifications.map((spec, j) => (
                         <li key={j}>• {spec}</li>
                       ))}
                     </ul>
+
                     <div className="flex flex-wrap gap-2">
                       {product.applications.map((app, j) => (
-                        <span
-                          key={j}
-                          className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
-                        >
+                        <span key={j} className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">
                           {app}
                         </span>
                       ))}
@@ -190,17 +180,22 @@ export default function DirectDyesPage() {
             </div>
           </div>
 
-          {/* RELATED LINKS */}
-          <div className="mb-16">
-            <h2 className="text-xl font-semibold mb-4">Related Categories</h2>
-            <div className="flex gap-4">
-              <Link to="/reactivedyes" className="text-blue-600 hover:underline">
+          {/* RELATED LINKS (BLACK GLASS) */}
+          <div className="mb-16 p-8 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] text-center">
+            <h2 className="text-2xl font-bold mb-6 text-white">
+              Related Categories
+            </h2>
+
+            <div className="flex flex-wrap justify-center gap-6">
+              <Link to="/reactivedyes" className="px-6 py-3 rounded-xl bg-black/30 border border-white/15 text-white/90">
                 Reactive Dyes
               </Link>
-              <Link to="/aciddyes" className="text-blue-600 hover:underline">
+
+              <Link to="/aciddyes" className="px-6 py-3 rounded-xl bg-black/30 border border-white/15 text-white/90">
                 Acid Dyes
               </Link>
-              <Link to="/dispersedyes" className="text-blue-600 hover:underline">
+
+              <Link to="/dispersedyes" className="px-6 py-3 rounded-xl bg-black/30 border border-white/15 text-white/90">
                 Disperse Dyes
               </Link>
             </div>

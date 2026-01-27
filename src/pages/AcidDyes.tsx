@@ -50,28 +50,12 @@ export default function AcidDyesPage() {
         title="Acid Dyes Supplier in India"
         description="BellChem (A. K. Jain & Co.) supplies acid dyes for wool, silk, nylon, and industrial textile applications with consistent quality and export-ready standards."
         canonical="https://www.bellchem.in/aciddyes"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "@id": "https://www.bellchem.in/aciddyes#service",
-          "name": "Acid Dyes Supply",
-          "serviceType": "Bulk Acid Dyes Supplier",
-          "provider": {
-            "@type": "Organization",
-            "@id": "https://www.bellchem.in/#organization",
-            "name": "A. K. Jain & Co. (BellChem)"
-          },
-          "areaServed": "Worldwide",
-          "audience": {
-            "@type": "BusinessAudience",
-            "audienceType": "Textile & Industrial Manufacturers"
-          }
-        }}
       />
 
       <Header />
 
       <main className="min-h-screen">
+
         {/* TOP HEADER */}
         <div className="bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center space-x-4">
@@ -81,7 +65,9 @@ export default function AcidDyesPage() {
                 <span>Back to Products</span>
               </Button>
             </Link>
+
             <div className="h-6 w-px bg-gray-300" />
+
             <h1 className="text-2xl font-bold text-gray-900">
               Acid Dyes Supplier in India
             </h1>
@@ -91,7 +77,8 @@ export default function AcidDyesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
           {/* HERO */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
+
             <div className="p-6 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] space-y-6">
               <div className="flex items-center space-x-2">
                 <div className="text-3xl">🎯</div>
@@ -111,6 +98,7 @@ export default function AcidDyesPage() {
                   <Star className="h-5 w-5 text-yellow-300 fill-current" />
                   <span>Premium B2B Quality</span>
                 </div>
+
                 <div className="flex items-center space-x-2">
                   <Award className="h-5 w-5 text-blue-400" />
                   <span>ISO & Export-Compliant Supply</span>
@@ -118,42 +106,51 @@ export default function AcidDyesPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl overflow-hidden shadow-lg">
+            {/* IMAGE */}
+            <div className="rounded-2xl overflow-hidden shadow-lg aspect-[16/10] max-h-[320px] w-full">
               <img
                 src={textileDyes}
                 alt="Industrial acid dyes for wool, silk, and nylon"
                 className="w-full h-full object-cover"
               />
             </div>
+
           </div>
 
-          {/* SEO BODY CONTENT */}
-          <div className="max-w-4xl mb-16">
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Acid dyes are water-soluble dyes applied in acidic dye baths,
-              primarily used for wool, silk, nylon, and specialty fibers.
-              BellChem supplies carefully selected acid dyes with excellent
-              leveling behavior and reliable fastness properties.
-            </p>
+          {/* SEO + FEATURES */}
+          <div className="mb-16 p-10 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] text-center">
 
-            <p className="text-gray-700 leading-relaxed">
-              Our acid dye range is widely used by textile dye houses,
-              carpet manufacturers, and industrial fabric processors
-              requiring consistent shade reproduction and export-ready quality.
-            </p>
-          </div>
+            <div className="max-w-4xl mx-auto mb-14 space-y-6">
+              <p className="text-white/95 text-lg leading-relaxed">
+                Acid dyes are water-soluble dyes applied in acidic dye baths,
+                primarily used for wool, silk, nylon, and specialty fibers.
+                BellChem supplies carefully selected acid dyes with excellent
+                leveling behavior and reliable fastness properties.
+              </p>
 
-          {/* FEATURES */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-8">Key Features</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <p className="text-white/90 text-lg leading-relaxed">
+                Our acid dye range is widely used by textile dye houses,
+                carpet manufacturers, and industrial fabric processors
+                requiring consistent shade reproduction and export-ready quality.
+              </p>
+            </div>
+
+            <h2 className="text-3xl font-bold mb-10 text-white">
+              Key Features
+            </h2>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, i) => (
-                <div key={i} className="flex items-center space-x-3 p-4 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>{feature}</span>
+                <div
+                  key={i}
+                  className="flex items-center justify-center space-x-4 p-5 bg-black/30 backdrop-blur-sm rounded-xl border border-white/15"
+                >
+                  <CheckCircle className="h-6 w-6 text-green-400" />
+                  <span className="text-white/95">{feature}</span>
                 </div>
               ))}
             </div>
+
           </div>
 
           {/* PRODUCTS */}
@@ -161,6 +158,7 @@ export default function AcidDyesPage() {
             <h2 className="text-2xl font-bold mb-8">
               Acid Dye Products for Textile & Industrial Use
             </h2>
+
             <div className="grid md:grid-cols-2 gap-8">
               {products.map((product, i) => (
                 <Card key={i}>
@@ -168,18 +166,17 @@ export default function AcidDyesPage() {
                     <CardTitle>{product.name}</CardTitle>
                     <CardDescription>{product.description}</CardDescription>
                   </CardHeader>
+
                   <CardContent className="space-y-4">
                     <ul className="space-y-1 text-sm text-gray-600">
                       {product.specifications.map((spec, j) => (
                         <li key={j}>• {spec}</li>
                       ))}
                     </ul>
+
                     <div className="flex flex-wrap gap-2">
                       {product.applications.map((app, j) => (
-                        <span
-                          key={j}
-                          className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
-                        >
+                        <span key={j} className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">
                           {app}
                         </span>
                       ))}
@@ -191,19 +188,26 @@ export default function AcidDyesPage() {
           </div>
 
           {/* RELATED LINKS */}
-          <div className="mb-16">
-            <h2 className="text-xl font-semibold mb-4">Related Categories</h2>
-            <div className="flex gap-4">
-              <Link to="/reactivedyes" className="text-blue-600 hover:underline">
+          <div className="mb-16 p-8 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] text-center">
+
+            <h2 className="text-2xl font-bold mb-6 text-white">
+              Related Categories
+            </h2>
+
+            <div className="flex flex-wrap justify-center gap-6">
+              <Link to="/reactivedyes" className="px-6 py-3 rounded-xl bg-black/30 border border-white/15 text-white/90">
                 Reactive Dyes
               </Link>
-              <Link to="/dispersedyes" className="text-blue-600 hover:underline">
+
+              <Link to="/dispersedyes" className="px-6 py-3 rounded-xl bg-black/30 border border-white/15 text-white/90">
                 Disperse Dyes
               </Link>
-              <Link to="/textileprocessing" className="text-blue-600 hover:underline">
+
+              <Link to="/textileprocessing" className="px-6 py-3 rounded-xl bg-black/30 border border-white/15 text-white/90">
                 Textile Processing Chemicals
               </Link>
             </div>
+
           </div>
 
           {/* CTA */}
@@ -211,10 +215,12 @@ export default function AcidDyesPage() {
             <h2 className="text-2xl font-bold mb-4">
               Need Bulk Acid Dyes Supply?
             </h2>
+
             <p className="mb-6">
               Contact BellChem for bulk supply, export inquiries,
               and technical dyeing support.
             </p>
+
             <Link to="/quote">
               <Button size="lg">Request a Quote</Button>
             </Link>

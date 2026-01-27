@@ -10,92 +10,77 @@ import pigmentDyesImage from "@/assets/PigmentDyes.jpg";
 const products = [
   {
     name: "Pigment Red FB",
-    description:
-      "A vibrant red pigment offering strong coloration and excellent consistency across formulations.",
+    description: "A vibrant red pigment offering strong coloration and excellent consistency across formulations.",
     applications: ["Paints", "Plastics", "Printing Inks", "Masterbatches", "Coatings"]
   },
   {
     name: "Pigment Lemon Yellow GRKW",
-    description:
-      "A bright lemon-yellow pigment known for its clean shade and reliable performance.",
+    description: "A bright lemon-yellow pigment known for its clean shade and reliable performance.",
     applications: ["Textile Printing", "Water-Based Paints", "Inks", "Plastics"]
   },
   {
     name: "Pigment Golden Yellow GR",
-    description:
-      "A warm, golden-yellow pigment offering excellent opacity and balanced brightness.",
+    description: "A warm, golden-yellow pigment offering excellent opacity and balanced brightness.",
     applications: ["Paints", "Plastics", "Powder Coatings", "Inks"]
   },
   {
     name: "Pigment Orange G",
-    description:
-      "A brilliant orange pigment with high chroma and smooth dispersion.",
+    description: "A brilliant orange pigment with high chroma and smooth dispersion.",
     applications: ["PVC Coloring", "Inks", "Coatings", "Textile Prints"]
   },
   {
     name: "Pigment Pink PF",
-    description:
-      "A clean-tone pink pigment with good stability for decorative formulations.",
+    description: "A clean-tone pink pigment with good stability for decorative formulations.",
     applications: ["Decorative Coatings", "Plastics", "Textile Printing", "Masterbatches"]
   },
   {
     name: "Pigment Bordeaux BW",
-    description:
-      "A deep bordeaux red pigment with strong coloring power.",
+    description: "A deep bordeaux red pigment with strong coloring power.",
     applications: ["Printing Inks", "Industrial Coatings", "Leather Finishes"]
   },
   {
     name: "Pigment Rubine R",
-    description:
-      "A bold rubine-red pigment with excellent tinting strength.",
+    description: "A bold rubine-red pigment with excellent tinting strength.",
     applications: ["Offset Inks", "Paints", "Plastics", "Textile Printing"]
   },
   {
     name: "Pigment Violet B",
-    description:
-      "A deep violet pigment with high shade purity.",
+    description: "A deep violet pigment with high shade purity.",
     applications: ["Coatings", "Masterbatches", "Decorative Paints", "Inks"]
   },
   {
     name: "Pigment Navy Blue RJ",
-    description:
-      "A strong navy-blue pigment with uniform coverage.",
+    description: "A strong navy-blue pigment with uniform coverage.",
     applications: ["Paints", "Powder Coatings", "Inks", "Rubber Compounds"]
   },
   {
     name: "Pigment Blue FB",
-    description:
-      "A bright blue pigment with consistent tinting strength.",
+    description: "A bright blue pigment with consistent tinting strength.",
     applications: ["Plastics", "Masterbatches", "Textile Printing", "Coatings"]
   },
   {
     name: "Pigment Turquoise Blue CB",
-    description:
-      "A striking turquoise pigment delivering fresh blue-green tones.",
+    description: "A striking turquoise pigment delivering fresh blue-green tones.",
     applications: ["Water-Based Paints", "Inks", "Polymer Coloring", "Decorative Coatings"]
   },
   {
     name: "Pigment Green GR",
-    description:
-      "A high-strength green pigment with stable color performance.",
+    description: "A high-strength green pigment with stable color performance.",
     applications: ["Plastics", "Coatings", "Printing Inks", "Industrial Finishes"]
   },
   {
     name: "Pigment Brown GR",
-    description:
-      "A rich brown pigment with excellent hiding power.",
+    description: "A rich brown pigment with excellent hiding power.",
     applications: ["Leather Coatings", "Wood Finishes", "Inks", "Industrial Paints"]
   },
   {
     name: "Pigment Black G",
-    description:
-      "An economical deep black pigment for general-purpose formulations.",
+    description: "An economical deep black pigment for general-purpose formulations.",
     applications: ["Rubber", "Plastics", "Paints", "General Inks", "PVC Compounds"]
   },
   {
     name: "Pigment Black FBR",
-    description:
-      "A cleaner-tone black pigment for applications requiring deeper coverage.",
+    description: "A cleaner-tone black pigment for applications requiring deeper coverage.",
     applications: ["Water-Based Paints", "Plastics", "Inks", "Industrial Applications"]
   }
 ];
@@ -116,28 +101,12 @@ export default function PigmentDyesPage() {
         title="Pigment Dyes Supplier in India"
         description="BellChem (A. K. Jain & Co.) supplies high-quality pigment dyes and pigment powders for paints, inks, plastics, coatings, and industrial applications."
         canonical="https://www.bellchem.in/pigmentdyes"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "@id": "https://www.bellchem.in/pigmentdyes#service",
-          "name": "Pigment Dyes Supply",
-          "serviceType": "Bulk Pigment Dyes & Pigment Powders Supplier",
-          "provider": {
-            "@type": "Organization",
-            "@id": "https://www.bellchem.in/#organization",
-            "name": "A. K. Jain & Co. (BellChem)"
-          },
-          "areaServed": "Worldwide",
-          "audience": {
-            "@type": "BusinessAudience",
-            "audienceType": "Paint, Ink & Plastic Manufacturers"
-          }
-        }}
       />
 
       <Header />
 
       <main className="min-h-screen">
+
         {/* TOP HEADER */}
         <div className="bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center space-x-4">
@@ -158,7 +127,7 @@ export default function PigmentDyesPage() {
 
           {/* HERO */}
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div className="p-6 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 space-y-6">
+            <div className="p-6 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] space-y-6">
               <div className="flex items-center space-x-2">
                 <div className="text-3xl">🖌️</div>
                 <h2 className="text-3xl font-bold text-white">
@@ -193,31 +162,33 @@ export default function PigmentDyesPage() {
             </div>
           </div>
 
-          {/* SEO BODY CONTENT */}
-          <div className="max-w-4xl mb-16">
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Pigment dyes are insoluble colorants used to impart durable, vibrant
-              coloration to paints, inks, plastics, coatings, and industrial materials.
-              BellChem supplies carefully processed pigment dyes with controlled particle
-              size, high dispersion quality, and consistent shade performance.
-            </p>
+          {/* SEO + FEATURES (BLACK GLASS) */}
+          <div className="mb-16 p-10 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] text-center">
 
-            <p className="text-gray-700 leading-relaxed">
-              Our pigment dye range is widely used by paint manufacturers, ink formulators,
-              plastic processors, and coating applicators who require stable color,
-              weather resistance, and reliable batch-to-batch consistency for
-              large-scale production.
-            </p>
-          </div>
+            <div className="max-w-4xl mx-auto mb-14 space-y-6">
+              <p className="text-white/95 text-lg leading-relaxed">
+                Pigment dyes are insoluble colorants used to impart durable, vibrant
+                coloration to paints, inks, plastics, coatings, and industrial materials.
+                BellChem supplies carefully processed pigment dyes with controlled particle
+                size, high dispersion quality, and consistent shade performance.
+              </p>
 
-          {/* FEATURES */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-8">Key Features</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <p className="text-white/90 text-lg leading-relaxed">
+                Our pigment dye range is widely used by paint manufacturers, ink formulators,
+                plastic processors, and coating applicators who require stable color,
+                weather resistance, and reliable batch-to-batch consistency.
+              </p>
+            </div>
+
+            <h2 className="text-3xl font-bold mb-10 text-white">
+              Key Features
+            </h2>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, i) => (
-                <div key={i} className="flex items-center space-x-3 p-4 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>{feature}</span>
+                <div key={i} className="flex items-center justify-center space-x-4 p-5 bg-black/30 backdrop-blur-sm rounded-xl border border-white/15">
+                  <CheckCircle className="h-6 w-6 text-green-400" />
+                  <span className="text-white/95">{feature}</span>
                 </div>
               ))}
             </div>
@@ -228,6 +199,7 @@ export default function PigmentDyesPage() {
             <h2 className="text-2xl font-bold mb-8">
               Pigment Dye Products for Industrial Applications
             </h2>
+
             <div className="grid md:grid-cols-2 gap-8">
               {products.map((product, i) => (
                 <Card key={i}>
@@ -238,10 +210,7 @@ export default function PigmentDyesPage() {
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
                       {product.applications.map((app, j) => (
-                        <span
-                          key={j}
-                          className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
-                        >
+                        <span key={j} className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">
                           {app}
                         </span>
                       ))}
@@ -252,17 +221,18 @@ export default function PigmentDyesPage() {
             </div>
           </div>
 
-          {/* RELATED LINKS */}
-          <div className="mb-16">
-            <h2 className="text-xl font-semibold mb-4">Related Categories</h2>
-            <div className="flex gap-4">
-              <Link to="/reactivedyes" className="text-blue-600 hover:underline">
+          {/* RELATED LINKS (BLACK GLASS) */}
+          <div className="mb-16 p-8 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] text-center">
+            <h2 className="text-2xl font-bold mb-6 text-white">Related Categories</h2>
+
+            <div className="flex flex-wrap justify-center gap-6">
+              <Link to="/reactivedyes" className="px-6 py-3 rounded-xl bg-black/30 border border-white/15 text-white/90">
                 Reactive Dyes
               </Link>
-              <Link to="/solventdyes" className="text-blue-600 hover:underline">
+              <Link to="/solventdyes" className="px-6 py-3 rounded-xl bg-black/30 border border-white/15 text-white/90">
                 Solvent Dyes
               </Link>
-              <Link to="/industrialchemicals" className="text-blue-600 hover:underline">
+              <Link to="/industrialchemicals" className="px-6 py-3 rounded-xl bg-black/30 border border-white/15 text-white/90">
                 Industrial Chemicals
               </Link>
             </div>

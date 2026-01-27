@@ -70,28 +70,12 @@ export default function SolventDyesPage() {
         title="Solvent Dyes Supplier in India"
         description="BellChem (A. K. Jain & Co.) supplies high-quality solvent dyes for plastics, fuels, waxes, inks, and industrial coatings."
         canonical="https://www.bellchem.in/solventdyes"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "@id": "https://www.bellchem.in/solventdyes#service",
-          "name": "Solvent Dyes Supply",
-          "serviceType": "Bulk Solvent Dyes Supplier",
-          "provider": {
-            "@type": "Organization",
-            "@id": "https://www.bellchem.in/#organization",
-            "name": "A. K. Jain & Co. (BellChem)"
-          },
-          "areaServed": "Worldwide",
-          "audience": {
-            "@type": "BusinessAudience",
-            "audienceType": "Plastic, Ink & Fuel Manufacturers"
-          }
-        }}
       />
 
       <Header />
 
       <main className="min-h-screen">
+
         {/* TOP HEADER */}
         <div className="bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center space-x-4">
@@ -112,7 +96,7 @@ export default function SolventDyesPage() {
 
           {/* HERO */}
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div className="p-6 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 space-y-6">
+            <div className="p-6 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] space-y-6">
               <div className="flex items-center space-x-2">
                 <div className="text-3xl">💧</div>
                 <h2 className="text-3xl font-bold text-white">
@@ -147,30 +131,36 @@ export default function SolventDyesPage() {
             </div>
           </div>
 
-          {/* SEO BODY CONTENT */}
-          <div className="max-w-4xl mb-16">
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Solvent dyes are oil-soluble colorants used where transparency,
-              thermal stability, and migration resistance are critical.
-              BellChem supplies carefully selected solvent dyes with consistent
-              solubility and shade reliability for industrial processing.
-            </p>
+          {/* SEO + FEATURES (BLACK GLASS) */}
+          <div className="mb-16 p-10 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] text-center">
 
-            <p className="text-gray-700 leading-relaxed">
-              Our solvent dyes are widely used in plastics, petroleum products,
-              waxes, adhesives, inks, and coatings, offering stable coloration
-              and compatibility across demanding manufacturing environments.
-            </p>
-          </div>
+            <div className="max-w-4xl mx-auto mb-14 space-y-6">
+              <p className="text-white/95 text-lg leading-relaxed">
+                Solvent dyes are oil-soluble colorants used where transparency,
+                thermal stability, and migration resistance are critical.
+                BellChem supplies carefully selected solvent dyes with consistent
+                solubility and shade reliability for industrial processing.
+              </p>
 
-          {/* FEATURES */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-8">Key Features</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <p className="text-white/90 text-lg leading-relaxed">
+                Our solvent dyes are widely used in plastics, petroleum products,
+                waxes, adhesives, inks, and coatings, offering stable coloration
+                and compatibility across demanding manufacturing environments.
+              </p>
+            </div>
+
+            <h2 className="text-3xl font-bold mb-10 text-white">
+              Key Features
+            </h2>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, i) => (
-                <div key={i} className="flex items-center space-x-3 p-4 bg-white rounded-lg shadow-sm">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>{feature}</span>
+                <div
+                  key={i}
+                  className="flex items-center justify-center space-x-4 p-5 bg-black/30 backdrop-blur-sm rounded-xl border border-white/15"
+                >
+                  <CheckCircle className="h-6 w-6 text-green-400" />
+                  <span className="text-white/95">{feature}</span>
                 </div>
               ))}
             </div>
@@ -181,6 +171,7 @@ export default function SolventDyesPage() {
             <h2 className="text-2xl font-bold mb-8">
               Solvent Dye Products for Industrial Applications
             </h2>
+
             <div className="grid md:grid-cols-2 gap-8">
               {products.map((product, i) => (
                 <Card key={i}>
@@ -188,18 +179,17 @@ export default function SolventDyesPage() {
                     <CardTitle>{product.name}</CardTitle>
                     <CardDescription>{product.description}</CardDescription>
                   </CardHeader>
+
                   <CardContent className="space-y-4">
                     <ul className="space-y-1 text-sm text-gray-600">
                       {product.specifications.map((spec, j) => (
                         <li key={j}>• {spec}</li>
                       ))}
                     </ul>
+
                     <div className="flex flex-wrap gap-2">
                       {product.applications.map((app, j) => (
-                        <span
-                          key={j}
-                          className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
-                        >
+                        <span key={j} className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">
                           {app}
                         </span>
                       ))}
@@ -210,17 +200,22 @@ export default function SolventDyesPage() {
             </div>
           </div>
 
-          {/* RELATED LINKS */}
-          <div className="mb-16">
-            <h2 className="text-xl font-semibold mb-4">Related Categories</h2>
-            <div className="flex gap-4">
-              <Link to="/pigmentdyes" className="text-blue-600 hover:underline">
+          {/* RELATED LINKS (BLACK GLASS) */}
+          <div className="mb-16 p-8 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] text-center">
+            <h2 className="text-2xl font-bold mb-6 text-white">
+              Related Categories
+            </h2>
+
+            <div className="flex flex-wrap justify-center gap-6">
+              <Link to="/pigmentdyes" className="px-6 py-3 rounded-xl bg-black/30 border border-white/15 text-white/90">
                 Pigment Dyes
               </Link>
-              <Link to="/oilcolors" className="text-blue-600 hover:underline">
+
+              <Link to="/oilcolors" className="px-6 py-3 rounded-xl bg-black/30 border border-white/15 text-white/90">
                 Oil Colors
               </Link>
-              <Link to="/industrialchemicals" className="text-blue-600 hover:underline">
+
+              <Link to="/industrialchemicals" className="px-6 py-3 rounded-xl bg-black/30 border border-white/15 text-white/90">
                 Industrial Chemicals
               </Link>
             </div>
