@@ -66,15 +66,12 @@ const App = () => (
               <Route path="/textileprocessing" element={<TextileProcessing />} />
               <Route path="/dischargedyes" element={<DischargeDyes />} />
 
-              {/* SEO FIX: old → new */}
+              {/* SEO redirect */}
               <Route
                 path="/fluorescentcolors"
                 element={<Navigate to="/fluorescent-dyes" replace />}
               />
-              <Route
-                path="/fluorescent-dyes"
-                element={<FluorescentDyes />}
-              />
+              <Route path="/fluorescent-dyes" element={<FluorescentDyes />} />
 
               <Route path="/pigmentdyes" element={<PigmentDyes />} />
               <Route path="/solventdyes" element={<SolventDyes />} />

@@ -3,79 +3,81 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, CheckCircle, Award } from "lucide-react";
+import { ArrowLeft, CheckCircle, Star, Award } from "lucide-react";
 import { Link } from "react-router-dom";
-import processingImage from "@/assets/TextileProcessing.jpg";
+import chemicalLab from "@/assets/chemical-lab.jpg";
 
 const products = [
   {
-    name: "Tinopal 2B",
+    name: "Thickener",
     description:
-      "A highly effective optical brightening agent that enhances fabric whiteness by absorbing UV light and emitting blue fluorescence.",
+      "High-viscosity agent used to regulate print paste flow and ensure dimensional clarity in textile printing.",
     specifications: [
+      "Type: Natural / Synthetic",
+      "Ionic Nature: Non-ionic / Anionic",
+      "Viscosity Range: Depends on Grade",
+      "Usage Level: Typically 1%–5%"
+    ],
+    applications: ["Pigment Printing", "Reactive Printing", "Discharge Printing"]
+  },
+  {
+    name: "Binder",
+    description:
+      "Polymer emulsion employed in pigment printing to form a durable film that binds pigment particles to fabric surfaces.",
+    specifications: [
+      "Polymer Type: Acrylic Emulsion",
       "Ionic Nature: Anionic",
-      "Usage: 0.05%–0.3%",
-      "Form: Powder / Granular",
-      "Solubility: Fully soluble in water"
+      "Binder Content: 40%–50%",
+      "Curing Temperature: 150°C–170°C"
     ],
-    applications: ["Detergents", "Textile Whitening", "Soaping", "Laundry Chemicals"]
+    applications: ["Pigment Printing", "Screen Printing", "Fabric Coating"]
   },
   {
-    name: "Optical Brightener CBX",
+    name: "Guar Gum",
     description:
-      "Fluorescent whitening agent used to improve brightness and whiteness of textile substrates during finishing.",
+      "Natural polysaccharide-based thickener derived from guar beans, providing excellent print definition and flow control.",
     specifications: [
-      "Ionic Nature: Anionic / Non-ionic",
-      "Usage: 0.1%–1%",
-      "Light Fastness: Good",
-      "Temperature Stability: Stable up to 130°C"
+      "Source: Guar Beans",
+      "Ionic Nature: Non-ionic",
+      "Viscosity (1%): 2,000–5,000 cps",
+      "Form: Off-white Powder"
     ],
-    applications: ["Finishing", "Whitening", "Detergent Formulations", "Dyeing Auxiliaries"]
+    applications: ["Reactive Printing", "Carpet Printing", "Fabric Sizing"]
   },
   {
-    name: "Alum",
+    name: "Dye Fixer",
     description:
-      "Versatile inorganic coagulant used in textile processing for scouring, dye fixation, and water treatment.",
+      "After-treatment chemical used to enhance wash fastness and minimize dye bleeding on finished textiles.",
     specifications: [
-      "Chemical Formula: Al₂(SO₄)₃",
-      "Purity: 98%–99%",
-      "Form: Powder / Lumps",
-      "pH: Acidic",
-      "Solubility: Highly soluble in water"
+      "Ionic Nature: Cationic",
+      "Form: Liquid",
+      "Application pH: 5–6"
     ],
-    applications: ["Mordanting", "Dye Fixing", "Water Treatment", "Scouring"]
-  },
-  {
-    name: "TSP (Trisodium Phosphate)",
-    description:
-      "Strong alkaline processing agent used for scouring, degreasing, and heavy-duty textile pretreatment.",
-    specifications: [
-      "Chemical Formula: Na₃PO₄",
-      "pH (1% Solution): 11–12",
-      "Form: Crystalline Powder",
-      "Purity: 98% Min",
-      "Solubility: Fully soluble in water"
-    ],
-    applications: ["Scouring", "Degreasing", "Pretreatment", "Boil-Out Cleaning"]
+    applications: [
+      "Reactive Dyeing",
+      "Direct Dyeing",
+      "After-Treatment",
+      "Color Fastness Improvement"
+    ]
   }
 ];
 
 const features = [
-  "Optimizes pretreatment, dyeing & finishing efficiency",
-  "Improves fabric absorbency, whiteness & leveling",
-  "Stable performance across wide pH & temperature ranges",
-  "Eco-conscious formulations for sustainable processing",
-  "Consistent results in hard water conditions",
-  "Reduces defects & improves batch-to-batch uniformity"
+  "Complete textile processing auxiliary range",
+  "Export-grade consistency for bulk supply",
+  "Technical support & formulation guidance",
+  "Process optimization expertise",
+  "Quality assurance & batch consistency",
+  "Compliance with international standards"
 ];
 
-export default function TextileProcessingPage() {
+export default function TextileAuxiliariesPage() {
   return (
     <>
       <SEO
-        title="Textile Processing Chemicals Supplier in India"
-        description="BellChem (A. K. Jain & Co.) supplies textile processing chemicals for pretreatment, dyeing, bleaching, and finishing applications."
-        canonical="https://www.bellchem.in/textileprocessing"
+        title="Textile Auxiliaries Supplier in India"
+        description="BellChem (A. K. Jain & Co.) supplies textile auxiliaries for dyeing, printing, and finishing applications, supporting global textile manufacturers."
+        canonical="https://www.bellchem.in/textileauxiliaries"
       />
 
       <Header />
@@ -95,7 +97,7 @@ export default function TextileProcessingPage() {
             <div className="h-6 w-px bg-gray-300" />
 
             <h1 className="text-2xl font-bold text-gray-900">
-              Textile Processing Chemicals Supplier in India
+              Textile Auxiliaries Supplier in India
             </h1>
           </div>
         </div>
@@ -107,29 +109,36 @@ export default function TextileProcessingPage() {
 
             <div className="p-6 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] space-y-6">
               <div className="flex items-center space-x-2">
-                <div className="text-3xl">🧵</div>
+                <div className="text-3xl">🔬</div>
                 <h2 className="text-3xl font-bold text-white">
-                  High-Performance Textile Processing Chemicals
+                  High-Performance Textile Auxiliaries
                 </h2>
               </div>
 
               <p className="text-xl text-white leading-relaxed">
-                Advanced processing chemicals engineered for pretreatment,
-                bleaching, dyeing, and finishing—delivering improved absorbency,
-                enhanced whiteness, uniform dye uptake, and consistent quality.
+                Complete range of textile auxiliaries engineered to improve dyeing,
+                printing, and finishing efficiency across cotton, blended, and
+                specialty fabrics.
               </p>
 
-              <div className="flex items-center space-x-2 text-white">
-                <Award className="h-5 w-5 text-blue-400" />
-                <span>Industry & Export Approved</span>
+              <div className="space-y-3 text-white">
+                <div className="flex items-center space-x-2">
+                  <Star className="h-5 w-5 text-yellow-300 fill-current" />
+                  <span>Complete Processing Support</span>
+                </div>
+
+                <div className="flex items-center space-x-2">
+                  <Award className="h-5 w-5 text-blue-400" />
+                  <span>Export & Industry Approved</span>
+                </div>
               </div>
             </div>
 
             {/* IMAGE */}
             <div className="rounded-2xl overflow-hidden shadow-lg aspect-[16/10] max-h-[320px] w-full">
               <img
-                src={processingImage}
-                alt="Textile processing chemicals for pretreatment and finishing"
+                src={chemicalLab}
+                alt="Textile auxiliaries laboratory testing and quality control"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -141,18 +150,16 @@ export default function TextileProcessingPage() {
 
             <div className="max-w-4xl mx-auto mb-14 space-y-6">
               <p className="text-white/95 text-lg leading-relaxed">
-                Textile processing chemicals play a critical role in pretreatment,
-                bleaching, dyeing, and finishing by improving fabric absorbency,
-                enhancing whiteness, and ensuring uniform dye penetration. BellChem
-                supplies carefully selected processing chemicals engineered for
-                consistent performance across cotton, blended, and specialty textiles.
+                BellChem supplies textile auxiliaries designed to enhance process efficiency,
+                shade consistency, and fabric performance across dyeing, printing, and finishing
+                operations. Our auxiliaries support improved leveling, fastness, dispersion,
+                and overall production reliability.
               </p>
 
               <p className="text-white/90 text-lg leading-relaxed">
-                Our processing chemical range is trusted by dye houses, garment
-                manufacturers, and fabric processors seeking optimized workflows,
-                reduced defects, and reliable batch-to-batch results. BellChem supports
-                bulk supply, technical guidance, and customized solutions worldwide.
+                We provide bulk supply, technical guidance, and formulation support for textile
+                processors worldwide, ensuring consistent quality and compliance with
+                international standards.
               </p>
             </div>
 
@@ -179,7 +186,7 @@ export default function TextileProcessingPage() {
           {/* PRODUCTS */}
           <div className="mb-16">
             <h2 className="text-2xl font-bold mb-8">
-              Textile Processing Chemical Range
+              Textile Auxiliary Product Range
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -222,12 +229,12 @@ export default function TextileProcessingPage() {
           {/* CTA */}
           <div className="bg-blue-50 rounded-2xl p-8 text-center">
             <h2 className="text-2xl font-bold mb-4">
-              Need Custom Textile Processing Solutions?
+              Need Custom Textile Auxiliary Solutions?
             </h2>
 
             <p className="mb-6">
-              Contact our technical experts for optimized formulations and
-              process support tailored to your production requirements.
+              Our technical team supports formulation, optimization, and bulk supply
+              for textile processors worldwide.
             </p>
 
             <Link to="/contact">
