@@ -9,7 +9,7 @@ import processingImage from "@/assets/TextileProcessing.jpg";
 
 const products = [
   {
-    name: "Tinopal 2B",
+    name: "Tinopal",
     description:
       "A highly effective optical brightening agent that enhances fabric whiteness by absorbing UV light and emitting blue fluorescence.",
     specifications: [
@@ -21,7 +21,7 @@ const products = [
     applications: ["Detergents", "Textile Whitening", "Soaping", "Laundry Chemicals"]
   },
   {
-    name: "Optical Brightener CBX",
+    name: "Optical Brightener",
     description:
       "Fluorescent whitening agent used to improve brightness and whiteness of textile substrates during finishing.",
     specifications: [
@@ -46,7 +46,7 @@ const products = [
     applications: ["Mordanting", "Dye Fixing", "Water Treatment", "Scouring"]
   },
   {
-    name: "TSP (Trisodium Phosphate)",
+    name: "TSP(Tri-Sodium Phosphate)",
     description:
       "Strong alkaline processing agent used for scouring, degreasing, and heavy-duty textile pretreatment.",
     specifications: [
