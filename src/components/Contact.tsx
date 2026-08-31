@@ -140,9 +140,9 @@ const Contact = () => {
                   </div>
 
                   {submitStatus === "success" && (
-                    <Alert className="border-green-200 bg-green-50">
-                      <CheckCircle className="h-4 w-4 text-green-600" />
-                      <AlertDescription className="text-green-800">
+                    <Alert className="border-green-900/40 bg-green-950/40">
+                      <CheckCircle className="h-4 w-4 text-green-400" />
+                      <AlertDescription className="text-green-300">
                         Thank you. Your inquiry has been received. Our export team will
                         contact you within 24 hours.
                       </AlertDescription>
@@ -150,9 +150,9 @@ const Contact = () => {
                   )}
 
                   {submitStatus === "error" && (
-                    <Alert className="border-red-200 bg-red-50">
-                      <AlertCircle className="h-4 w-4 text-red-600" />
-                      <AlertDescription className="text-red-800">
+                    <Alert className="border-red-900/40 bg-red-950/40">
+                      <AlertCircle className="h-4 w-4 text-red-400" />
+                      <AlertDescription className="text-red-300">
                         There was an error submitting your inquiry. Please try again
                         or contact us directly via email.
                       </AlertDescription>
@@ -221,6 +221,18 @@ const Contact = () => {
             </Reveal>
           </div>
         </div>
+
+        <Reveal className="mt-12 rounded-2xl overflow-hidden border border-border shadow-soft">
+          <iframe
+            title="Bell Chem office location — Tilak Bazar, Khari Baoli, New Delhi"
+            src="https://maps.google.com/maps?q=Khari%20Baoli%2C%20Tilak%20Bazar%2C%20New%20Delhi%2C%20110006&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="320"
+            style={{ border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </Reveal>
       </div>
       </section>
     </>

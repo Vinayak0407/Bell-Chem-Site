@@ -50,11 +50,11 @@ const OptimizedImage = ({
   return (
     <div ref={imgRef} className={`relative overflow-hidden ${className}`}>
       {!isLoaded && (
-        <div 
-          className="absolute inset-0 bg-gray-100 animate-pulse flex items-center justify-center"
+        <div
+          className="absolute inset-0 bg-muted animate-pulse flex items-center justify-center"
           style={{ width, height }}
         >
-          <div className="w-8 h-8 border-2 border-gray-300 border-t-primary rounded-full animate-spin"></div>
+          <div className="w-8 h-8 border-2 border-border border-t-primary rounded-full animate-spin"></div>
         </div>
       )}
       {isInView && (

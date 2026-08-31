@@ -7,6 +7,7 @@ const navItems = [
   { name: "About Us", path: "/about" },
   { name: "Products", path: "/products" },
   { name: "Industries", path: "/industries" },
+  { name: "Insights", path: "/insights" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -18,7 +19,7 @@ const Header = () => {
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="flex justify-between items-center h-20">
@@ -78,7 +79,7 @@ const Header = () => {
             onClick={toggleMobileMenu}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMobileMenuOpen}
-            className="md:hidden p-2 rounded-md text-primary hover:bg-gray-100 transition-colors"
+            className="md:hidden p-2 rounded-md text-primary hover:bg-muted transition-colors"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -90,14 +91,14 @@ const Header = () => {
             isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="border-t border-gray-200 bg-white">
+          <div className="border-t border-border bg-background">
             <nav className="py-3 space-y-1">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
                   onClick={closeMobileMenu}
-                  className="block px-4 py-2 text-primary hover:bg-gray-100 rounded transition-colors"
+                  className="block px-4 py-2 text-primary hover:bg-muted rounded transition-colors"
                 >
                   {item.name}
                 </Link>

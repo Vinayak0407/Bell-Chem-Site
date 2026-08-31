@@ -32,6 +32,10 @@ const IndustrialChemicals = lazy(() => import("./pages/IndustrialChemicals"));
 const SpecialtyChemicals = lazy(() => import("./pages/SpecialtyChemicals"));
 const TextileAuxiliaries = lazy(() => import("./pages/TextileAuxiliaries"));
 
+const CaseStudiesPage = lazy(() => import("./pages/CaseStudies"));
+const InsightsPage = lazy(() => import("./pages/Insights"));
+const InsightPostPage = lazy(() => import("./pages/InsightPost"));
+
 const queryClient = new QueryClient();
 
 const RouteFade = ({ children }: { children: React.ReactNode }) => {
@@ -90,6 +94,11 @@ const App = () => (
                 <Route path="/industrialchemicals" element={<IndustrialChemicals />} />
                 <Route path="/specialtychemicals" element={<SpecialtyChemicals />} />
                 <Route path="/textileauxiliaries" element={<TextileAuxiliaries />} />
+
+                {/* Content */}
+                <Route path="/success-stories" element={<CaseStudiesPage />} />
+                <Route path="/insights" element={<InsightsPage />} />
+                <Route path="/insights/:slug" element={<InsightPostPage />} />
 
                 {/* 404 */}
                 <Route path="*" element={<NotFound />} />

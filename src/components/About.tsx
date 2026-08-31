@@ -1,6 +1,8 @@
 import manufacturingFacility from "@/assets/manufacturing-facility.jpg";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
+import CountUp from "@/components/CountUp";
+import TrustBadges from "@/components/TrustBadges";
 import { Building2 } from "lucide-react";
 
 const pillars = [
@@ -42,7 +44,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-            <Reveal className="bg-white rounded-2xl border border-border shadow-soft p-8 space-y-8">
+            <Reveal className="bg-card rounded-2xl border border-border shadow-soft p-8 space-y-8">
               <div className="space-y-6">
                 <h2 className="text-2xl font-semibold text-foreground">Our Legacy</h2>
 
@@ -80,8 +82,10 @@ const About = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
-              <Reveal key={stat.label} index={i} className="text-center p-6 bg-white rounded-xl shadow-soft border border-border hover:shadow-elegant hover:-translate-y-1 transition-all duration-300">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.value}</div>
+              <Reveal key={stat.label} index={i} className="text-center p-6 bg-card rounded-xl shadow-soft border border-border hover:shadow-elegant hover:-translate-y-1 transition-all duration-300">
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                  <CountUp value={stat.value} />
+                </div>
                 <div className="text-muted-foreground font-medium">{stat.label}</div>
               </Reveal>
             ))}
@@ -89,6 +93,8 @@ const About = () => {
 
         </div>
       </section>
+
+      <TrustBadges />
     </>
   );
 };

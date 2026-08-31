@@ -104,18 +104,18 @@ const QuoteRequest = () => {
 
                   {/* STATUS */}
                   {submitStatus === "success" && (
-                    <Alert className="border-green-200 bg-green-50">
-                      <CheckCircle className="h-4 w-4 text-green-600" />
-                      <AlertDescription className="text-green-800">
+                    <Alert className="border-green-900/40 bg-green-950/40">
+                      <CheckCircle className="h-4 w-4 text-green-400" />
+                      <AlertDescription className="text-green-300">
                         Quote request received. Our team will contact you shortly.
                       </AlertDescription>
                     </Alert>
                   )}
 
                   {submitStatus === "error" && (
-                    <Alert className="border-red-200 bg-red-50">
-                      <AlertCircle className="h-4 w-4 text-red-600" />
-                      <AlertDescription className="text-red-800">
+                    <Alert className="border-red-900/40 bg-red-950/40">
+                      <AlertCircle className="h-4 w-4 text-red-400" />
+                      <AlertDescription className="text-red-300">
                         Submission failed. Please retry or email us directly.
                       </AlertDescription>
                     </Alert>
@@ -123,7 +123,7 @@ const QuoteRequest = () => {
 
                   <Button
                     type="submit"
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-semibold"
+                    className="w-full bg-primary hover:bg-primary/90 text-white py-3 text-lg font-semibold"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Submitting..." : "Submit Quote Request"}

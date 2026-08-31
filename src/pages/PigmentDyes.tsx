@@ -115,7 +115,7 @@ export default function PigmentDyesPage() {
       <Header />
 
       <main className="min-h-screen">
-        <div className="bg-white border-b border-border">
+        <div className="bg-card border-b border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <Link to="/products">
               <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-muted-foreground hover:text-primary">
@@ -193,13 +193,13 @@ export default function PigmentDyesPage() {
             <h2 className="text-2xl font-bold mb-6 text-foreground">Related Categories</h2>
 
             <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/reactivedyes" className="px-6 py-3 rounded-xl bg-white border border-border text-foreground hover:border-primary hover:text-primary shadow-soft transition-colors">
+              <Link to="/reactivedyes" className="px-6 py-3 rounded-xl bg-card border border-border text-foreground hover:border-primary hover:text-primary shadow-soft transition-colors">
                 Reactive Dyes
               </Link>
-              <Link to="/solventdyes" className="px-6 py-3 rounded-xl bg-white border border-border text-foreground hover:border-primary hover:text-primary shadow-soft transition-colors">
+              <Link to="/solventdyes" className="px-6 py-3 rounded-xl bg-card border border-border text-foreground hover:border-primary hover:text-primary shadow-soft transition-colors">
                 Solvent Dyes
               </Link>
-              <Link to="/industrialchemicals" className="px-6 py-3 rounded-xl bg-white border border-border text-foreground hover:border-primary hover:text-primary shadow-soft transition-colors">
+              <Link to="/industrialchemicals" className="px-6 py-3 rounded-xl bg-card border border-border text-foreground hover:border-primary hover:text-primary shadow-soft transition-colors">
                 Industrial Chemicals
               </Link>
             </div>

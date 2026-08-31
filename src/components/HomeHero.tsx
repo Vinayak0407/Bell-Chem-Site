@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import OptimizedImage from "@/components/OptimizedImage";
 import Reveal from "@/components/Reveal";
+import CountUp from "@/components/CountUp";
 import chemicalLab from "@/assets/chemical-lab.jpg";
 import { useNavigate } from "react-router-dom";
 
@@ -87,7 +88,7 @@ const HomeHero = () => {
               <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/20">
                 {stats.map((stat) => (
                   <div key={stat.label} className="text-center">
-                    <div className="text-2xl font-bold text-white">{stat.value}</div>
+                    <div className="text-2xl font-bold text-white"><CountUp value={stat.value} /></div>
                     <div className="text-sm text-white/80">{stat.label}</div>
                   </div>
                 ))}

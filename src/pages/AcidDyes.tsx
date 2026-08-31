@@ -64,7 +64,7 @@ export default function AcidDyesPage() {
       <Header />
 
       <main className="min-h-screen">
-        <div className="bg-white border-b border-border">
+        <div className="bg-card border-b border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <Link to="/products">
               <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-muted-foreground hover:text-primary">
@@ -151,15 +151,15 @@ export default function AcidDyesPage() {
             </h2>
 
             <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/reactivedyes" className="px-6 py-3 rounded-xl bg-white border border-border text-foreground hover:border-primary hover:text-primary shadow-soft transition-colors">
+              <Link to="/reactivedyes" className="px-6 py-3 rounded-xl bg-card border border-border text-foreground hover:border-primary hover:text-primary shadow-soft transition-colors">
                 Reactive Dyes
               </Link>
 
-              <Link to="/dispersedyes" className="px-6 py-3 rounded-xl bg-white border border-border text-foreground hover:border-primary hover:text-primary shadow-soft transition-colors">
+              <Link to="/dispersedyes" className="px-6 py-3 rounded-xl bg-card border border-border text-foreground hover:border-primary hover:text-primary shadow-soft transition-colors">
                 Disperse Dyes
               </Link>
 
-              <Link to="/textileprocessing" className="px-6 py-3 rounded-xl bg-white border border-border text-foreground hover:border-primary hover:text-primary shadow-soft transition-colors">
+              <Link to="/textileprocessing" className="px-6 py-3 rounded-xl bg-card border border-border text-foreground hover:border-primary hover:text-primary shadow-soft transition-colors">
                 Textile Processing Chemicals
               </Link>
             </div>

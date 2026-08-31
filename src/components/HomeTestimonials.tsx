@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import CountUp from "@/components/CountUp";
 
 const HomeTestimonials = () => {
   const testimonials = [
@@ -53,13 +54,13 @@ const HomeTestimonials = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {testimonials.map((testimonial, index) => (
             <Reveal key={index} index={index} className="h-full">
-              <Card className="group h-full border-0 shadow-soft hover:shadow-professional transition-all duration-300 hover:-translate-y-2 bg-white">
+              <Card className="group h-full border-0 shadow-soft hover:shadow-professional transition-all duration-300 hover:-translate-y-2 bg-card">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="text-4xl mr-3">{testimonial.image}</div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                      <p className="text-sm text-gray-600">{testimonial.role}</p>
+                      <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
+                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                     </div>
                   </div>
 
@@ -69,7 +70,7 @@ const HomeTestimonials = () => {
                     ))}
                   </div>
 
-                  <p className="text-gray-600 leading-relaxed italic">
+                  <p className="text-muted-foreground leading-relaxed italic">
                     "{testimonial.content}"
                   </p>
                 </CardContent>
@@ -83,7 +84,7 @@ const HomeTestimonials = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
               {trustStats.map((stat, i) => (
                 <div key={i} className="text-center">
-                  <div className="text-2xl font-bold text-white mb-2">{stat.value}</div>
+                  <div className="text-2xl font-bold text-white mb-2"><CountUp value={stat.value} /></div>
                   <div className="text-sm text-white/80">{stat.label}</div>
                 </div>
               ))}

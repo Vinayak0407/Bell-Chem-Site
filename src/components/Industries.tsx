@@ -48,13 +48,13 @@ const Industries = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((industry, index) => (
               <Reveal key={index} index={index} className="h-full">
-                <Card className="group h-full border-0 shadow-soft hover:shadow-professional transition-all duration-300 hover:-translate-y-2 bg-white">
+                <Card className="group h-full border-0 shadow-soft hover:shadow-professional transition-all duration-300 hover:-translate-y-2 bg-card">
                   <CardHeader className="text-center pb-4">
                     <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{industry.icon}</div>
-                    <CardTitle className="text-xl font-semibold text-gray-900">{industry.title}</CardTitle>
+                    <CardTitle className="text-xl font-semibold text-foreground">{industry.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center">
-                    <CardDescription className="text-gray-600 leading-relaxed">
+                    <CardDescription className="text-muted-foreground leading-relaxed">
                       {industry.description}
                     </CardDescription>
                   </CardContent>
