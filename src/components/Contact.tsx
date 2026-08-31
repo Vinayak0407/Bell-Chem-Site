@@ -12,51 +12,30 @@ import {
 import { useContactForm } from "@/hooks/useContactForm";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { CheckCircle, AlertCircle, Globe, Package } from "lucide-react";
+import PageHero from "@/components/PageHero";
+import Reveal from "@/components/Reveal";
 
 const Contact = () => {
   const { form, onSubmit, isSubmitting, submitStatus } = useContactForm();
 
   return (
-    <section id="contact" className="py-16 lg:py-24">
+    <>
+      <PageHero
+        eyebrow="We reply within 24 hours"
+        title="Contact BellChem"
+        description="B2B inquiries for dyes, industrial chemicals, textile auxiliaries, and specialty chemicals. Serving manufacturers, exporters, and textile processors worldwide."
+        badges={[
+          { icon: <Globe className="h-4 w-4" />, label: "Global Export Support" },
+          { icon: <Package className="h-4 w-4" />, label: "Bulk & Custom Supply" },
+        ]}
+      />
+
+      <section id="contact" className="py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* HERO / INTRO — B2B EXPORT POSITIONED */}
-        <div className="text-center mb-16">
-          <div
-            className="
-              mx-auto w-fit text-center space-y-4
-              px-8 py-6
-              bg-black/30 backdrop-blur-md
-              rounded-2xl border border-white/20
-              shadow-[0_0_25px_rgba(0,0,0,0.3)]
-            "
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Contact <span className="bg-gradient-primary bg-clip-text text-transparent">BellChem</span>
-            </h2>
-
-            <p className="text-lg text-white max-w-xl">
-              B2B inquiries for dyes, industrial chemicals, textile auxiliaries,
-              and specialty chemicals. Serving manufacturers, exporters, and
-              textile processors worldwide.
-            </p>
-
-            <div className="flex flex-wrap justify-center gap-6 text-white/90 text-sm pt-2">
-              <div className="flex items-center gap-2">
-                <Globe className="h-4 w-4" />
-                Global Export Support
-              </div>
-              <div className="flex items-center gap-2">
-                <Package className="h-4 w-4" />
-                Bulk & Custom Supply
-              </div>
-            </div>
-          </div>
-        </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* FORM */}
-          <div className="lg:col-span-2">
+          <Reveal className="lg:col-span-2">
             <Card className="shadow-soft">
               <CardHeader>
                 <CardTitle>B2B Inquiry Form</CardTitle>
@@ -190,52 +169,61 @@ const Contact = () => {
                 </form>
               </CardContent>
             </Card>
-          </div>
+          </Reveal>
 
           {/* CONTACT DETAILS */}
           <div className="space-y-6">
-            <Card className="shadow-soft">
-              <CardContent className="p-6">
-                <h3 className="font-semibold mb-2">📧 Email</h3>
-                <p className="text-muted-foreground">vinayak@bellchem.in</p>
-                <p className="text-muted-foreground text-sm">akjain.ranas@gmail.com</p>
-              </CardContent>
-            </Card>
+            <Reveal index={0}>
+              <Card className="shadow-soft hover:shadow-elegant transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <h3 className="font-semibold mb-2">📧 Email</h3>
+                  <p className="text-muted-foreground">vinayak@bellchem.in</p>
+                  <p className="text-muted-foreground text-sm">akjain.ranas@gmail.com</p>
+                </CardContent>
+              </Card>
+            </Reveal>
 
-            <Card className="shadow-soft">
-              <CardContent className="p-6">
-                <h3 className="font-semibold mb-2">📞 Phone / WhatsApp</h3>
-                <p className="text-muted-foreground">+91-9999776385</p>
-                <p className="text-muted-foreground text-sm">Sales & Export Inquiries</p>
-              </CardContent>
-            </Card>
+            <Reveal index={1}>
+              <Card className="shadow-soft hover:shadow-elegant transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <h3 className="font-semibold mb-2">📞 Phone / WhatsApp</h3>
+                  <p className="text-muted-foreground">+91-9999776385</p>
+                  <p className="text-muted-foreground text-sm">Sales & Export Inquiries</p>
+                </CardContent>
+              </Card>
+            </Reveal>
 
-            <Card className="shadow-soft">
-              <CardContent className="p-6">
-                <h3 className="font-semibold mb-2">📍 Office</h3>
-                <p className="text-muted-foreground">
-                  Ground Floor, Godown No. 198<br />
-                  Tilak Bazar, Khari Baoli<br />
-                  New Delhi – 110007<br />
-                  India
-                </p>
-              </CardContent>
-            </Card>
+            <Reveal index={2}>
+              <Card className="shadow-soft hover:shadow-elegant transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <h3 className="font-semibold mb-2">📍 Office</h3>
+                  <p className="text-muted-foreground">
+                    Ground Floor, Godown No. 198<br />
+                    Tilak Bazar, Khari Baoli<br />
+                    New Delhi – 110007<br />
+                    India
+                  </p>
+                </CardContent>
+              </Card>
+            </Reveal>
 
-            <Card className="shadow-soft">
-              <CardContent className="p-6">
-                <h3 className="font-semibold mb-2">🕒 Business Hours</h3>
-                <p className="text-muted-foreground text-sm">
-                  Monday – Friday: 9:00 AM – 6:00 PM<br />
-                  Saturday: 9:00 AM – 2:00 PM<br />
-                  Sunday: Closed
-                </p>
-              </CardContent>
-            </Card>
+            <Reveal index={3}>
+              <Card className="shadow-soft hover:shadow-elegant transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <h3 className="font-semibold mb-2">🕒 Business Hours</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Monday – Friday: 9:00 AM – 6:00 PM<br />
+                    Saturday: 9:00 AM – 2:00 PM<br />
+                    Sunday: Closed
+                  </p>
+                </CardContent>
+              </Card>
+            </Reveal>
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 };
 

@@ -33,7 +33,7 @@ export default function ContactPage() {
 
       <Header />
 
-      <main className="pt-20">
+      <main>
         <Contact />
       </main>
 

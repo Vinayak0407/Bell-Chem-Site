@@ -6,12 +6,13 @@ import SEO from "@/components/SEO";
 const IndustriesPage = () => {
   return (
     <>
-      <SEO 
+      <SEO
         title="Industries We Serve - Chemical Solutions | Bell Chem"
         description="Bell Chem serves diverse industries including textile manufacturing, pharmaceutical, paint & coatings, paper & pulp, leather processing, and water treatment."
+        canonical="https://www.bellchem.in/industries"
       />
       <Header />
-      <main className="pt-20">
+      <main>
         <Industries />
       </main>
       <Footer />

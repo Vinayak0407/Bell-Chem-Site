@@ -30,7 +30,7 @@ export default function AboutPage() {
 
       <Header />
 
-      <main className="pt-20">
+      <main>
         <About />
       </main>
 

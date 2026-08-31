@@ -38,7 +38,7 @@ const ProductsPage = () => {
 
       <Header />
 
-      <main className="pt-20">
+      <main>
         <Services />
       </main>
 

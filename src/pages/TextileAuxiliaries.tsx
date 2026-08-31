@@ -1,9 +1,13 @@
 import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHero from "@/components/PageHero";
+import FeatureGrid from "@/components/FeatureGrid";
+import Reveal from "@/components/Reveal";
+import OptimizedImage from "@/components/OptimizedImage";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, CheckCircle, Star, Award } from "lucide-react";
+import { ArrowLeft, Star, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 import chemicalLab from "@/assets/chemical-lab.jpg";
 
@@ -78,169 +82,112 @@ export default function TextileAuxiliariesPage() {
         title="Textile Auxiliaries Supplier in India"
         description="BellChem (A. K. Jain & Co.) supplies textile auxiliaries for dyeing, printing, and finishing applications, supporting global textile manufacturers."
         canonical="https://www.bellchem.in/textileauxiliaries"
+        breadcrumbs={[
+          { name: "Home", url: "https://www.bellchem.in/" },
+          { name: "Products", url: "https://www.bellchem.in/products" },
+          { name: "Textile Auxiliaries", url: "https://www.bellchem.in/textileauxiliaries" }
+        ]}
       />
 
       <Header />
 
       <main className="min-h-screen">
-
-        {/* TOP HEADER */}
-        <div className="bg-white shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center space-x-4">
+        <div className="bg-white border-b border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <Link to="/products">
-              <Button variant="ghost" size="sm" className="flex items-center space-x-2">
+              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-muted-foreground hover:text-primary">
                 <ArrowLeft className="h-4 w-4" />
                 <span>Back to Products</span>
               </Button>
             </Link>
-
-            <div className="h-6 w-px bg-gray-300" />
-
-            <h1 className="text-2xl font-bold text-gray-900">
-              Textile Auxiliaries Supplier in India
-            </h1>
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-          {/* HERO */}
-          <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
-
-            <div className="p-6 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] space-y-6">
-              <div className="flex items-center space-x-2">
-                <div className="text-3xl">🔬</div>
-                <h2 className="text-3xl font-bold text-white">
-                  High-Performance Textile Auxiliaries
-                </h2>
-              </div>
-
-              <p className="text-xl text-white leading-relaxed">
-                Complete range of textile auxiliaries engineered to improve dyeing,
-                printing, and finishing efficiency across cotton, blended, and
-                specialty fabrics.
-              </p>
-
-              <div className="space-y-3 text-white">
-                <div className="flex items-center space-x-2">
-                  <Star className="h-5 w-5 text-yellow-300 fill-current" />
-                  <span>Complete Processing Support</span>
-                </div>
-
-                <div className="flex items-center space-x-2">
-                  <Award className="h-5 w-5 text-blue-400" />
-                  <span>Export & Industry Approved</span>
-                </div>
-              </div>
-            </div>
-
-            {/* IMAGE */}
-            <div className="rounded-2xl overflow-hidden shadow-lg aspect-[16/10] max-h-[320px] w-full">
-              <img
+        <PageHero
+          eyebrow="🔬 Textile Auxiliaries"
+          title="High-Performance Textile Auxiliaries"
+          description="Complete range of textile auxiliaries engineered to improve dyeing, printing, and finishing efficiency across cotton, blended, and specialty fabrics."
+          badges={[
+            { icon: <Star className="h-4 w-4 fill-current" />, label: "Complete Processing Support" },
+            { icon: <Award className="h-4 w-4" />, label: "Export & Industry Approved" },
+          ]}
+          image={
+            <div className="rounded-2xl overflow-hidden shadow-professional aspect-[16/10] max-h-[360px] w-full">
+              <OptimizedImage
                 src={chemicalLab}
                 alt="Textile auxiliaries laboratory testing and quality control"
                 className="w-full h-full object-cover"
+                width={800}
+                height={500}
               />
             </div>
+          }
+        />
 
-          </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
-          {/* SEO + FEATURES GLASS */}
-          <div className="mb-16 p-10 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] text-center">
-
-            <div className="max-w-4xl mx-auto mb-14 space-y-6">
-              <p className="text-white/95 text-lg leading-relaxed">
-                BellChem supplies textile auxiliaries designed to enhance process efficiency,
-                shade consistency, and fabric performance across dyeing, printing, and finishing
-                operations. Our auxiliaries support improved leveling, fastness, dispersion,
-                and overall production reliability.
-              </p>
-
-              <p className="text-white/90 text-lg leading-relaxed">
-                We provide bulk supply, technical guidance, and formulation support for textile
-                processors worldwide, ensuring consistent quality and compliance with
-                international standards.
-              </p>
-            </div>
-
-            <h2 className="text-3xl font-bold mb-10 text-white">
-              Key Features
-            </h2>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {features.map((feature, i) => (
-                <div
-                  key={i}
-                  className="flex items-center justify-center space-x-4 p-5 bg-black/30 backdrop-blur-sm rounded-xl border border-white/15"
-                >
-                  <CheckCircle className="h-6 w-6 text-green-400" />
-                  <span className="text-white/95">
-                    {feature}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-          </div>
+          <FeatureGrid
+            intro={[
+              "BellChem supplies textile auxiliaries designed to enhance process efficiency, shade consistency, and fabric performance across dyeing, printing, and finishing operations. Our auxiliaries support improved leveling, fastness, dispersion, and overall production reliability.",
+              "We provide bulk supply, technical guidance, and formulation support for textile processors worldwide, ensuring consistent quality and compliance with international standards."
+            ]}
+            features={features}
+          />
 
           {/* PRODUCTS */}
           <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-8">
-              Textile Auxiliary Product Range
-            </h2>
+            <Reveal>
+              <h2 className="text-2xl font-bold mb-8 text-foreground">
+                Textile Auxiliary Product Range
+              </h2>
+            </Reveal>
 
             <div className="grid md:grid-cols-2 gap-8">
               {products.map((product, i) => (
-                <Card key={i}>
-                  <CardHeader>
-                    <CardTitle>{product.name}</CardTitle>
-                    <CardDescription>{product.description}</CardDescription>
-                  </CardHeader>
+                <Reveal key={i} index={i}>
+                  <Card className="h-full hover:shadow-elegant transition-shadow duration-300">
+                    <CardHeader>
+                      <CardTitle>{product.name}</CardTitle>
+                      <CardDescription>{product.description}</CardDescription>
+                    </CardHeader>
 
-                  <CardContent className="space-y-4">
-                    <div>
-                      <h3 className="font-semibold mb-2">Specifications</h3>
-                      <ul className="space-y-1 text-sm">
+                    <CardContent className="space-y-4">
+                      <ul className="space-y-1 text-sm text-muted-foreground">
                         {product.specifications.map((spec, j) => (
                           <li key={j}>• {spec}</li>
                         ))}
                       </ul>
-                    </div>
 
-                    <div>
-                      <h3 className="font-semibold mb-2">Applications</h3>
                       <div className="flex flex-wrap gap-2">
                         {product.applications.map((app, j) => (
-                          <span
-                            key={j}
-                            className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
-                          >
+                          <span key={j} className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">
                             {app}
                           </span>
                         ))}
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </Reveal>
               ))}
             </div>
           </div>
 
           {/* CTA */}
-          <div className="bg-blue-50 rounded-2xl p-8 text-center">
-            <h2 className="text-2xl font-bold mb-4">
+          <Reveal className="bg-gradient-hero rounded-2xl p-10 text-center">
+            <h2 className="text-2xl font-bold mb-4 text-white">
               Need Custom Textile Auxiliary Solutions?
             </h2>
 
-            <p className="mb-6">
-              Our technical team supports formulation, optimization, and bulk supply
-              for textile processors worldwide.
+            <p className="mb-6 text-white/85 max-w-xl mx-auto">
+              Our technical team supports formulation, optimization, and bulk supply for textile processors worldwide.
             </p>
 
             <Link to="/contact">
-              <Button size="lg">Contact Us</Button>
+              <Button size="lg" className="bg-white text-primary hover:bg-white/90 shadow-professional transition-transform hover:scale-[1.03]">
+                Contact Us
+              </Button>
             </Link>
-          </div>
+          </Reveal>
 
         </div>
       </main>

@@ -1,131 +1,95 @@
 import manufacturingFacility from "@/assets/manufacturing-facility.jpg";
+import PageHero from "@/components/PageHero";
+import Reveal from "@/components/Reveal";
+import { Building2 } from "lucide-react";
+
+const pillars = [
+  {
+    title: "Quality Excellence",
+    description:
+      "Rigorous multi-stage quality checks with verified supplier networks. Consistent sourcing standards to ensure purity, performance, and batch reliability. Compliance with global documentation and export requirements.",
+  },
+  {
+    title: "Environmental Responsibility",
+    description:
+      "Eco-friendly production methods with zero liquid discharge. Commitment to minimizing environmental impact across our supply chain.",
+  },
+  {
+    title: "Innovation Focus",
+    description:
+      "Customer-centric solutions tailored to textile, chemical, and industrial segments. Continuous expansion of our product portfolio based on industry needs.",
+  },
+];
+
+const stats = [
+  { value: "1000+", label: "Products" },
+  { value: "500+", label: "Satisfied Clients" },
+  { value: "99%", label: "Quality Assurance" },
+  { value: "40+", label: "Years Experience" },
+];
 
 const About = () => {
   return (
-    <section id="about" className="py-20 lg:py-28">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* TOP HERO SECTION WITH GLASS CARD */}
-        <div className="text-center mb-16">
-          <div
-            className="
-              mx-auto w-fit text-center space-y-4 
-              px-8 py-6 
-              bg-black/30 backdrop-blur-md 
-              rounded-2xl border border-white/20 
-              shadow-[0_0_25px_rgba(0,0,0,0.3)]
-            "
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
-              About <span className="bg-gradient-primary bg-clip-text text-transparent">Bell Chem</span>
-            </h2>
+    <>
+      <PageHero
+        eyebrow="Since 1984"
+        title="About Bell Chem"
+        description="Established in 1984, Bell Chem has been India's trusted partner in dyes and chemical supplying for over four decades, delivering excellence through innovation and quality."
+        badges={[{ icon: <Building2 className="h-4 w-4" />, label: "An A.K. Jain & Co. Enterprise" }]}
+      />
 
-            <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
-              Established in 1984, Bell Chem has been India's trusted partner in dyes and chemical supplying  
-              for over four decades, delivering excellence through innovation and quality.
-            </p>
-          </div>
-        </div>
+      <section id="about" className="py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        
-        {/* MAIN CONTENT SECTION */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-
-          {/* ⭐ ENTIRE LEFT COLUMN NOW A SINGLE GLASS CARD */}
-          <div
-            className="
-              bg-black/30 backdrop-blur-md 
-              rounded-2xl border border-white/20 
-              shadow-[0_0_25px_rgba(0,0,0,0.3)]
-              p-8 space-y-8
-            "
-          >
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-white">Our Legacy</h3>
-
-              <p className="text-lg text-white leading-relaxed">
-                From a modest beginning to becoming one of India's leading chemical supplier and exporter, 
-                Bell Chem has consistently evolved with changing industry demands while maintaining 
-                our commitment to quality and sustainability.
-              </p>
-              
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+            <Reveal className="bg-white rounded-2xl border border-border shadow-soft p-8 space-y-8">
               <div className="space-y-6">
+                <h2 className="text-2xl font-semibold text-foreground">Our Legacy</h2>
 
-                {/* Quality Excellence */}
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-3"></div>
-                  <div>
-                    <h4 className="font-semibold text-white">Quality Excellence</h4>
-                    <p className="text-white/90">
-                      Rigorous multi-stage quality checks with verified supplier networks<br/>
-                      Consistent sourcing standards to ensure purity, performance, and batch reliability<br/>
-                      Compliance with global documentation and export requirements
-                    </p>
-                  </div> 
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  From a modest beginning to becoming one of India's leading chemical supplier and exporter,
+                  Bell Chem has consistently evolved with changing industry demands while maintaining
+                  our commitment to quality and sustainability.
+                </p>
+
+                <div className="space-y-6">
+                  {pillars.map((pillar) => (
+                    <div key={pillar.title} className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-3 shrink-0" />
+                      <div>
+                        <h3 className="font-semibold text-foreground">{pillar.title}</h3>
+                        <p className="text-muted-foreground">{pillar.description}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-
-                {/* Environmental Responsibility */}
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-3"></div>
-                  <div>
-                    <h4 className="font-semibold text-white">Environmental Responsibility</h4>
-                    <p className="text-white/90">
-                      Eco-friendly production methods with zero liquid discharge<br/>
-                      Commitment to minimizing environmental impact across our supply chain
-                    </p>
-                  </div>
-                </div>
-
-                {/* Innovation Focus */}
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-3"></div>
-                  <div>
-                    <h4 className="font-semibold text-white">Innovation Focus</h4>
-                    <p className="text-white/90">
-                      Customer-centric solutions tailored to textile, chemical, and industrial segments<br/>
-                      Continuous expansion of our product portfolio based on industry needs
-                    </p>
-                  </div>
-                </div>
-
               </div>
-            </div>
+            </Reveal>
+
+            <Reveal delay={120} animation="scale" className="relative">
+              <div className="rounded-2xl overflow-hidden shadow-professional">
+                <img
+                  src={manufacturingFacility}
+                  alt="Bell Chem modern manufacturing facility with advanced equipment"
+                  className="w-full h-[400px] object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </Reveal>
           </div>
 
-          {/* IMAGE COLUMN (unchanged) */}
-          <div className="relative">
-            <div className="rounded-2xl overflow-hidden shadow-professional">
-              <img 
-                src={manufacturingFacility}
-                alt="Bell Chem modern manufacturing facility with advanced equipment"
-                className="w-full h-[400px] object-cover"
-              />
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, i) => (
+              <Reveal key={stat.label} index={i} className="text-center p-6 bg-white rounded-xl shadow-soft border border-border hover:shadow-elegant hover:-translate-y-1 transition-all duration-300">
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.value}</div>
+                <div className="text-muted-foreground font-medium">{stat.label}</div>
+              </Reveal>
+            ))}
           </div>
+
         </div>
-
-        {/* Statistics Section (unchanged) */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="text-center p-6 bg-white rounded-xl shadow-soft">
-            <div className="text-3xl md:text-4xl font-bold text-primary mb-2">1000+</div>
-            <div className="text-gray-600 font-medium">Products</div>
-          </div>
-          <div className="text-center p-6 bg-white rounded-xl shadow-soft">
-            <div className="text-3xl md:text-4xl font-bold text-primary mb-2">500+</div>
-            <div className="text-gray-600 font-medium">Satisfied Clients</div>
-          </div>
-          <div className="text-center p-6 bg-white rounded-xl shadow-soft">
-            <div className="text-3xl md:text-4xl font-bold text-primary mb-2">99%</div>
-            <div className="text-gray-600 font-medium">Quality Assurance</div>
-          </div>
-          <div className="text-center p-6 bg-white rounded-xl shadow-soft">
-            <div className="text-3xl md:text-4xl font-bold text-primary mb-2">40+</div>
-            <div className="text-gray-600 font-medium">Years Experience</div>
-          </div>
-        </div>
-
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

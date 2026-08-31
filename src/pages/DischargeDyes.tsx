@@ -1,9 +1,13 @@
 import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHero from "@/components/PageHero";
+import FeatureGrid from "@/components/FeatureGrid";
+import Reveal from "@/components/Reveal";
+import OptimizedImage from "@/components/OptimizedImage";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, CheckCircle, Scissors, Award } from "lucide-react";
+import { ArrowLeft, Scissors, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 import dischargeImage from "@/assets/DischargeDyes.jpg";
 
@@ -116,151 +120,107 @@ export default function DischargeDyes() {
         title="Discharge Dyes Supplier in India | BellChem"
         description="BellChem (A. K. Jain & Co.) supplies high-performance discharge dyes for textile printing with sharp discharge effects and consistent results on dark fabrics."
         canonical="https://www.bellchem.in/dischargedyes"
+        breadcrumbs={[
+          { name: "Home", url: "https://www.bellchem.in/" },
+          { name: "Products", url: "https://www.bellchem.in/products" },
+          { name: "Discharge Dyes", url: "https://www.bellchem.in/dischargedyes" }
+        ]}
       />
 
       <Header />
 
       <main className="min-h-screen">
-
-        {/* TOP BAR */}
-        <div className="bg-white shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center space-x-4">
+        <div className="bg-white border-b border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <Link to="/products">
-              <Button variant="ghost" size="sm" className="flex items-center space-x-2">
+              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-muted-foreground hover:text-primary">
                 <ArrowLeft className="h-4 w-4" />
                 <span>Back to Products</span>
               </Button>
             </Link>
-
-            <div className="h-6 w-px bg-gray-300" />
-
-            <h1 className="text-2xl font-bold text-gray-900">
-              Discharge Dyes Supplier in India
-            </h1>
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-          {/* HERO */}
-          <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
-
-            <div className="p-6 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] space-y-6">
-              <div className="flex items-center space-x-2">
-                <Scissors className="h-8 w-8 text-green-300" />
-                <h2 className="text-3xl font-bold text-white">
-                  High-Performance Discharge Dyes
-                </h2>
-              </div>
-
-              <p className="text-xl text-white leading-relaxed">
-                Premium discharge dyes engineered for bright, clean color replacement
-                on dark-dyed cotton fabrics with soft, breathable finishes.
-              </p>
-
-              <div className="space-y-3 text-white">
-                <div className="flex items-center space-x-2">
-                  <Award className="h-5 w-5 text-blue-400" />
-                  <span>Industry & Export Approved</span>
-                </div>
-
-                <div className="flex items-center space-x-2">
-                  <Scissors className="h-5 w-5 text-green-300" />
-                  <span>Sharp, Clean Discharge Effect</span>
-                </div>
-              </div>
-            </div>
-
-            {/* IMAGE */}
-            <div className="rounded-2xl overflow-hidden shadow-lg aspect-[16/10] max-h-[320px] w-full">
-              <img
+        <PageHero
+          eyebrow="Textile Dyes"
+          title="High-Performance Discharge Dyes"
+          description="Premium discharge dyes engineered for bright, clean color replacement on dark-dyed cotton fabrics with soft, breathable finishes."
+          badges={[
+            { icon: <Award className="h-4 w-4" />, label: "Industry & Export Approved" },
+            { icon: <Scissors className="h-4 w-4" />, label: "Sharp, Clean Discharge Effect" },
+          ]}
+          image={
+            <div className="rounded-2xl overflow-hidden shadow-professional aspect-[16/10] max-h-[360px] w-full">
+              <OptimizedImage
                 src={dischargeImage}
                 alt="Discharge dyes for textile printing"
                 className="w-full h-full object-cover"
+                width={800}
+                height={500}
               />
             </div>
+          }
+        />
 
-          </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
-          {/* SEO + FEATURES */}
-          <div className="mb-16 p-10 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(0,0,0,0.3)] text-center">
-
-            <div className="max-w-4xl mx-auto mb-14 space-y-6">
-              <p className="text-white/95 text-lg leading-relaxed">
-                Discharge dyes are specialized textile dyes used to remove or replace
-                existing colors on dark fabrics, enabling bright designs with soft
-                hand-feel. BellChem supplies high-performance discharge dyes engineered
-                for sharp discharge, consistent penetration, and clean tonal results.
-              </p>
-
-              <p className="text-white/90 text-lg leading-relaxed">
-                Our discharge dye range is widely adopted by textile printers and garment
-                manufacturers seeking vibrant shades, eco-conscious formulations, and
-                dependable batch-to-batch consistency.
-              </p>
-            </div>
-
-            <h2 className="text-3xl font-bold mb-10 text-white">
-              Key Features
-            </h2>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {features.map((feature, i) => (
-                <div
-                  key={i}
-                  className="flex items-center justify-center space-x-4 p-5 bg-black/30 backdrop-blur-sm rounded-xl border border-white/15"
-                >
-                  <CheckCircle className="h-6 w-6 text-green-400" />
-                  <span className="text-white/95">{feature}</span>
-                </div>
-              ))}
-            </div>
-
-          </div>
+          <FeatureGrid
+            intro={[
+              "Discharge dyes are specialized textile dyes used to remove or replace existing colors on dark fabrics, enabling bright designs with soft hand-feel. BellChem supplies high-performance discharge dyes engineered for sharp discharge, consistent penetration, and clean tonal results.",
+              "Our discharge dye range is widely adopted by textile printers and garment manufacturers seeking vibrant shades, eco-conscious formulations, and dependable batch-to-batch consistency."
+            ]}
+            features={features}
+          />
 
           {/* PRODUCTS */}
           <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-8">
-              Discharge Dye Product Range
-            </h2>
+            <Reveal>
+              <h2 className="text-2xl font-bold mb-8 text-foreground">
+                Discharge Dye Product Range
+              </h2>
+            </Reveal>
 
             <div className="grid md:grid-cols-2 gap-8">
               {dischargeProducts.map((product, i) => (
-                <Card key={i}>
-                  <CardHeader>
-                    <CardTitle>{product.name}</CardTitle>
-                    <CardDescription>{product.description}</CardDescription>
-                  </CardHeader>
+                <Reveal key={i} index={i}>
+                  <Card className="h-full hover:shadow-elegant transition-shadow duration-300">
+                    <CardHeader>
+                      <CardTitle>{product.name}</CardTitle>
+                      <CardDescription>{product.description}</CardDescription>
+                    </CardHeader>
 
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2">
-                      {product.applications.map((app, j) => (
-                        <span key={j} className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">
-                          {app}
-                        </span>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                    <CardContent>
+                      <div className="flex flex-wrap gap-2">
+                        {product.applications.map((app, j) => (
+                          <span key={j} className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">
+                            {app}
+                          </span>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Reveal>
               ))}
             </div>
           </div>
 
           {/* CTA */}
-          <div className="bg-blue-50 rounded-2xl p-8 text-center">
-            <h2 className="text-2xl font-bold mb-4">
+          <Reveal className="bg-gradient-hero rounded-2xl p-10 text-center">
+            <h2 className="text-2xl font-bold mb-4 text-white">
               Need Custom Discharge Dye Solutions?
             </h2>
 
-            <p className="mb-6">
+            <p className="mb-6 text-white/85 max-w-xl mx-auto">
               Our technical team supports formulation, shade matching,
               and bulk supply for textile printers worldwide.
             </p>
 
             <Link to="/contact">
-              <Button size="lg">Contact Us</Button>
+              <Button size="lg" className="bg-white text-primary hover:bg-white/90 shadow-professional transition-transform hover:scale-[1.03]">
+                Contact Us
+              </Button>
             </Link>
-          </div>
+          </Reveal>
 
         </div>
       </main>

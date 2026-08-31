@@ -1,5 +1,10 @@
 import { Helmet } from "react-helmet-async";
 
+interface Breadcrumb {
+  name: string;
+  url: string;
+}
+
 interface SEOProps {
   title?: string;
   description?: string;
@@ -7,15 +12,21 @@ interface SEOProps {
   ogImage?: string;
   ogType?: string;
   structuredData?: object;
+  /** Exclude this page from search indexing (forms, 404s, thank-you pages) */
+  noIndex?: boolean;
+  /** Renders a BreadcrumbList JSON-LD block, e.g. [{name:"Products",url:"/products"},{name:"Acid Dyes",url:"/aciddyes"}] */
+  breadcrumbs?: Breadcrumb[];
 }
 
 const SEO = ({
   title = "Industrial Dyes & Chemical Supplier | BellChem India",
   description = "BellChem (A. K. Jain & Co.) is a leading B2B supplier and exporter of industrial dyes, pigments, textile chemicals, and specialty chemicals. ISO-certified, REACH-compliant, serving global manufacturers since 1984.",
   canonical = "https://www.bellchem.in",
-  ogImage = "https://www.bellchem.in/og-image.jpg",
+  ogImage = "https://www.bellchem.in/og-image.png",
   ogType = "website",
-  structuredData
+  structuredData,
+  noIndex = false,
+  breadcrumbs
 }: SEOProps) => {
 
   const fullTitle = title.includes("BellChem")
@@ -79,6 +90,20 @@ const SEO = ({
     ]
   };
 
+  const breadcrumbSchema =
+    breadcrumbs && breadcrumbs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: breadcrumbs.map((crumb, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: crumb.name,
+            item: crumb.url
+          }))
+        }
+      : null;
+
   return (
     <Helmet>
       {/* CORE */}
@@ -86,7 +111,11 @@ const SEO = ({
       <meta name="description" content={description} />
       <meta
         name="robots"
-        content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        content={
+          noIndex
+            ? "noindex, nofollow"
+            : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        }
       />
       <meta name="author" content="A. K. Jain & Co. (BellChem)" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -123,6 +152,12 @@ const SEO = ({
       <script type="application/ld+json">
         {JSON.stringify(structuredData || defaultStructuredData)}
       </script>
+
+      {breadcrumbSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+      )}
     </Helmet>
   );
 };

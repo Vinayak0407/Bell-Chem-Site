@@ -16,18 +16,18 @@ import {
   AlertCircle,
   Calculator,
   Clock,
-  Package,
-  Users,
-  ArrowLeft
 } from "lucide-react";
-import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import PageHero from "@/components/PageHero";
+import Reveal from "@/components/Reveal";
 
 const QuoteRequest = () => {
   const { form, onSubmit, isSubmitting, submitStatus } = useQuoteForm();
 
   return (
-    <div className="min-h-screen">
+    <>
       {/* 🚫 NOINDEX — QUOTE PAGES SHOULD NOT RANK */}
       <SEO
         title="Request a Quote | Custom B2B Chemical & Dye Supply – BellChem"
@@ -54,59 +54,27 @@ const QuoteRequest = () => {
         }}
       />
 
-      {/* HEADER */}
-      <div className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center space-x-4">
-            <Link to="/">
-              <Button variant="ghost" size="sm" className="flex items-center space-x-2">
-                <ArrowLeft className="h-4 w-4" />
-                <span>Back to Home</span>
-              </Button>
-            </Link>
-            <div className="h-6 w-px bg-gray-300" />
-            <h1 className="text-2xl font-bold text-gray-900">
-              Request a Custom B2B Quote
-            </h1>
-          </div>
-        </div>
-      </div>
+      <Header />
+
+      <PageHero
+        eyebrow="24-hour response"
+        title="Custom B2B Quote Request"
+        description="Submit your bulk and export requirements for dyes and chemicals. We provide tailored quotations based on application, specifications, and long-term supply needs."
+        badges={[
+          { icon: <Calculator className="h-4 w-4" />, label: "Tailored Pricing" },
+          { icon: <Clock className="h-4 w-4" />, label: "24-Hour Turnaround" },
+        ]}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* HERO */}
-        <div className="text-center mb-12">
-          <div
-            className="
-              mx-auto w-fit text-center space-y-4
-              px-8 py-6
-              bg-black/30 backdrop-blur-md
-              rounded-2xl border border-white/20
-              shadow-[0_0_25px_rgba(0,0,0,0.3)]
-            "
-          >
-            <div className="flex items-center justify-center space-x-2">
-              <Calculator className="h-8 w-8 text-blue-300" />
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
-                Custom B2B Quote Request
-              </h2>
-            </div>
-
-            <p className="text-lg text-white max-w-3xl">
-              Submit your bulk and export requirements for dyes and chemicals.
-              We provide tailored quotations based on application, specifications,
-              and long-term supply needs.
-            </p>
-
-            <p className="text-sm text-white/80">
-              Serving manufacturers & importers across India, Middle East, Europe,
-              Southeast Asia, Africa & the Americas.
-            </p>
-          </div>
-        </div>
+        <p className="text-sm text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+          Serving manufacturers & importers across India, Middle East, Europe,
+          Southeast Asia, Africa & the Americas.
+        </p>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* FORM */}
-          <div className="lg:col-span-2">
+          <Reveal className="lg:col-span-2">
             <Card className="shadow-lg">
               <CardHeader>
                 <CardTitle className="text-2xl">Quote Request Form</CardTitle>
@@ -163,39 +131,45 @@ const QuoteRequest = () => {
                 </form>
               </CardContent>
             </Card>
-          </div>
+          </Reveal>
 
           {/* SIDEBAR */}
           <div className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Clock className="h-5 w-5 text-blue-600" /> Response Time
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-gray-600">
-                Typically within 24 business hours.
-              </CardContent>
-            </Card>
+            <Reveal index={0}>
+              <Card className="hover:shadow-elegant transition-shadow duration-300">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Clock className="h-5 w-5 text-primary" /> Response Time
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-sm text-muted-foreground">
+                  Typically within 24 business hours.
+                </CardContent>
+              </Card>
+            </Reveal>
 
-            <Card className="bg-blue-50 border-blue-200">
-              <CardContent className="p-6">
-                <h3 className="font-semibold mb-2 text-blue-900">
-                  Need Immediate Assistance?
-                </h3>
-                <p className="text-sm text-blue-800">Contact us directly</p>
-                <p className="font-medium text-blue-900 mt-2">
-                  +91-9999776385
-                </p>
-                <p className="text-sm text-blue-700">
-                  vinayak@bellchem.in
-                </p>
-              </CardContent>
-            </Card>
+            <Reveal index={1}>
+              <Card className="bg-primary/5 border-primary/20">
+                <CardContent className="p-6">
+                  <h3 className="font-semibold mb-2 text-primary">
+                    Need Immediate Assistance?
+                  </h3>
+                  <p className="text-sm text-foreground/80">Contact us directly</p>
+                  <p className="font-medium text-primary mt-2">
+                    +91-9999776385
+                  </p>
+                  <p className="text-sm text-foreground/70">
+                    vinayak@bellchem.in
+                  </p>
+                </CardContent>
+              </Card>
+            </Reveal>
           </div>
         </div>
       </div>
-    </div>
+
+      <Footer />
+    </>
   );
 };
 

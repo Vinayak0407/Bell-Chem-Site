@@ -1,6 +1,13 @@
+import SEO from "@/components/SEO";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import PageHero from "@/components/PageHero";
+import FeatureGrid from "@/components/FeatureGrid";
+import Reveal from "@/components/Reveal";
+import OptimizedImage from "@/components/OptimizedImage";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, CheckCircle, Star, Award } from "lucide-react";
+import { ArrowLeft, Star, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 import textileDyes from "@/assets/textile-dyes.jpg";
 
@@ -42,128 +49,123 @@ const DisperseDyes = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Header */}
-      <div className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center space-x-4">
+    <>
+      <SEO
+        title="Disperse Dyes Supplier in India"
+        description="BellChem (A. K. Jain & Co.) supplies premium disperse dyes for polyester and synthetic fibers with superior color strength, migration resistance, and high-temperature performance."
+        canonical="https://www.bellchem.in/dispersedyes"
+        breadcrumbs={[
+          { name: "Home", url: "https://www.bellchem.in/" },
+          { name: "Products", url: "https://www.bellchem.in/products" },
+          { name: "Disperse Dyes", url: "https://www.bellchem.in/dispersedyes" }
+        ]}
+      />
+
+      <Header />
+
+      <main className="min-h-screen">
+        <div className="bg-white border-b border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <Link to="/products">
-              <Button variant="ghost" size="sm" className="flex items-center space-x-2">
+              <Button variant="ghost" size="sm" className="flex items-center space-x-2 text-muted-foreground hover:text-primary">
                 <ArrowLeft className="h-4 w-4" />
                 <span>Back to Products</span>
               </Button>
             </Link>
-            <div className="h-6 w-px bg-gray-300" />
-            <h1 className="text-2xl font-bold text-gray-900">Disperse Dyes</h1>
           </div>
         </div>
-      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Hero Section */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="text-3xl">🌈</div>
-              <h2 className="text-3xl font-bold text-gray-900">Disperse Dyes</h2>
-            </div>
-            <p className="text-lg text-gray-600 mb-6">
-              Premium disperse dyes for polyester and synthetic fibers with superior color strength 
-              and migration resistance. Our disperse dyes are engineered for high-temperature 
-              applications and excellent performance.
-            </p>
-            <div className="flex items-center space-x-4 mb-6">
-              <div className="flex items-center space-x-1">
-                <Star className="h-5 w-5 text-yellow-400 fill-current" />
-                <span className="text-sm font-medium">Premium Quality</span>
-              </div>
-              <div className="flex items-center space-x-1">
-                <Award className="h-5 w-5 text-blue-500" />
-                <span className="text-sm font-medium">ISO Certified</span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="relative">
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img 
+        <PageHero
+          eyebrow="Textile Dyes"
+          title="Premium Disperse Dyes"
+          description="Premium disperse dyes for polyester and synthetic fibers with superior color strength and migration resistance. Our disperse dyes are engineered for high-temperature applications and excellent performance."
+          badges={[
+            { icon: <Star className="h-4 w-4 fill-current" />, label: "Premium Quality" },
+            { icon: <Award className="h-4 w-4" />, label: "ISO Certified" },
+          ]}
+          image={
+            <div className="rounded-2xl overflow-hidden shadow-professional aspect-[16/10] max-h-[360px] w-full">
+              <OptimizedImage
                 src={textileDyes}
                 alt="Disperse dyes in various colors"
-                className="w-full h-[400px] object-cover"
+                className="w-full h-full object-cover"
+                width={800}
+                height={500}
               />
             </div>
-          </div>
-        </div>
+          }
+        />
 
-        {/* Features */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">Key Features</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature, index) => (
-              <div key={index} className="flex items-center space-x-3 p-4 bg-white rounded-lg shadow-sm">
-                <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700">{feature}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
-        {/* Products */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">Our Disperse Dye Products</h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            {products.map((product, index) => (
-              <Card key={index} className="shadow-sm hover:shadow-md transition-shadow">
-                <CardHeader>
-                  <CardTitle className="text-xl text-gray-900">{product.name}</CardTitle>
-                  <CardDescription className="text-gray-600">
-                    {product.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Specifications:</h4>
-                    <ul className="space-y-1">
-                      {product.specifications.map((spec, specIndex) => (
-                        <li key={specIndex} className="text-sm text-gray-600 flex items-center space-x-2">
-                          <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-                          <span>{spec}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Applications:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {product.applications.map((app, appIndex) => (
-                        <span key={appIndex} className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">
-                          {app}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+          <FeatureGrid features={features} />
 
-        {/* Contact CTA */}
-        <div className="bg-blue-50 rounded-2xl p-8 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Need Custom Disperse Dyes?</h3>
-          <p className="text-gray-600 mb-6">
-            Contact our technical team for custom formulations and technical support.
-          </p>
-          <Link to="/contact">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-              Contact Us
-            </Button>
-          </Link>
+          {/* PRODUCTS */}
+          <div className="mb-16">
+            <Reveal>
+              <h2 className="text-2xl font-bold mb-8 text-foreground">
+                Our Disperse Dye Products
+              </h2>
+            </Reveal>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {products.map((product, index) => (
+                <Reveal key={index} index={index}>
+                  <Card className="h-full hover:shadow-elegant transition-shadow duration-300">
+                    <CardHeader>
+                      <CardTitle>{product.name}</CardTitle>
+                      <CardDescription>
+                        {product.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-2">Specifications:</h4>
+                        <ul className="space-y-1">
+                          {product.specifications.map((spec, specIndex) => (
+                            <li key={specIndex} className="text-sm text-muted-foreground flex items-center space-x-2">
+                              <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                              <span>{spec}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-2">Applications:</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {product.applications.map((app, appIndex) => (
+                            <span key={appIndex} className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">
+                              {app}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA */}
+          <Reveal className="bg-gradient-hero rounded-2xl p-10 text-center">
+            <h2 className="text-2xl font-bold mb-4 text-white">Need Custom Disperse Dyes?</h2>
+            <p className="mb-6 text-white/85 max-w-xl mx-auto">
+              Contact our technical team for custom formulations and technical support.
+            </p>
+            <Link to="/contact">
+              <Button size="lg" className="bg-white text-primary hover:bg-white/90 shadow-professional transition-transform hover:scale-[1.03]">
+                Contact Us
+              </Button>
+            </Link>
+          </Reveal>
+
         </div>
-      </div>
-    </div>
+      </main>
+
+      <Footer />
+    </>
   );
 };
 
 export default DisperseDyes;
-
