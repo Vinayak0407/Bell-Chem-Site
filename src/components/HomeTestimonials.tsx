@@ -54,7 +54,7 @@ const HomeTestimonials = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {testimonials.map((testimonial, index) => (
             <Reveal key={index} index={index} className="h-full">
-              <Card className="group h-full border-0 shadow-soft hover:shadow-professional transition-all duration-300 hover:-translate-y-2 bg-card">
+              <Card className="card-shimmer group h-full border-0 shadow-soft hover:shadow-professional transition-all duration-300 hover:-translate-y-2 bg-card">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="text-4xl mr-3">{testimonial.image}</div>

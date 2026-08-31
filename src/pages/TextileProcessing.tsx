@@ -142,7 +142,7 @@ export default function TextileProcessingPage() {
             <div className="grid md:grid-cols-2 gap-8">
               {products.map((product, i) => (
                 <Reveal key={i} index={i}>
-                  <Card className="h-full hover:shadow-elegant transition-shadow duration-300">
+                  <Card className="card-shimmer h-full hover:shadow-elegant transition-shadow duration-300">
                     <CardHeader>
                       <CardTitle>{product.name}</CardTitle>
                       <CardDescription>{product.description}</CardDescription>

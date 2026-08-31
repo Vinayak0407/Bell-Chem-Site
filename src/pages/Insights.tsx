@@ -35,7 +35,7 @@ const InsightsPage = () => {
             {insightPosts.map((post, i) => (
               <Reveal key={post.slug} index={i} className="h-full">
                 <Link to={`/insights/${post.slug}`}>
-                  <Card className="group h-full hover:shadow-elegant hover:-translate-y-1 transition-all duration-300">
+                  <Card className="card-shimmer group h-full hover:shadow-elegant hover:-translate-y-1 transition-all duration-300">
                     <CardContent className="p-8 space-y-4">
                       <div className="flex items-center gap-3 text-sm text-muted-foreground">
                         <span className="px-3 py-1 rounded-full bg-primary/10 text-primary font-medium">

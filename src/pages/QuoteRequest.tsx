@@ -136,7 +136,7 @@ const QuoteRequest = () => {
           {/* SIDEBAR */}
           <div className="space-y-6">
             <Reveal index={0}>
-              <Card className="hover:shadow-elegant transition-shadow duration-300">
+              <Card className="card-shimmer hover:shadow-elegant transition-shadow duration-300">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Clock className="h-5 w-5 text-primary" /> Response Time

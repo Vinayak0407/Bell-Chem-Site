@@ -43,7 +43,7 @@ const CategoryGrid = ({
     {items.map((item) => (
       <div key={item.slug} className="h-full animate-in fade-in zoom-in-95 duration-300">
         <Link to={`/${item.slug}`}>
-          <Card className="group h-full border-0 shadow-soft hover:shadow-professional transition-all duration-300 hover:-translate-y-2 bg-card cursor-pointer">
+          <Card className="card-shimmer group h-full border-0 shadow-soft hover:shadow-professional transition-all duration-300 hover:-translate-y-2 bg-card cursor-pointer">
             <CardHeader className="text-center pb-4">
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{item.icon}</div>
               <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors">

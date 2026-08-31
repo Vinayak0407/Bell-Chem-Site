@@ -29,7 +29,7 @@ const FeatureGrid = ({ title = "Key Features", intro, features }: FeatureGridPro
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {features.map((feature, i) => (
           <Reveal key={i} index={i} className="h-full">
-            <div className="flex items-center gap-3 p-5 h-full bg-card rounded-xl border border-border shadow-soft hover:shadow-elegant hover:-translate-y-0.5 transition-all duration-300">
+            <div className="card-shimmer flex items-center gap-3 p-5 h-full bg-card rounded-xl border border-border shadow-soft hover:shadow-elegant hover:-translate-y-0.5 transition-all duration-300 animate-panel-glow">
               <CheckCircle className="h-5 w-5 text-primary shrink-0" />
               <span className="text-foreground/90">{feature}</span>
             </div>

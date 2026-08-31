@@ -174,7 +174,7 @@ const Contact = () => {
           {/* CONTACT DETAILS */}
           <div className="space-y-6">
             <Reveal index={0}>
-              <Card className="shadow-soft hover:shadow-elegant transition-shadow duration-300">
+              <Card className="card-shimmer shadow-soft hover:shadow-elegant transition-shadow duration-300">
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-2">📧 Email</h3>
                   <p className="text-muted-foreground">vinayak@bellchem.in</p>
@@ -184,7 +184,7 @@ const Contact = () => {
             </Reveal>
 
             <Reveal index={1}>
-              <Card className="shadow-soft hover:shadow-elegant transition-shadow duration-300">
+              <Card className="card-shimmer shadow-soft hover:shadow-elegant transition-shadow duration-300">
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-2">📞 Phone / WhatsApp</h3>
                   <p className="text-muted-foreground">+91-9999776385</p>
@@ -194,7 +194,7 @@ const Contact = () => {
             </Reveal>
 
             <Reveal index={2}>
-              <Card className="shadow-soft hover:shadow-elegant transition-shadow duration-300">
+              <Card className="card-shimmer shadow-soft hover:shadow-elegant transition-shadow duration-300">
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-2">📍 Office</h3>
                   <p className="text-muted-foreground">
@@ -208,7 +208,7 @@ const Contact = () => {
             </Reveal>
 
             <Reveal index={3}>
-              <Card className="shadow-soft hover:shadow-elegant transition-shadow duration-300">
+              <Card className="card-shimmer shadow-soft hover:shadow-elegant transition-shadow duration-300">
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-2">🕒 Business Hours</h3>
                   <p className="text-muted-foreground text-sm">

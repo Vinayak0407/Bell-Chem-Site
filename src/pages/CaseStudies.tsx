@@ -34,7 +34,7 @@ const CaseStudiesPage = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {caseStudies.map((study, i) => (
               <Reveal key={study.slug} index={i} className="h-full">
-                <Card className="h-full hover:shadow-elegant transition-shadow duration-300">
+                <Card className="card-shimmer h-full hover:shadow-elegant transition-shadow duration-300">
                   <CardContent className="p-8 space-y-4">
                     <div className="flex items-center gap-3">
                       <span className="text-3xl">{study.icon}</span>

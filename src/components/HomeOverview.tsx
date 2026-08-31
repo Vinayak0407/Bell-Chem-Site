@@ -64,7 +64,7 @@ const HomeOverview = () => {
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {overviewSections.map((section, index) => (
             <Reveal key={index} index={index} className="h-full">
-              <Card className="group h-full border-0 shadow-soft hover:shadow-professional transition-all duration-300 hover:-translate-y-2 bg-card">
+              <Card className="card-shimmer group h-full border-0 shadow-soft hover:shadow-professional transition-all duration-300 hover:-translate-y-2 bg-card">
                 <CardHeader className="text-center pb-4">
                   <div className="flex justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
                     {section.icon}

@@ -79,7 +79,7 @@ const Index = () => {
               {caseStudies.slice(0, 3).map((study, i) => (
                 <Reveal key={study.slug} index={i} className="h-full">
                   <Link to="/success-stories">
-                    <Card className="group h-full hover:shadow-elegant hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                    <Card className="card-shimmer group h-full hover:shadow-elegant hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                       <CardContent className="p-6 space-y-3">
                         <span className="text-3xl">{study.icon}</span>
                         <div className="text-sm font-medium text-primary">{study.industry}</div>

@@ -40,7 +40,7 @@ const ProcessSteps = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, i) => (
             <Reveal key={step.title} index={i} className="h-full">
-              <div className="relative h-full bg-card rounded-2xl border border-border shadow-soft p-6 pt-8 text-center hover:shadow-elegant hover:-translate-y-1 transition-all duration-300">
+              <div className="card-shimmer relative h-full bg-card rounded-2xl border border-border shadow-soft p-6 pt-8 text-center hover:shadow-elegant hover:-translate-y-1 transition-all duration-300 animate-panel-glow" style={{ animationDelay: `${i * 0.3}s` }}>
                 <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-gradient-hero text-white flex items-center justify-center text-sm font-bold shadow-elegant">
                   {i + 1}
                 </div>

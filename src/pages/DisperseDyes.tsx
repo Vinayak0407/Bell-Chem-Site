@@ -111,7 +111,7 @@ const DisperseDyes = () => {
             <div className="grid md:grid-cols-2 gap-8">
               {products.map((product, index) => (
                 <Reveal key={index} index={index}>
-                  <Card className="h-full hover:shadow-elegant transition-shadow duration-300">
+                  <Card className="card-shimmer h-full hover:shadow-elegant transition-shadow duration-300">
                     <CardHeader>
                       <CardTitle>{product.name}</CardTitle>
                       <CardDescription>

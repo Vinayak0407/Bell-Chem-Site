@@ -62,49 +62,67 @@ const App = () => (
         <Sonner />
 
         <BrowserRouter>
-          <RouteFade>
-            <Suspense fallback={<PageFallback />}>
-              <Routes>
-                {/* Core pages */}
-                <Route path="/" element={<Index />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/products" element={<ProductsPage />} />
-                <Route path="/industries" element={<IndustriesPage />} />
-                <Route path="/contact" element={<ContactPage />} />
-                <Route path="/quote" element={<QuoteRequestPage />} />
+          {/* Site-wide swirling background — the site's actual visible background,
+              with a dark scrim on top for text contrast and dark-theme cohesion. */}
+          <div className="relative min-h-screen overflow-hidden">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: 'url("/SwirlingSpectrum.png")',
+                backgroundSize: "200% 200%",
+                backgroundPosition: "0% 0%",
+                backgroundAttachment: "fixed",
+                animation: "panBackground 45s ease infinite",
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/45 to-background/75" />
 
-                {/* Product categories */}
-                <Route path="/textileprocessing" element={<TextileProcessing />} />
-                <Route path="/dischargedyes" element={<DischargeDyes />} />
+            <div className="relative">
+              <RouteFade>
+                <Suspense fallback={<PageFallback />}>
+                  <Routes>
+                    {/* Core pages */}
+                    <Route path="/" element={<Index />} />
+                    <Route path="/about" element={<AboutPage />} />
+                    <Route path="/products" element={<ProductsPage />} />
+                    <Route path="/industries" element={<IndustriesPage />} />
+                    <Route path="/contact" element={<ContactPage />} />
+                    <Route path="/quote" element={<QuoteRequestPage />} />
 
-                {/* SEO redirect */}
-                <Route
-                  path="/fluorescentcolors"
-                  element={<Navigate to="/fluorescent-dyes" replace />}
-                />
-                <Route path="/fluorescent-dyes" element={<FluorescentDyes />} />
+                    {/* Product categories */}
+                    <Route path="/textileprocessing" element={<TextileProcessing />} />
+                    <Route path="/dischargedyes" element={<DischargeDyes />} />
 
-                <Route path="/pigmentdyes" element={<PigmentDyes />} />
-                <Route path="/solventdyes" element={<SolventDyes />} />
-                <Route path="/oilcolors" element={<OilColors />} />
-                <Route path="/reactivedyes" element={<ReactiveDyes />} />
-                <Route path="/dispersedyes" element={<DisperseDyes />} />
-                <Route path="/aciddyes" element={<AcidDyes />} />
-                <Route path="/directdyes" element={<DirectDyes />} />
-                <Route path="/industrialchemicals" element={<IndustrialChemicals />} />
-                <Route path="/specialtychemicals" element={<SpecialtyChemicals />} />
-                <Route path="/textileauxiliaries" element={<TextileAuxiliaries />} />
+                    {/* SEO redirect */}
+                    <Route
+                      path="/fluorescentcolors"
+                      element={<Navigate to="/fluorescent-dyes" replace />}
+                    />
+                    <Route path="/fluorescent-dyes" element={<FluorescentDyes />} />
 
-                {/* Content */}
-                <Route path="/success-stories" element={<CaseStudiesPage />} />
-                <Route path="/insights" element={<InsightsPage />} />
-                <Route path="/insights/:slug" element={<InsightPostPage />} />
+                    <Route path="/pigmentdyes" element={<PigmentDyes />} />
+                    <Route path="/solventdyes" element={<SolventDyes />} />
+                    <Route path="/oilcolors" element={<OilColors />} />
+                    <Route path="/reactivedyes" element={<ReactiveDyes />} />
+                    <Route path="/dispersedyes" element={<DisperseDyes />} />
+                    <Route path="/aciddyes" element={<AcidDyes />} />
+                    <Route path="/directdyes" element={<DirectDyes />} />
+                    <Route path="/industrialchemicals" element={<IndustrialChemicals />} />
+                    <Route path="/specialtychemicals" element={<SpecialtyChemicals />} />
+                    <Route path="/textileauxiliaries" element={<TextileAuxiliaries />} />
 
-                {/* 404 */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Suspense>
-          </RouteFade>
+                    {/* Content */}
+                    <Route path="/success-stories" element={<CaseStudiesPage />} />
+                    <Route path="/insights" element={<InsightsPage />} />
+                    <Route path="/insights/:slug" element={<InsightPostPage />} />
+
+                    {/* 404 */}
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </Suspense>
+              </RouteFade>
+            </div>
+          </div>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

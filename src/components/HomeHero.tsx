@@ -15,39 +15,22 @@ const HomeHero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative overflow-hidden bg-gradient-hero">
-      {/* Decorative texture — soft radial highlights, always on */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-25"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 12% 15%, white 0%, transparent 30%), radial-gradient(circle at 88% 85%, white 0%, transparent 30%)",
-        }}
-      />
-
-      {/* Subtle organic texture from the original brand swirl, blended into the gradient */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-40 mix-blend-overlay"
-        style={{
-          backgroundImage: 'url("/SwirlingSpectrum.png")',
-          backgroundSize: "200% 200%",
-          backgroundPosition: "0% 0%",
-          animation: "panBackground 40s ease infinite",
-        }}
-      />
+    <section className="relative overflow-hidden">
+      {/* Extra scrim directly behind hero text for guaranteed contrast against the swirl */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background/50 via-background/15 to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 lg:pt-32 lg:pb-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <Reveal>
-              <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium text-white border border-white/20">
+              <div className="inline-flex items-center px-4 py-2 bg-background/60 backdrop-blur-md rounded-full text-sm font-medium text-white border border-white/20 shadow-elegant">
                 <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse" />
                 40+ Years of Excellence
               </div>
             </Reveal>
 
             <Reveal delay={80}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white text-shadow-hero">
                 Premium Dyes &{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-cyan-200">
                   Chemical Solutions
@@ -56,7 +39,7 @@ const HomeHero = () => {
             </Reveal>
 
             <Reveal delay={160}>
-              <p className="text-lg md:text-xl text-white/90 leading-relaxed">
+              <p className="text-lg md:text-xl text-white leading-relaxed text-shadow-hero max-w-xl">
                 Leading supplier and exporter of high-quality chemicals and industrial dyes in India.
                 Serving textile, pharmaceutical, and manufacturing industries with reliable,
                 cost-effective solutions for over four decades.
@@ -76,7 +59,7 @@ const HomeHero = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white/40 text-white bg-white/5 hover:bg-white/15 backdrop-blur-sm transition-transform hover:scale-[1.03]"
+                  className="border-white/60 text-white bg-background/40 hover:bg-background/60 backdrop-blur-md transition-transform hover:scale-[1.03]"
                   onClick={() => navigate("/products")}
                 >
                   View Products
@@ -85,11 +68,11 @@ const HomeHero = () => {
             </Reveal>
 
             <Reveal delay={320}>
-              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/20">
+              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/25 bg-background/30 backdrop-blur-sm rounded-xl px-4 -mx-4">
                 {stats.map((stat) => (
-                  <div key={stat.label} className="text-center">
-                    <div className="text-2xl font-bold text-white"><CountUp value={stat.value} /></div>
-                    <div className="text-sm text-white/80">{stat.label}</div>
+                  <div key={stat.label} className="text-center py-2">
+                    <div className="text-2xl font-bold text-white text-shadow-soft"><CountUp value={stat.value} /></div>
+                    <div className="text-sm text-white/90 text-shadow-soft">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -111,7 +94,7 @@ const HomeHero = () => {
             </div>
 
             {/* Floating Tag 1 */}
-            <div className="absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-elegant animate-float">
+            <div className="absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-elegant animate-float animate-panel-glow">
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-green-500 rounded-full" />
                 <div className="text-sm font-medium text-gray-900">ISO Certified</div>
@@ -120,7 +103,7 @@ const HomeHero = () => {
 
             {/* Floating Tag 2 */}
             <div
-              className="absolute -top-4 -right-4 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-elegant animate-float"
+              className="absolute -top-4 -right-4 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-elegant animate-float animate-panel-glow"
               style={{ animationDelay: "1.5s" }}
             >
               <div className="flex items-center space-x-3">
