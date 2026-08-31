@@ -16,14 +16,11 @@ const HomeHero = () => {
 
   return (
     <section className="relative overflow-hidden">
-      {/* Extra scrim directly behind hero text for guaranteed contrast against the swirl */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background/35 via-background/10 to-transparent" />
-
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 lg:pt-32 lg:pb-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <Reveal>
-              <div className="inline-flex items-center px-4 py-2 bg-background/60 backdrop-blur-md rounded-full text-sm font-medium text-white border border-white/20 shadow-elegant">
+              <div className="inline-flex items-center px-4 py-2 bg-background/35 backdrop-blur-md rounded-full text-sm font-medium text-white border border-white/20 shadow-elegant text-shadow-soft">
                 <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse" />
                 40+ Years of Excellence
               </div>
@@ -59,7 +56,7 @@ const HomeHero = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white/60 text-white bg-background/40 hover:bg-background/60 backdrop-blur-md transition-transform hover:scale-[1.03]"
+                  className="border-white/60 text-white bg-background/25 hover:bg-background/45 backdrop-blur-md transition-transform hover:scale-[1.03] text-shadow-soft"
                   onClick={() => navigate("/products")}
                 >
                   View Products
@@ -68,7 +65,7 @@ const HomeHero = () => {
             </Reveal>
 
             <Reveal delay={320}>
-              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/25 bg-background/30 backdrop-blur-sm rounded-xl px-4 -mx-4">
+              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/25 bg-background/20 backdrop-blur-sm rounded-xl px-4 -mx-4">
                 {stats.map((stat) => (
                   <div key={stat.label} className="text-center py-2">
                     <div className="text-2xl font-bold text-white text-shadow-soft"><CountUp value={stat.value} /></div>

@@ -76,7 +76,9 @@ const App = () => (
                 animation: "panBackground 45s ease infinite",
               }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/10 to-background/35" />
+            {/* Fixed to the viewport (not the page), so every screen gets the same
+                flat tint regardless of how tall the page is */}
+            <div className="fixed inset-0 bg-background/22" />
 
             <div className="relative">
               <RouteFade>
