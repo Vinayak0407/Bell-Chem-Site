@@ -17,7 +17,7 @@ const HomeHero = () => {
   return (
     <section className="relative overflow-hidden">
       {/* Extra scrim directly behind hero text for guaranteed contrast against the swirl */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background/50 via-background/15 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background/35 via-background/10 to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 lg:pt-32 lg:pb-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">

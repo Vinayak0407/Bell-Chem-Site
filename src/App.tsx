@@ -71,11 +71,12 @@ const App = () => (
                 backgroundImage: 'url("/SwirlingSpectrum.png")',
                 backgroundSize: "200% 200%",
                 backgroundPosition: "0% 0%",
+                backgroundRepeat: "no-repeat",
                 backgroundAttachment: "fixed",
                 animation: "panBackground 45s ease infinite",
               }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/45 to-background/75" />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/10 to-background/35" />
 
             <div className="relative">
               <RouteFade>

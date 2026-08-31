@@ -9,14 +9,14 @@ const badges = [
 
 const TrustBadges = ({ className = "" }: { className?: string }) => {
   return (
-    <div className={`border-y border-border bg-background/70 backdrop-blur-md ${className}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+    <div className={`py-8 ${className}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-wrap items-center justify-center gap-4">
           {badges.map((badge, i) => (
             <Reveal key={badge.label} index={i} animation="fade">
-              <div className="flex items-center gap-2 text-foreground">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/50 backdrop-blur-sm border border-border text-foreground shadow-soft">
                 <badge.icon className="h-5 w-5 text-primary shrink-0" />
-                <span className="text-sm font-medium">{badge.label}</span>
+                <span className="text-sm font-medium text-shadow-soft">{badge.label}</span>
               </div>
             </Reveal>
           ))}

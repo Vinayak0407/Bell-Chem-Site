@@ -18,7 +18,7 @@ const PageHero = ({ eyebrow, title, description, badges, image }: PageHeroProps)
   return (
     <section className="relative overflow-hidden">
       {/* Extra scrim directly behind hero text for guaranteed contrast against the swirl */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background/55 via-background/20 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background/40 via-background/10 to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className={`grid gap-12 items-center ${image ? "lg:grid-cols-2" : ""}`}>
