@@ -1,13 +1,14 @@
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link } from "react-router-dom";
 import textileDyes from "@/assets/textile-dyes.jpg";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionIntro from "@/components/SectionIntro";
-import { ShieldCheck, Search, PackageSearch } from "lucide-react";
+import { ShieldCheck, Search, PackageSearch, ChevronLeft, ChevronRight } from "lucide-react";
 
 const dyes = [
   { title: "Oil Colors", slug: "oilcolors", description: "High-purity oil-soluble colors formulated for deep and uniform shades.", icon: "🎨" },
@@ -34,38 +35,80 @@ const credentials = [
 ];
 
 type Category = "all" | "dyes" | "chemicals";
+type ProductItem = { title: string; slug: string; description: string; icon: string };
 
-const CategoryGrid = ({
-  items,
-}: {
-  items: { title: string; slug: string; description: string; icon: string }[];
-}) => (
+const ProductCard = ({ item }: { item: ProductItem }) => (
+  <Link to={`/${item.slug}`}>
+    <Card className="card-shimmer group h-full border-0 shadow-soft hover:shadow-professional transition-all duration-300 hover:-translate-y-2 bg-card cursor-pointer">
+      <CardHeader className="text-center pb-2 pt-8">
+        <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-primary/10 flex items-center justify-center text-4xl group-hover:scale-110 transition-transform">
+          {item.icon}
+        </div>
+        <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors">
+          {item.title}
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="text-center pb-8">
+        <CardDescription className="text-muted-foreground">{item.description}</CardDescription>
+      </CardContent>
+    </Card>
+  </Link>
+);
+
+const CategoryGrid = ({ items }: { items: ProductItem[] }) => (
   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
     {items.map((item) => (
       <div key={item.slug} className="h-full animate-in fade-in zoom-in-95 duration-300">
-        <Link to={`/${item.slug}`}>
-          <Card className="card-shimmer group h-full border-0 shadow-soft hover:shadow-professional transition-all duration-300 hover:-translate-y-2 bg-card cursor-pointer">
-            <CardHeader className="text-center pb-2 pt-8">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-primary/10 flex items-center justify-center text-4xl group-hover:scale-110 transition-transform">
-                {item.icon}
-              </div>
-              <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors">
-                {item.title}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-center pb-8">
-              <CardDescription className="text-muted-foreground">{item.description}</CardDescription>
-            </CardContent>
-          </Card>
-        </Link>
+        <ProductCard item={item} />
       </div>
     ))}
   </div>
 );
 
+/** Horizontally scrolling row with snap-scroll and prev/next controls — used for
+ * the default, unfiltered browsing view so the page isn't purely vertical. */
+const CategoryRow = ({ items }: { items: ProductItem[] }) => {
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  const scrollByCards = (direction: 1 | -1) => {
+    const track = trackRef.current;
+    if (!track) return;
+    track.scrollBy({ left: direction * (track.clientWidth * 0.85), behavior: "smooth" });
+  };
+
+  return (
+    <div className="relative">
+      <div
+        ref={trackRef}
+        className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 [scrollbar-width:thin]"
+      >
+        {items.map((item) => (
+          <div key={item.slug} className="snap-start shrink-0 w-[260px] sm:w-[280px]">
+            <ProductCard item={item} />
+          </div>
+        ))}
+      </div>
+
+      {/* Edge fades hinting there's more to scroll */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-background to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-background to-transparent" />
+
+      <div className="hidden md:flex justify-end gap-2 mt-4">
+        <Button variant="outline" size="icon" onClick={() => scrollByCards(-1)} aria-label="Scroll left">
+          <ChevronLeft className="h-4 w-4" />
+        </Button>
+        <Button variant="outline" size="icon" onClick={() => scrollByCards(1)} aria-label="Scroll right">
+          <ChevronRight className="h-4 w-4" />
+        </Button>
+      </div>
+    </div>
+  );
+};
+
 const Services = () => {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<Category>("all");
+  const isFiltering = query.trim() !== "" || category !== "all";
 
   const filteredDyes = useMemo(() => {
     if (category === "chemicals") return [];
@@ -136,7 +179,7 @@ const Services = () => {
                 description="High-performance dyes for textile and industrial applications."
               />
 
-              <CategoryGrid items={filteredDyes} />
+              {isFiltering ? <CategoryGrid items={filteredDyes} /> : <CategoryRow items={filteredDyes} />}
             </div>
           )}
 
@@ -148,7 +191,7 @@ const Services = () => {
                 description="Reliable chemicals engineered for performance and consistency."
               />
 
-              <CategoryGrid items={filteredChemicals} />
+              {isFiltering ? <CategoryGrid items={filteredChemicals} /> : <CategoryRow items={filteredChemicals} />}
             </div>
           )}
 
