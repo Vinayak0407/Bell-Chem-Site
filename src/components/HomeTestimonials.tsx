@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
+import SectionIntro from "@/components/SectionIntro";
 
 const HomeTestimonials = () => {
   const testimonials = [
@@ -39,17 +40,10 @@ const HomeTestimonials = () => {
     <section className="py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <Reveal className="text-center mb-16">
-          <div className="max-w-3xl mx-auto space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              What Our <span className="bg-gradient-primary bg-clip-text text-transparent">Clients Say</span>
-            </h2>
-
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Don't just take our word for it. Here's what industry leaders say about our products and services.
-            </p>
-          </div>
-        </Reveal>
+        <SectionIntro
+          title={<>What Our <span className="bg-gradient-primary bg-clip-text text-transparent">Clients Say</span></>}
+          description="Don't just take our word for it. Here's what industry leaders say about our products and services."
+        />
 
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {testimonials.map((testimonial, index) => (

@@ -11,13 +11,13 @@ const FeatureGrid = ({ title = "Key Features", intro, features }: FeatureGridPro
   return (
     <div className="mb-16">
       {intro && intro.length > 0 && (
-        <div className="max-w-4xl mx-auto mb-12 space-y-4 text-center">
+        <Reveal className="max-w-4xl mx-auto mb-12 bg-card border border-border rounded-2xl shadow-elegant p-8 sm:p-10 text-center space-y-4">
           {intro.map((paragraph, i) => (
-            <Reveal key={i} index={i}>
-              <p className="text-muted-foreground text-lg leading-relaxed">{paragraph}</p>
-            </Reveal>
+            <p key={i} className="text-muted-foreground text-lg leading-relaxed">
+              {paragraph}
+            </p>
           ))}
-        </div>
+        </Reveal>
       )}
 
       <Reveal>

@@ -128,8 +128,8 @@ export default function ReactiveDyesPage() {
 
           {/* PRODUCTS */}
           <div className="mb-16">
-            <Reveal>
-              <h2 className="text-2xl font-bold mb-8 text-foreground">
+            <Reveal className="inline-block bg-card border border-border rounded-2xl shadow-soft px-6 py-4 mb-8">
+              <h2 className="text-2xl font-bold text-foreground">
                 Selected Reactive Dye Products
               </h2>
             </Reveal>

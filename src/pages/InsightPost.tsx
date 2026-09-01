@@ -65,7 +65,7 @@ const InsightPostPage = () => {
         </div>
 
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <Reveal>
+          <Reveal className="bg-card border border-border rounded-3xl shadow-elegant p-8 sm:p-12">
             <div className="flex items-center gap-3 text-sm text-muted-foreground mb-4">
               <span className="px-3 py-1 rounded-full bg-primary/10 text-primary font-medium">
                 {post.category}
@@ -79,15 +79,13 @@ const InsightPostPage = () => {
             <h1 className="text-3xl md:text-4xl font-bold text-foreground leading-tight mb-8">
               {post.title}
             </h1>
-          </Reveal>
 
-          <div className="space-y-6">
-            {post.body.map((paragraph, i) => (
-              <Reveal key={i} index={i}>
-                <p className="text-lg text-foreground/80 leading-relaxed">{paragraph}</p>
-              </Reveal>
-            ))}
-          </div>
+            <div className="space-y-6">
+              {post.body.map((paragraph, i) => (
+                <p key={i} className="text-lg text-foreground/80 leading-relaxed">{paragraph}</p>
+              ))}
+            </div>
+          </Reveal>
 
           <Reveal className="mt-16 bg-gradient-hero rounded-2xl p-8 text-center">
             <h2 className="text-xl font-bold mb-3 text-white">Have a Requirement in Mind?</h2>

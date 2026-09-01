@@ -159,8 +159,8 @@ export default function PigmentDyesPage() {
 
           {/* PRODUCTS */}
           <div className="mb-16">
-            <Reveal>
-              <h2 className="text-2xl font-bold mb-8 text-foreground">
+            <Reveal className="inline-block bg-card border border-border rounded-2xl shadow-soft px-6 py-4 mb-8">
+              <h2 className="text-2xl font-bold text-foreground">
                 Pigment Dye Products for Industrial Applications
               </h2>
             </Reveal>
@@ -189,7 +189,7 @@ export default function PigmentDyesPage() {
           </div>
 
           {/* RELATED LINKS */}
-          <Reveal className="mb-16 p-8 rounded-2xl bg-muted/50 border border-border text-center">
+          <Reveal className="mb-16 p-8 rounded-2xl bg-muted border border-border text-center">
             <h2 className="text-2xl font-bold mb-6 text-foreground">Related Categories</h2>
 
             <div className="flex flex-wrap justify-center gap-4">

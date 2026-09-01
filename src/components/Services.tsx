@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import textileDyes from "@/assets/textile-dyes.jpg";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
+import SectionIntro from "@/components/SectionIntro";
 import { ShieldCheck, Search, PackageSearch } from "lucide-react";
 
 const dyes = [
@@ -39,18 +40,20 @@ const CategoryGrid = ({
 }: {
   items: { title: string; slug: string; description: string; icon: string }[];
 }) => (
-  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
     {items.map((item) => (
       <div key={item.slug} className="h-full animate-in fade-in zoom-in-95 duration-300">
         <Link to={`/${item.slug}`}>
           <Card className="card-shimmer group h-full border-0 shadow-soft hover:shadow-professional transition-all duration-300 hover:-translate-y-2 bg-card cursor-pointer">
-            <CardHeader className="text-center pb-4">
-              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{item.icon}</div>
+            <CardHeader className="text-center pb-2 pt-8">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-primary/10 flex items-center justify-center text-4xl group-hover:scale-110 transition-transform">
+                {item.icon}
+              </div>
               <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors">
                 {item.title}
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-center">
+            <CardContent className="text-center pb-8">
               <CardDescription className="text-muted-foreground">{item.description}</CardDescription>
             </CardContent>
           </Card>
@@ -128,12 +131,10 @@ const Services = () => {
           {/* Industrial Dyes Section */}
           {filteredDyes.length > 0 && (
             <div className="mb-20">
-              <Reveal className="text-center mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Industrial Dyes</h2>
-                <p className="text-lg text-muted-foreground">
-                  High-performance dyes for textile and industrial applications.
-                </p>
-              </Reveal>
+              <SectionIntro
+                title="Industrial Dyes"
+                description="High-performance dyes for textile and industrial applications."
+              />
 
               <CategoryGrid items={filteredDyes} />
             </div>
@@ -142,12 +143,10 @@ const Services = () => {
           {/* Industrial Chemicals Section */}
           {filteredChemicals.length > 0 && (
             <div className="mb-12">
-              <Reveal className="text-center mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Industrial Chemicals</h2>
-                <p className="text-lg text-muted-foreground">
-                  Reliable chemicals engineered for performance and consistency.
-                </p>
-              </Reveal>
+              <SectionIntro
+                title="Industrial Chemicals"
+                description="Reliable chemicals engineered for performance and consistency."
+              />
 
               <CategoryGrid items={filteredChemicals} />
             </div>

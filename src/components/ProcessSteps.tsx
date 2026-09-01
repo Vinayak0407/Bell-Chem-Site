@@ -1,5 +1,6 @@
 import { MessageSquare, FileText, FlaskConical, Truck } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import SectionIntro from "@/components/SectionIntro";
 
 const steps = [
   {
@@ -28,28 +29,32 @@ const ProcessSteps = () => {
   return (
     <section className="py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            How It Works
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A straightforward process from first inquiry to bulk delivery.
-          </p>
-        </Reveal>
+        <SectionIntro
+          title="How It Works"
+          description="A straightforward process from first inquiry to bulk delivery."
+        />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step, i) => (
-            <Reveal key={step.title} index={i} className="h-full">
-              <div className="card-shimmer relative h-full bg-card rounded-2xl border border-border shadow-soft p-6 pt-8 text-center hover:shadow-elegant hover:-translate-y-1 transition-all duration-300 animate-panel-glow" style={{ animationDelay: `${i * 0.3}s` }}>
-                <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-gradient-hero text-white flex items-center justify-center text-sm font-bold shadow-elegant">
-                  {i + 1}
+        <div className="relative">
+          {/* Connecting line, desktop only */}
+          <div className="hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-hero opacity-40" />
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            {steps.map((step, i) => (
+              <Reveal key={step.title} index={i} className="h-full">
+                <div
+                  className="card-shimmer relative h-full bg-card rounded-2xl border border-border shadow-elegant p-8 pt-12 text-center hover:shadow-professional hover:-translate-y-1 transition-all duration-300 animate-panel-glow"
+                  style={{ animationDelay: `${i * 0.3}s` }}
+                >
+                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-gradient-hero text-white flex items-center justify-center text-lg font-bold shadow-professional">
+                    {i + 1}
+                  </div>
+                  <step.icon className="h-10 w-10 text-primary mx-auto mb-5 mt-2" />
+                  <h3 className="text-lg font-semibold text-foreground mb-3">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
                 </div>
-                <step.icon className="h-8 w-8 text-primary mx-auto mb-4 mt-2" />
-                <h3 className="font-semibold text-foreground mb-2">{step.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>

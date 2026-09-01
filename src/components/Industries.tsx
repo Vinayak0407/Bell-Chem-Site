@@ -1,4 +1,4 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 
@@ -45,18 +45,20 @@ const Industries = () => {
 
       <section id="industries" className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {industries.map((industry, index) => (
               <Reveal key={index} index={index} className="h-full">
-                <Card className="card-shimmer group h-full border-0 shadow-soft hover:shadow-professional transition-all duration-300 hover:-translate-y-2 bg-card">
-                  <CardHeader className="text-center pb-4">
-                    <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{industry.icon}</div>
-                    <CardTitle className="text-xl font-semibold text-foreground">{industry.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <CardDescription className="text-muted-foreground leading-relaxed">
-                      {industry.description}
-                    </CardDescription>
+                <Card className="card-shimmer group h-full border border-border shadow-soft hover:shadow-professional transition-all duration-300 hover:-translate-y-1 bg-card">
+                  <CardContent className="p-8 flex items-start gap-6">
+                    <div className="shrink-0 w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-4xl group-hover:scale-110 transition-transform">
+                      {industry.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-foreground mb-2">{industry.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {industry.description}
+                      </p>
+                    </div>
                   </CardContent>
                 </Card>
               </Reveal>

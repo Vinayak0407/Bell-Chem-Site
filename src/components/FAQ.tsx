@@ -1,5 +1,6 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Reveal from "@/components/Reveal";
+import SectionIntro from "@/components/SectionIntro";
 
 export const faqItems = [
   {
@@ -56,14 +57,10 @@ const FAQ = () => {
   return (
     <section className="py-20 lg:py-28">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Common questions from manufacturers and exporters we work with.
-          </p>
-        </Reveal>
+        <SectionIntro
+          title="Frequently Asked Questions"
+          description="Common questions from manufacturers and exporters we work with."
+        />
 
         <Reveal>
           <Accordion type="single" collapsible className="bg-card rounded-2xl border border-border shadow-soft px-6">

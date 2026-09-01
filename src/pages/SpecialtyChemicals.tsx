@@ -129,8 +129,8 @@ export default function SpecialtyChemicalsPage() {
 
           {/* PRODUCTS */}
           <div className="mb-16">
-            <Reveal>
-              <h2 className="text-2xl font-bold mb-8 text-foreground">
+            <Reveal className="inline-block bg-card border border-border rounded-2xl shadow-soft px-6 py-4 mb-8">
+              <h2 className="text-2xl font-bold text-foreground">
                 Specialty Chemical Product Range
               </h2>
             </Reveal>

@@ -8,6 +8,7 @@ import FAQ, { faqStructuredData } from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import Reveal from "@/components/Reveal";
+import SectionIntro from "@/components/SectionIntro";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -66,14 +67,10 @@ const Index = () => {
         {/* Success Stories teaser */}
         <section className="py-20 lg:py-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Reveal className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                How We Help
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Representative examples of how we support manufacturers and processors across industries.
-              </p>
-            </Reveal>
+            <SectionIntro
+              title="How We Help"
+              description="Representative examples of how we support manufacturers and processors across industries."
+            />
 
             <div className="grid md:grid-cols-3 gap-8 mb-10">
               {caseStudies.slice(0, 3).map((study, i) => (
