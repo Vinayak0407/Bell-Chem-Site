@@ -232,6 +232,10 @@
 .card-shimmer {
   position: relative;
   overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.card-shimmer:hover {
+  border-color: hsl(213 90% 62% / 0.7);
 }
 .card-shimmer::after {
   content: "";

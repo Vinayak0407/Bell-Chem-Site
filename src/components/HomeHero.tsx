@@ -82,7 +82,7 @@ const HomeHero = () => {
             </div>
 
             {/* Floating Tag 1 */}
-            <div className="absolute -bottom-4 -left-4 bg-card border border-border rounded-xl p-4 shadow-elegant animate-float animate-panel-glow">
+            <div className="absolute -bottom-4 -left-4 bg-card border border-border rounded-xl p-4 shadow-elegant">
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-green-500 rounded-full" />
                 <div className="text-sm font-medium text-foreground">ISO Certified</div>
@@ -90,10 +90,7 @@ const HomeHero = () => {
             </div>
 
             {/* Floating Tag 2 */}
-            <div
-              className="absolute -top-4 -right-4 bg-card border border-border rounded-xl p-4 shadow-elegant animate-float animate-panel-glow"
-              style={{ animationDelay: "1.5s" }}
-            >
+            <div className="absolute -top-4 -right-4 bg-card border border-border rounded-xl p-4 shadow-elegant">
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-blue-500 rounded-full" />
                 <div className="text-sm font-medium text-foreground">Quality Assured</div>
