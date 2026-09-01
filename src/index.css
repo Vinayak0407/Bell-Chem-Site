@@ -235,7 +235,8 @@
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .card-shimmer:hover {
-  border-color: hsl(213 90% 62% / 0.7);
+  border-color: hsl(213 90% 62% / 0.8);
+  box-shadow: 0 0 0 1px hsl(213 90% 62% / 0.5), 0 0 24px 4px hsl(213 90% 62% / 0.35);
 }
 .card-shimmer::after {
   content: "";

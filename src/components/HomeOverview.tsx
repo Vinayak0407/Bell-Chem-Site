@@ -87,7 +87,7 @@ const HomeOverview = () => {
             const textBlock = (
               <Reveal
                 delay={100}
-                className="bg-card border border-border rounded-3xl shadow-elegant p-8 sm:p-10 space-y-6 transition-all duration-500 ease-out group-hover:shadow-professional group-hover:border-primary/70"
+                className="bg-card border border-border rounded-3xl shadow-elegant p-8 sm:p-10 space-y-6 transition-all duration-500 ease-out group-hover:border-primary/80 group-hover:shadow-[0_0_0_1px_hsl(213_90%_62%/0.5),0_0_32px_6px_hsl(213_90%_62%/0.35)]"
               >
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
                   <section.icon className="w-7 h-7 text-primary" />
