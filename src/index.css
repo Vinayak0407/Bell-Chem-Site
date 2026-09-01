@@ -133,66 +133,6 @@
   
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 0%;
-  }
-  25% {
-    background-position: 100% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  75% {
-    background-position: 0% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
-
-@keyframes hueRotate {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(360deg);
-  }
-}
-
-@keyframes spinGradient {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 200% 0%;
-  }
-}
-
-@keyframes smoothShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 @keyframes panBackground {
   0% {
     background-position: 0% 0%;
@@ -252,17 +192,32 @@
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
-@keyframes pulseGlow {
+/* GPU-friendly pulsing glow: animates opacity of a pre-blurred pseudo-element
+   instead of animating box-shadow directly (which forces a main-thread
+   repaint every frame). Opacity animates on the compositor only. */
+@keyframes pulseGlowOpacity {
   0%, 100% {
-    box-shadow: 0 8px 25px hsl(213 90% 62% / 0.1), 0 2px 8px hsl(0 0% 0% / 0.25);
+    opacity: 0.15;
   }
   50% {
-    box-shadow: 0 8px 35px hsl(213 90% 62% / 0.3), 0 2px 8px hsl(0 0% 0% / 0.25);
+    opacity: 0.55;
   }
 }
 
 .animate-panel-glow {
-  animation: pulseGlow 4s ease-in-out infinite;
+  position: relative;
+}
+.animate-panel-glow::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  box-shadow: 0 10px 30px hsl(213 90% 62% / 0.45);
+  opacity: 0.15;
+  animation: pulseGlowOpacity 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+  will-change: opacity;
 }
 
 @keyframes shimmerSweep {

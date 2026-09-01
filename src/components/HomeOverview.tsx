@@ -76,7 +76,7 @@ const HomeOverview = () => {
                   <OptimizedImage
                     src={section.image}
                     alt={section.alt}
-                    className="w-full h-[360px] lg:h-[420px] object-cover"
+                    className="w-full h-[360px] lg:h-[420px] object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     width={800}
                     height={420}
                   />
@@ -85,8 +85,11 @@ const HomeOverview = () => {
             );
 
             const textBlock = (
-              <Reveal delay={100} className="bg-card border border-border rounded-3xl shadow-elegant p-8 sm:p-10 space-y-6">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
+              <Reveal
+                delay={100}
+                className="bg-card border border-border rounded-3xl shadow-elegant p-8 sm:p-10 space-y-6 transition-all duration-500 ease-out group-hover:shadow-professional group-hover:border-primary/40"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
                   <section.icon className="w-7 h-7 text-primary" />
                 </div>
 
@@ -105,29 +108,33 @@ const HomeOverview = () => {
                   ))}
                 </div>
 
-                <Link to={section.link}>
-                  <Button variant="outline" className="group/btn">
-                    {section.linkText}
-                    <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
-                  </Button>
-                </Link>
+                <div className="inline-flex items-center gap-2 font-semibold text-primary">
+                  {section.linkText}
+                  <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1.5" />
+                </div>
               </Reveal>
             );
 
             return (
-              <div key={section.title} className="grid lg:grid-cols-2 gap-12 items-center">
-                {reversed ? (
-                  <>
-                    <div className="lg:order-2">{imageBlock}</div>
-                    <div className="lg:order-1">{textBlock}</div>
-                  </>
-                ) : (
-                  <>
-                    {imageBlock}
-                    {textBlock}
-                  </>
-                )}
-              </div>
+              <Link
+                key={section.title}
+                to={section.link}
+                className="group block rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-background transition-transform duration-500 ease-out hover:-translate-y-1"
+              >
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                  {reversed ? (
+                    <>
+                      <div className="lg:order-2">{imageBlock}</div>
+                      <div className="lg:order-1">{textBlock}</div>
+                    </>
+                  ) : (
+                    <>
+                      {imageBlock}
+                      {textBlock}
+                    </>
+                  )}
+                </div>
+              </Link>
             );
           })}
         </div>

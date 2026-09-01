@@ -27,6 +27,7 @@ const Reveal = ({
 }: RevealProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
+  const [settled, setSettled] = useState(false);
 
   useEffect(() => {
     const node = ref.current;
@@ -57,10 +58,15 @@ const Reveal = ({
   return (
     <Tag
       ref={ref as never}
-      className={`transition-all duration-700 ease-out will-change-transform ${
+      className={`transition-[opacity,transform] duration-700 ${
         inView ? "opacity-100 translate-y-0 scale-100" : animationClasses[animation]
       } ${className}`}
-      style={{ transitionDelay: inView ? `${resolvedDelay}ms` : "0ms" }}
+      style={{
+        transitionDelay: inView ? `${resolvedDelay}ms` : "0ms",
+        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+        willChange: settled ? undefined : "opacity, transform",
+      }}
+      onTransitionEnd={() => setSettled(true)}
     >
       {children}
     </Tag>

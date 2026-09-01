@@ -34,27 +34,19 @@ const ProcessSteps = () => {
           description="A straightforward process from first inquiry to bulk delivery."
         />
 
-        <div className="relative">
-          {/* Connecting line, desktop only */}
-          <div className="hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-hero opacity-40" />
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
-            {steps.map((step, i) => (
-              <Reveal key={step.title} index={i} className="h-full">
-                <div
-                  className="card-shimmer relative h-full bg-card rounded-2xl border border-border shadow-elegant p-8 pt-12 text-center hover:shadow-professional hover:-translate-y-1 transition-all duration-300 animate-panel-glow"
-                  style={{ animationDelay: `${i * 0.3}s` }}
-                >
-                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-gradient-hero text-white flex items-center justify-center text-lg font-bold shadow-professional">
-                    {i + 1}
-                  </div>
-                  <step.icon className="h-10 w-10 text-primary mx-auto mb-5 mt-2" />
-                  <h3 className="text-lg font-semibold text-foreground mb-3">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {steps.map((step, i) => (
+            <Reveal key={step.title} index={i} className="h-full">
+              <div className="card-shimmer relative h-full bg-card rounded-2xl border border-border shadow-elegant p-8 pt-12 text-center hover:shadow-professional hover:-translate-y-1 transition-all duration-300">
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-gradient-hero text-white flex items-center justify-center text-lg font-bold shadow-professional">
+                  {i + 1}
                 </div>
-              </Reveal>
-            ))}
-          </div>
+                <step.icon className="h-10 w-10 text-primary mx-auto mb-5 mt-2" />
+                <h3 className="text-lg font-semibold text-foreground mb-3 min-h-[3.5rem] flex items-center justify-center">{step.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
