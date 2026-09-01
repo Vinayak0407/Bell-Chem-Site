@@ -14,7 +14,7 @@ import OptimizedImage from "@/components/OptimizedImage";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionIntro from "@/components/SectionIntro";
-import { ShieldCheck, Search, PackageSearch, ArrowRight } from "lucide-react";
+import { ShieldCheck, Search, PackageSearch, ArrowRight, X } from "lucide-react";
 import textileDyesImg from "@/assets/textile-dyes.jpg";
 import chemicalLabImg from "@/assets/chemical-lab.jpg";
 import manufacturingImg from "@/assets/manufacturing-facility.jpg";
@@ -145,23 +145,33 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Search + Filter */}
-          <Reveal className="flex flex-col sm:flex-row gap-4 items-center justify-between mb-16 bg-card rounded-2xl border border-border shadow-soft p-4">
-            <div className="relative w-full sm:max-w-xs">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Reveal className="mb-16 bg-card rounded-3xl border border-border shadow-elegant p-6 sm:p-8 space-y-6">
+            <div className="relative">
+              <Search className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <Input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search products..."
-                className="pl-9"
+                placeholder="Search for a dye or chemical..."
+                className="h-14 pl-14 pr-14 text-lg rounded-2xl"
                 aria-label="Search products"
               />
+              {query && (
+                <button
+                  type="button"
+                  onClick={() => setQuery("")}
+                  aria-label="Clear search"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              )}
             </div>
 
-            <Tabs value={category} onValueChange={(v) => setCategory(v as Category)}>
-              <TabsList>
-                <TabsTrigger value="all">All</TabsTrigger>
-                <TabsTrigger value="dyes">Dyes</TabsTrigger>
-                <TabsTrigger value="chemicals">Chemicals</TabsTrigger>
+            <Tabs value={category} onValueChange={(v) => setCategory(v as Category)} className="flex justify-center">
+              <TabsList className="h-12 p-1.5 rounded-2xl">
+                <TabsTrigger value="all" className="text-base px-6 py-2 rounded-xl">All</TabsTrigger>
+                <TabsTrigger value="dyes" className="text-base px-6 py-2 rounded-xl">Dyes</TabsTrigger>
+                <TabsTrigger value="chemicals" className="text-base px-6 py-2 rounded-xl">Chemicals</TabsTrigger>
               </TabsList>
             </Tabs>
           </Reveal>
