@@ -1,16 +1,23 @@
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 import { Link } from "react-router-dom";
 import OptimizedImage from "@/components/OptimizedImage";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionIntro from "@/components/SectionIntro";
-import { ShieldCheck, Search, PackageSearch, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { ShieldCheck, Search, PackageSearch, ArrowRight } from "lucide-react";
 import textileDyesImg from "@/assets/textile-dyes.jpg";
 import chemicalLabImg from "@/assets/chemical-lab.jpg";
+import manufacturingImg from "@/assets/manufacturing-facility.jpg";
 import oilColorsImg from "@/assets/oil-colors.jpg";
 import pigmentDyesImg from "@/assets/PigmentDyes.jpg";
 import solventDyesImg from "@/assets/solvent-dyes.jpg";
@@ -20,18 +27,18 @@ import textileProcessingImg from "@/assets/TextileProcessing.jpg";
 
 const dyes = [
   { title: "Oil Colors", slug: "oilcolors", description: "High-purity oil-soluble colors formulated for deep and uniform shades.", icon: "🎨", image: oilColorsImg },
-  { title: "Pigment Colors", slug: "pigmentdyes", description: "Versatile, high-stability pigments providing superior lightfastness and durability.", icon: "🌈", image: pigmentDyesImg },
-  { title: "Solvent Dyes", slug: "solventdyes", description: "Premium solvent-soluble dyes with excellent transparency and fastness.", icon: "💧", image: solventDyesImg },
   { title: "Direct Dyes", slug: "directdyes", description: "Cost-effective dyes for cellulosic fibers with excellent color yield.", icon: "🎪", image: textileDyesImg },
-  { title: "Fluorescent Colors", slug: "fluorescent-dyes", description: "High-visibility fluorescent colors for vibrant glowing shades.", icon: "✨", image: fluorescentDyesImg },
+  { title: "Pigment Colors", slug: "pigmentdyes", description: "Versatile, high-stability pigments providing superior lightfastness and durability.", icon: "🌈", image: pigmentDyesImg },
   { title: "Acid Dyes", slug: "aciddyes", description: "High-strength acid dyes suitable for wool, silk, nylon, and industrial uses.", icon: "⚗️", image: textileDyesImg },
+  { title: "Solvent Dyes", slug: "solventdyes", description: "Premium solvent-soluble dyes with excellent transparency and fastness.", icon: "💧", image: solventDyesImg },
   { title: "Reactive Dyes", slug: "reactivedyes", description: "Reactive dyes offering excellent fastness and strong fiber bonding.", icon: "🧪", image: textileDyesImg },
+  { title: "Fluorescent Colors", slug: "fluorescent-dyes", description: "High-visibility fluorescent colors for vibrant glowing shades.", icon: "✨", image: fluorescentDyesImg },
   { title: "Discharge Colors", slug: "dischargedyes", description: "High-purity dyes for clean discharge effects and sharp contrast printing.", icon: "✂️", image: dischargeDyesImg }
 ];
 
 const chemicals = [
-  { title: "Industrial Chemicals", slug: "industrialchemicals", description: "High-grade chemicals for textile, and manufacturing applications.", icon: "⚗️", image: chemicalLabImg },
   { title: "Textile Processing", slug: "textileprocessing", description: "High-performance chemicals for every stage of textile processing.", icon: "🏭", image: textileProcessingImg },
+  { title: "Industrial Chemicals", slug: "industrialchemicals", description: "High-grade chemicals for textile, and manufacturing applications.", icon: "⚗️", image: manufacturingImg },
   { title: "Specialty Chemicals", slug: "specialtychemicals", description: "Precision-engineered specialty chemicals for high-performance applications.", icon: "🧬", image: chemicalLabImg },
   { title: "Textile Auxiliaries", slug: "textileauxiliaries", description: "Auxiliaries that enhance efficiency, compatibility, and process control.", icon: "🔬", image: chemicalLabImg }
 ];
@@ -45,26 +52,26 @@ const credentials = [
 type Category = "all" | "dyes" | "chemicals";
 type ProductItem = { title: string; slug: string; description: string; icon: string; image: string };
 
-/** Big, tall, photo-led tile — replaces the old small icon-only card. */
+/** Big, tall, photo-led tile with a slow continuous zoom on the image. */
 const ProductTile = ({ item }: { item: ProductItem }) => (
   <Link to={`/${item.slug}`} className="block h-full">
-    <Card className="card-shimmer group relative h-[380px] sm:h-[420px] overflow-hidden border-0 shadow-elegant hover:shadow-professional transition-all duration-500 hover:-translate-y-2">
+    <Card className="card-shimmer group relative h-[440px] sm:h-[520px] overflow-hidden border-0 shadow-elegant hover:shadow-professional transition-all duration-500 hover:-translate-y-2">
       <OptimizedImage
         src={item.image}
         alt={item.title}
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-        width={400}
-        height={420}
+        className="absolute inset-0 w-full h-full object-cover animate-ken-burns transition-[filter] duration-500 group-hover:brightness-110"
+        width={480}
+        height={520}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/5 transition-opacity duration-500 group-hover:from-black/95" />
 
-      <div className="absolute top-4 right-4 w-12 h-12 rounded-2xl bg-background/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-2xl shadow-elegant transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
+      <div className="absolute top-5 right-5 w-14 h-14 rounded-2xl bg-background/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-3xl shadow-elegant transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
         {item.icon}
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 p-6 space-y-2">
-        <CardTitle className="text-xl font-bold text-white">{item.title}</CardTitle>
-        <CardDescription className="text-white/85 leading-relaxed line-clamp-2">
+      <div className="absolute inset-x-0 bottom-0 p-7 space-y-2">
+        <CardTitle className="text-2xl font-bold text-white">{item.title}</CardTitle>
+        <CardDescription className="text-white/85 leading-relaxed">
           {item.description}
         </CardDescription>
         <div className="flex items-center gap-1.5 text-sm font-semibold text-white pt-1 opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
@@ -86,45 +93,21 @@ const CategoryGrid = ({ items }: { items: ProductItem[] }) => (
   </div>
 );
 
-/** Full-bleed horizontally scrolling row — extends to the true viewport edges
- * with a CSS mask for the fade (not a stacked overlay, which clips awkwardly). */
-const CategoryRow = ({ items }: { items: ProductItem[] }) => {
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  const scrollByCards = (direction: 1 | -1) => {
-    const track = trackRef.current;
-    if (!track) return;
-    track.scrollBy({ left: direction * (track.clientWidth * 0.8), behavior: "smooth" });
-  };
-
-  return (
-    <div className="relative w-screen left-1/2 -translate-x-1/2">
-      <div
-        ref={trackRef}
-        className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 px-[max(1rem,calc((100vw-80rem)/2+1rem))] [scrollbar-width:thin]"
-        style={{
-          maskImage: "linear-gradient(to right, transparent, black 3%, black 97%, transparent)",
-          WebkitMaskImage: "linear-gradient(to right, transparent, black 3%, black 97%, transparent)",
-        }}
-      >
-        {items.map((item) => (
-          <div key={item.slug} className="snap-start shrink-0 w-[280px] sm:w-[320px]">
-            <ProductTile item={item} />
-          </div>
-        ))}
-      </div>
-
-      <div className="flex justify-center gap-2 mt-6">
-        <Button variant="outline" size="icon" onClick={() => scrollByCards(-1)} aria-label="Scroll left">
-          <ChevronLeft className="h-4 w-4" />
-        </Button>
-        <Button variant="outline" size="icon" onClick={() => scrollByCards(1)} aria-label="Scroll right">
-          <ChevronRight className="h-4 w-4" />
-        </Button>
-      </div>
-    </div>
-  );
-};
+/** Carousel — arrow-key / button navigable, no scrollbar, snaps a full "page"
+ * of tiles at a time instead of a free-scrolling bar. */
+const CategoryCarousel = ({ items }: { items: ProductItem[] }) => (
+  <Carousel opts={{ align: "start", loop: items.length > 3 }} className="px-1">
+    <CarouselContent className="-ml-6">
+      {items.map((item) => (
+        <CarouselItem key={item.slug} className="pl-6 sm:basis-1/2 lg:basis-1/3">
+          <ProductTile item={item} />
+        </CarouselItem>
+      ))}
+    </CarouselContent>
+    <CarouselPrevious className="-left-4 sm:-left-6" />
+    <CarouselNext className="-right-4 sm:-right-6" />
+  </Carousel>
+);
 
 const Services = () => {
   const [query, setQuery] = useState("");
@@ -158,7 +141,7 @@ const Services = () => {
         }
       />
 
-      <section id="products" className="py-20 lg:py-28 overflow-x-hidden">
+      <section id="products" className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Search + Filter */}
@@ -191,47 +174,32 @@ const Services = () => {
               </p>
             </div>
           )}
-        </div>
 
-        {/* Industrial Dyes Section */}
-        {filteredDyes.length > 0 && (
-          <div className="mb-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Industrial Dyes Section */}
+          {filteredDyes.length > 0 && (
+            <div className="mb-24">
               <SectionIntro
                 title="Industrial Dyes"
                 description="High-performance dyes for textile and industrial applications."
               />
+
+              {isFiltering ? <CategoryGrid items={filteredDyes} /> : <CategoryCarousel items={filteredDyes} />}
             </div>
+          )}
 
-            {isFiltering ? (
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <CategoryGrid items={filteredDyes} />
-              </div>
-            ) : (
-              <CategoryRow items={filteredDyes} />
-            )}
-          </div>
-        )}
-
-        {/* Industrial Chemicals Section */}
-        {filteredChemicals.length > 0 && (
-          <div className="mb-12">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Industrial Chemicals Section */}
+          {filteredChemicals.length > 0 && (
+            <div className="mb-12">
               <SectionIntro
                 title="Industrial Chemicals"
                 description="Reliable chemicals engineered for performance and consistency."
               />
-            </div>
 
-            {isFiltering ? (
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <CategoryGrid items={filteredChemicals} />
-              </div>
-            ) : (
-              <CategoryRow items={filteredChemicals} />
-            )}
-          </div>
-        )}
+              {isFiltering ? <CategoryGrid items={filteredChemicals} /> : <CategoryCarousel items={filteredChemicals} />}
+            </div>
+          )}
+
+        </div>
       </section>
     </>
   );

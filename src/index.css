@@ -192,6 +192,19 @@
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
+/* Slow, subtle continuous zoom for photo tiles — transform-only, cheap on the compositor */
+@keyframes kenBurns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.12);
+  }
+}
+.animate-ken-burns {
+  animation: kenBurns 12s ease-in-out infinite alternate;
+}
+
 /* GPU-friendly pulsing glow: animates opacity of a pre-blurred pseudo-element
    instead of animating box-shadow directly (which forces a main-thread
    repaint every frame). Opacity animates on the compositor only. */

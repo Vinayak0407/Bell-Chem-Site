@@ -149,16 +149,16 @@ const QuoteRequest = () => {
             </Reveal>
 
             <Reveal index={1}>
-              <Card className="bg-primary/5 border-primary/20">
+              <Card className="card-shimmer bg-card border-2 border-primary/50 shadow-elegant">
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-2 text-primary">
                     Need Immediate Assistance?
                   </h3>
-                  <p className="text-sm text-foreground/80">Contact us directly</p>
-                  <p className="font-medium text-primary mt-2">
+                  <p className="text-sm text-muted-foreground">Contact us directly</p>
+                  <p className="font-bold text-lg text-primary mt-2">
                     +91-9999776385
                   </p>
-                  <p className="text-sm text-foreground/70">
+                  <p className="text-sm text-muted-foreground">
                     vinayak@bellchem.in
                   </p>
                 </CardContent>
